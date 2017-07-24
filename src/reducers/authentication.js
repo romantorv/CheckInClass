@@ -22,7 +22,6 @@ const INIT_STATE = {
 export default (state = INIT_STATE, action) => {
 	switch (action.type) {
 		case INPUT_CHANGED:
-			console.log("input change: ",action.payload.name, action.payload.value)
 			return { ...state, [action.payload.name]: action.payload.value };
 		case IS_WAITING:
 			return { ...state, isWaiting: true, errorMessage:"", errorCode: "" };

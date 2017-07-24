@@ -11,6 +11,17 @@ const Styles = StyleSheet.create({
 		backgroundColor: "#F5F6F7",
 		flex: 1
 	},
+	centerLayout: {
+		justifyContent: 'center',
+		alignItems: 'center',
+		flex: 1
+	},
+	defaultLayout: {
+		justifyContent: 'flex-start',
+		alignItems: 'flex-start',
+		flex: 1,
+		padding: 15
+	},
 	textDefault: {
 		color: colorPrimary,
 		fontSize: 14,
@@ -75,11 +86,6 @@ const Styles = StyleSheet.create({
 		height: 60,
 		fontSize: 18
 	},
-		centerLayout: {
-			justifyContent: 'center',
-			alignItems: 'center',
-			flex: 1
-		},
 		loginForm:{
 			width: 320,
 			alignItems: 'center'
@@ -91,6 +97,14 @@ const Styles = StyleSheet.create({
 				letterSpacing: 1,
 				color: colorHighlight
 			},
+	formWrapper:{
+		backgroundColor: '#EEEEEE',
+		borderRadius: 2,
+		padding: 15,
+		paddingBottom: 0,
+		marginBottom: 15,
+		width: '100%'
+	},
 	inputGroupContainer: {
 		alignItems: 'flex-start',
 		marginBottom: 15
@@ -133,14 +147,8 @@ const Styles = StyleSheet.create({
 			fontSize: 14,
 			fontWeight: '500',
 			textAlign: 'left'
-		},
-	welcome: {
-		fontSize: 20,
-		textAlign: "center",
-		margin: 10,
-		fontFamily: fontPrimary,
-		fontWeight: "500"
-	},
+		}
+	
 });
 
 export { Styles };

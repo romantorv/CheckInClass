@@ -4,7 +4,7 @@ import { Actions, ActionConst } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 
 import { Styles } from '../../theme';
-import { Paragraph, Heading, InputGroup, Button } from '../../components/common';
+import { AlertError, Paragraph, Heading, InputGroup, Button } from '../../components/common';
 import { onInputChanged, UserSignUp } from '../../actions';
 
 class SignUpForm extends Component {
@@ -13,10 +13,13 @@ class SignUpForm extends Component {
 	}
 	_doSignUp(){
 		const { fullname, email, contact, password, repassword } = this.props;
-		//console.log(fullname, email, repassword);
 		this.props.UserSignUp({
 			fullname, email, contact, password, repassword
 		});
+	}
+	_showError(){
+		if (this.props.errorMessage !== "")
+			return <AlertError>{this.props.errorMessage}</AlertError>
 	}
 
 	render(){
@@ -30,6 +33,7 @@ class SignUpForm extends Component {
 					<View style={Styles.loginForm}>
 						<Paragraph style={Styles.link} onPress={this._gotoLogin.bind(this)}>BACK</Paragraph>
 						<Heading>REGISTER FORM</Heading>
+						{this._showError()}
 						<InputGroup 
 						 label="FULLNAME" 
 						 placeholder="e.g: John Nathan"

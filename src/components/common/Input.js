@@ -13,8 +13,10 @@ const InputGroup = (props) => {
 			{this._hasLabel(props.label)}
 			<View style={Styles.inputWrapper}>
 				<TextInput 
-					style={Styles.input}
+					style={[ Styles.input, props.style ]}
 					placeholder = { props.placeholder }
+					autoCorrect = { props.autoCorrect || false }
+					multiline = { props.multiline || false }
 					secureTextEntry = { props.secureTextEntry }
 					onChangeText = { props.onChangeText }
 					value = { props.value }

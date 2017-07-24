@@ -9,8 +9,10 @@ import { Router, Scene, ActionConst } from 'react-native-router-flux';
 import firebase from 'firebase';
 import RootReducer from './reducers';
 import { Styles } from './theme';
+//
 import LoginForm from './containers/Public/LoginForm';
 import SignUpForm from './containers/Public/SignUpForm';
+import ClassFormComponent from './containers/Class/ClassForm';
 
 const FB_Configuration = {
 	apiKey: "AIzaSyB8YXt3rBlo7N3F8XFhnAi0wUkrJzvs4Jk",
@@ -32,9 +34,14 @@ class App extends Component {
 		return(
 			<Provider store={rootStore}>
 				<Router>
-					<Scene key="publicScenes" hideNavBar={true}>
-						<Scene key="loginScene" component={LoginForm} initial={true} type={ActionConst.BACK} />
-						<Scene key="signupScene" component={SignUpForm} />
+					<Scene key="rootScene" hideNavBar={true}>
+						<Scene key="privateScene" >
+							<Scene key="classManageScene" component={ClassFormComponent} initial={true} type={ActionConst.BACK} />
+						</Scene>
+						<Scene key="publicScenes" hideNavBar={true}>
+							<Scene key="loginScene" component={LoginForm} type={ActionConst.BACK} />
+							<Scene key="signupScene" component={SignUpForm} />
+						</Scene>
 					</Scene>
 				</Router>
 			</Provider>

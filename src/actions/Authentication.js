@@ -22,7 +22,7 @@ export const UserLogin = ({email, password}) => {
 
 export const UserSignUp = ({fullname, email, contact, password, repassword}) => {
 	return (dispath) => {
-		console.log(password, repassword);
+
 		if ( password != repassword){
 			dispath({
 				type: SIGNUP_FAIL,
@@ -33,15 +33,17 @@ export const UserSignUp = ({fullname, email, contact, password, repassword}) => 
 			});
 		} else {
 			dispath({ type: IS_WAITING });
-			firebase.auth().createUserWithEmailAndPassword({
-				email,
-				password
-			})
+			firebase.auth().createUserWithEmailAndPassword(email, password)
 				.then( user => {
 					dispath({
 						type: SIGNUP_SUCCESS,
 						payload: user
-					});				
+					});
+					user.updateProfile({
+						displayName: fullname,
+						phoneNumber: contact
+					});
+					console.log("user: ", user);
 				})
 				.catch ( error => {
 					dispath({
