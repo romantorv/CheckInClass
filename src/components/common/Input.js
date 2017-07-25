@@ -8,15 +8,26 @@ const InputGroup = (props) => {
 			return <Text style={Styles.inputLabel}>{labelValue}</Text>;
 		}
 	}
+	_isMultiRows = () => {
+		if (props.inputRows > 1) return true;
+		return false;
+	}
+	_multiRowHeight = () => {
+		if (props.inputRows > 1) {
+			let rows = props.inputRows;
+			return { height: (55 + (rows-1)*18), paddingTop:10 };
+		}
+	}
+
 	return(
 		<View style={Styles.inputGroupContainer}>
 			{this._hasLabel(props.label)}
-			<View style={Styles.inputWrapper}>
+			<View style={[Styles.inputWrapper, _multiRowHeight()]}>
 				<TextInput 
 					style={[ Styles.input, props.style ]}
 					placeholder = { props.placeholder }
 					autoCorrect = { props.autoCorrect || false }
-					multiline = { props.multiline || false }
+					multiline = { _isMultiRows() }
 					secureTextEntry = { props.secureTextEntry }
 					onChangeText = { props.onChangeText }
 					value = { props.value }
@@ -25,5 +36,6 @@ const InputGroup = (props) => {
 		</View>
 	);
 }
+
 
 export { InputGroup };

@@ -20,8 +20,32 @@ const Styles = StyleSheet.create({
 		justifyContent: 'flex-start',
 		alignItems: 'flex-start',
 		flex: 1,
-		padding: 15
+		paddingBottom: 15,
+		paddingTop: 25
 	},
+	gridLayout: {
+		flex: 1,
+		flexDirection: 'column',
+		justifyContent: 'flex-start',
+		paddingLeft: GUTTER/2,
+		paddingRight: GUTTER/2
+	},
+		gridRow: {
+			flex:1,
+			flexDirection: 'row',
+			justifyContent: 'flex-start',
+			alignItems: 'stretch',
+			marginLeft: -(GUTTER/2),
+			marginRight: -(GUTTER/2)
+		},
+		gridRowNoCell: {
+			paddingLeft: GUTTER,
+			paddingRight: GUTTER
+		},
+		gridCell: {
+			paddingLeft: GUTTER/2,
+			paddingRight: GUTTER/2
+		},
 	textDefault: {
 		color: colorPrimary,
 		fontSize: 14,
@@ -128,6 +152,7 @@ const Styles = StyleSheet.create({
 		input: {
 			fontFamily: fontPrimary,
 			fontSize: 14,
+			lineHeight: 30,
 			color: colorPrimary,
 			textAlign: 'left',
 			flex: 1
@@ -151,4 +176,54 @@ const Styles = StyleSheet.create({
 	
 });
 
-export { Styles };
+const RouterStyles = {
+	navContainer: {
+		backgroundColor: colorPrimary
+	},
+		navTitle: {
+			color: colorInvert,
+			fontFamily: fontPrimary,
+			fontSize: 18,
+			fontWeight: '500'
+		},
+		backButtonTextStyle: {
+			color: colorInvert,
+			fontFamily: fontPrimary,
+			fontSize: 12,
+			fontWeight: '300'
+		},
+		leftButtonTextStyle: {
+			color: colorInvert,
+			fontFamily: fontPrimary,
+			fontSize: 12,
+			fontWeight: '300'
+		},
+		rightButtonStyle: {
+			flexDirection: 'row',
+			justifyContent: 'flex-end',
+			alignItems: 'flex-end',
+			flex: 1,
+			height: 20,
+			paddingRight: 13
+		},
+		rightButtonTextStyle: {
+			color: colorInvert,
+			fontFamily: fontPrimary,
+			fontSize: 12,
+			fontWeight: '400'
+		},
+		
+
+}
+
+const TabStyles = {
+	tabContainer: {
+		backgroundColor: '#F9F9F9',
+		shadowColor: '#000',
+		shadowOpacity: 0.1,
+		shadowOffset: {width:0, height:0}
+	}
+		
+}
+
+export { Styles, RouterStyles, TabStyles };
