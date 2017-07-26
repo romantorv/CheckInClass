@@ -2,10 +2,13 @@ import React, {Component} from 'react';
 import { View, ScrollView } from 'react-native';
 import { Grid, Row, Cell, Button, Caption, InputGroup, Subheading } from '../../components/common';
 import { Styles, RouterStyles } from '../../theme';
+import { TabIcon } from '../../components';
 
 class SchoolFormComponent extends Component {
 	static navigationOptions = {
-		title: "School Information"
+		title: "School Information",
+		tabBarLabel: "School Info",
+		tabBarIcon: (tabItem) => <TabIcon iconName="i_School" focused={tabItem.focused} />
 		//headerStyle: RouterStyles.navContainer,
 		//headerTitleStyle: RouterStyles.navTitle
 	}

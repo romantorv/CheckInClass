@@ -13,6 +13,10 @@ import { Styles, RouterStyles, TabStyles } from './theme';
 import LoginForm from './containers/Public/LoginForm';
 import SignUpForm from './containers/Public/SignUpForm';
 import SchoolFormComponent from './containers/School/SchoolForm';
+import ClassListComponent from './containers/Class/ClassList';
+import ClassEditFormComponent from './containers/Class/ClassEditForm';
+import ClassStudentListComponent from './containers/Class/ClassStudentList';
+
 import { TabIcon, TabIcon_School } from './components';
 //
 const FB_Configuration = {
@@ -40,15 +44,36 @@ class App extends Component {
 	}
 }
 
+const PrivateScreens = TabNavigator({
+	School: {
+		screen: SchoolFormComponent
+	},
+	Classes: {
+		screen: ClassListComponent
+	},
+	Teachers: {
+		screen: ClassEditFormComponent
+	},
+	Students: {
+		screen: ClassStudentListComponent
+	}
+}, {
+	tabBarOptions:{
+		labelStyle: TabStyles.tabTitle,
+		activeTintColor: '#1FBAD6',
+		style: {paddingBottom: 3}
+	}
+})
+
 const AppRouter = StackNavigator({
+	AppScene: {
+		screen: PrivateScreens
+	},
 	Login: {
 		screen: LoginForm
 	},
 	SignUp: {
 		screen: SignUpForm
-	},
-	School: {
-		screen: SchoolFormComponent
 	}
 },{
 	navigationOptions: {
