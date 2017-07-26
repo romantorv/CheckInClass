@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, KeyboardAvoidingView } from 'react-native';
 import { connect } from 'react-redux';
-import { Actions } from 'react-native-router-flux';
 import { AlertError ,InputGroup, Button, Subheading, Paragraph, Caption, Divider } from '../../components/common';
 import { onInputChanged, UserLogin } from '../../actions';
 
@@ -13,7 +12,7 @@ class LoginForm extends Component {
 	}
 
 	_gotoSignUp() {
-		Actions.signupScene();
+		//Actions.signupScene();
 	}
 	_doSignin(){
 		console.log("doSignin", this.props.email, this.props.password);

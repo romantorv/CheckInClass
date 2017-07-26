@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, KeyboardAvoidingView } from 'react-native';
-import { Actions, ActionConst } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 
 import { Styles } from '../../theme';
@@ -9,7 +8,7 @@ import { onInputChanged, UserSignUp } from '../../actions';
 
 class SignUpForm extends Component {
 	_gotoLogin(){
-		Actions.loginScene();
+		//Actions.loginScene();
 	}
 	_doSignUp(){
 		const { fullname, email, contact, password, repassword } = this.props;

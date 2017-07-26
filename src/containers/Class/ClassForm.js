@@ -4,6 +4,9 @@ import { Grid, Row, Cell, Button, Caption, InputGroup, Subheading } from '../../
 import { Styles } from '../../theme';
 
 class ClassFormComponent extends Component {
+	static navigationOptions = {
+		title: "School Information"
+	}
 	render(){
 		return(
 			<ScrollView style={Styles.pageContainer}>
