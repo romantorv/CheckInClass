@@ -4,12 +4,27 @@ import { connect } from 'react-redux';
 
 import { Styles } from '../../theme';
 import { AlertError, Paragraph, Heading, InputGroup, Button } from '../../components/common';
-import { onInputChanged, UserSignUp } from '../../actions';
+import { onAuthReset, onInputChanged, UserSignUp } from '../../actions';
 
 class SignUpForm extends Component {
-	_gotoLogin(){
-		//Actions.loginScene();
+	static navigationOptions = {
+		header: null
 	}
+	constructor(props){
+		super(props);
+		
+	}
+
+	componentWillMount(){
+		this.props.onAuthReset();
+	}
+	
+	_goBackSignIn(){
+		const { goBack } = this.props.navigation; 
+		this.props.onAuthReset();
+		goBack();
+	}
+
 	_doSignUp(){
 		const { fullname, email, contact, password, repassword } = this.props;
 		this.props.UserSignUp({
@@ -30,7 +45,7 @@ class SignUpForm extends Component {
 				behavior="position"
 				resetScrollToCoords={{ x: 0, y: 0 }}>
 					<View style={Styles.loginForm}>
-						<Paragraph style={Styles.link} onPress={this._gotoLogin.bind(this)}>BACK</Paragraph>
+						<Paragraph style={Styles.link} onPress={ this._goBackSignIn.bind(this) }>BACK</Paragraph>
 						<Heading>REGISTER FORM</Heading>
 						{this._showError()}
 						<InputGroup 
@@ -77,4 +92,4 @@ const mapStateToProps = (state) =>{
 	};
 }
 
-export default connect(mapStateToProps, {onInputChanged, UserSignUp})(SignUpForm);
+export default connect(mapStateToProps, {onAuthReset, onInputChanged, UserSignUp})(SignUpForm);

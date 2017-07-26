@@ -1,4 +1,5 @@
 import { 
+	AUTH_RESET,
 	INPUT_CHANGED,
 	IS_WAITING,
 	LOGIN_FAIL, 
@@ -21,6 +22,8 @@ const INIT_STATE = {
 
 export default (state = INIT_STATE, action) => {
 	switch (action.type) {
+		case AUTH_RESET:
+			return INIT_STATE;
 		case INPUT_CHANGED:
 			return { ...state, [action.payload.name]: action.payload.value };
 		case IS_WAITING:

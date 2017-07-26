@@ -183,8 +183,8 @@ const RouterStyles = {
 		navTitle: {
 			color: colorInvert,
 			fontFamily: fontPrimary,
-			fontSize: 18,
-			fontWeight: '500'
+			fontSize: 20,
+			fontWeight: '200'
 		},
 		backButtonTextStyle: {
 			color: colorInvert,

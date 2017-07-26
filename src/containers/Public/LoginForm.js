@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
 import { View, Text, Image, KeyboardAvoidingView } from 'react-native';
 import { connect } from 'react-redux';
+import { NavigationActions } from 'react-navigation';
 import { AlertError ,InputGroup, Button, Subheading, Paragraph, Caption, Divider } from '../../components/common';
-import { onInputChanged, UserLogin } from '../../actions';
+import { onAuthReset, onInputChanged, UserLogin } from '../../actions';
 
 import  { Styles } from '../../theme';
 
 class LoginForm extends Component {
+	static navigationOptions = {
+		header: null
+	}
+
 	constructor(props){
 		super(props);
 	}
 
+	componentWillMount(){
+		this.props.onAuthReset();
+	}
+
 	_gotoSignUp() {
-		//Actions.signupScene();
+		const { navigate } = this.props.navigation;
+		navigate('SignUp');
 	}
 	_doSignin(){
 		console.log("doSignin", this.props.email, this.props.password);
@@ -69,4 +79,4 @@ const mapStateToProps = (state) => {
 	};
 }
 
-export default connect(mapStateToProps, {onInputChanged, UserLogin})(LoginForm);
+export default connect(mapStateToProps, {onAuthReset, onInputChanged, UserLogin})(LoginForm);

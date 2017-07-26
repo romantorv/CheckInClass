@@ -12,7 +12,7 @@ import { Styles, RouterStyles, TabStyles } from './theme';
 //
 import LoginForm from './containers/Public/LoginForm';
 import SignUpForm from './containers/Public/SignUpForm';
-import ClassFormComponent from './containers/Class/ClassForm';
+import SchoolFormComponent from './containers/School/SchoolForm';
 import { TabIcon, TabIcon_School } from './components';
 //
 const FB_Configuration = {
@@ -41,8 +41,19 @@ class App extends Component {
 }
 
 const AppRouter = StackNavigator({
+	Login: {
+		screen: LoginForm
+	},
+	SignUp: {
+		screen: SignUpForm
+	},
 	School: {
-		screen: ClassFormComponent
+		screen: SchoolFormComponent
+	}
+},{
+	navigationOptions: {
+		headerStyle: RouterStyles.navContainer,
+		headerTitleStyle: RouterStyles.navTitle
 	}
 });
 
