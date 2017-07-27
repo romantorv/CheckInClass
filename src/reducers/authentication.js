@@ -5,7 +5,8 @@ import {
 	LOGIN_FAIL, 
 	LOGIN_SUCCESS,
 	SIGNUP_FAIL,
-	SIGNUP_SUCCESS
+	SIGNUP_SUCCESS,
+	SIGN_OUT
 } from '../constants';
 
 const INIT_STATE = {
@@ -36,6 +37,8 @@ export default (state = INIT_STATE, action) => {
 			return { ...INIT_STATE, user: action.payload };
 		case SIGNUP_FAIL:
 			return { ...state, isWaiting: false, errorCode: action.payload.code, errorMessage: action.payload.message}
+		case SIGN_OUT:
+			return INIT_STATE;
 		default:
 			return state;
 	}

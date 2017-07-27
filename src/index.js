@@ -10,6 +10,7 @@ import firebase from 'firebase';
 import RootReducer from './reducers';
 import { Styles, RouterStyles, TabStyles } from './theme';
 //
+import RootNavigator from './containers';
 import LoginForm from './containers/Public/LoginForm';
 import SignUpForm from './containers/Public/SignUpForm';
 import SchoolFormComponent from './containers/School/SchoolForm';
@@ -38,12 +39,13 @@ class App extends Component {
 		const rootStore = createStore(RootReducer, {}, applyMiddleware(ReduxThunk));
 		return(
 			<Provider store={rootStore}>
-				<AppRouter />
+				<RootNavigator />
 			</Provider>
 		)
 	}
 }
 
+/*
 const PrivateScreens = TabNavigator({
 	School: {
 		screen: SchoolFormComponent
@@ -66,20 +68,22 @@ const PrivateScreens = TabNavigator({
 })
 
 const AppRouter = StackNavigator({
-	AppScene: {
-		screen: PrivateScreens
-	},
 	Login: {
-		screen: LoginForm
+		screen: LoginForm,
 	},
 	SignUp: {
 		screen: SignUpForm
+	},
+	AppScene: {
+		screen: PrivateScreens
 	}
 },{
+	initialRouteName: 'Login',
 	navigationOptions: {
 		headerStyle: RouterStyles.navContainer,
 		headerTitleStyle: RouterStyles.navTitle
 	}
 });
+*/
 
 export default App;
