@@ -2,6 +2,7 @@ import { AsyncStorage } from 'react-native';
 import firebase from 'firebase';
 import { 
 	TOKEN_ID,
+	TOKEN_LOOKUP,
 	INPUT_CHANGED, 
 	IS_WAITING, 
 	LOGIN_FAIL, 
@@ -11,41 +12,17 @@ import {
 	SIGN_OUT } from '../constants';
 
 const _saveAuth = (currentUser) => {
-	AsyncStorage.multiSet([
-		[TOKEN_ID, currentUser.getIdToken() ],
-		['displayScreen', currentUser.displayName ],
-		['uid', currentUser.uid ]
-	]);
+	currentUser.getIdToken().then(value => {
+		AsyncStorage.multiSet([
+			[TOKEN_ID, value],
+			['displayScreen', currentUser.userInfo().displayName ],
+			['uid', currentUser.userInfo().uid ]
+		]);
+	});
 }
 
 const _removeAuth = () => {
 	AsyncStorage.multiRemove([TOKEN_ID, 'displayScreen', 'uid']);
-}
-
-
-export const AuthWithToken = (tokenId) => {
-	return (dispath) => {
-		if (tokenId == null || tokenId == undefined || tokenId == ""){
-			dispath({
-				type: SIGN_OUT
-			})
-		} else {
-			firebase.auth().signInWithCustomToken(tokenId)
-				.then( user => {
-					dispath({
-						type: LOGIN_SUCCESS,
-						payload: user
-					});
-					_saveAuth(user);
-				})
-				.catch( error => {
-					_removeAuth();
-					dispath({
-						type: SIGN_OUT
-					})
-				})
-		}		
-	}
 }
 
 export const UserLogin = ({email, password}) => {
