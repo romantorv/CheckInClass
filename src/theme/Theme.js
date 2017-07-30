@@ -110,17 +110,24 @@ const Styles = StyleSheet.create({
 		height: 60,
 		fontSize: 18
 	},
-		loginForm:{
-			width: 320,
-			alignItems: 'center'
+	avatarImage: {
+		width: 250,
+		height: 250,
+		borderRadius: 125,
+		borderWidth: 5,
+		borderColor: colorInvert
+	},
+	loginForm:{
+		width: 320,
+		alignItems: 'center'
+	},
+		loginTitle:{
+			fontFamily: fontPrimary,
+			fontWeight: '300',
+			fontSize: 36,
+			letterSpacing: 1,
+			color: colorHighlight
 		},
-			loginTitle:{
-				fontFamily: fontPrimary,
-				fontWeight: '300',
-				fontSize: 36,
-				letterSpacing: 1,
-				color: colorHighlight
-			},
 	formWrapper:{
 		backgroundColor: '#EEEEEE',
 		borderRadius: 2,

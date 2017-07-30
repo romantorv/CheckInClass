@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, Text } from 'react-native';
+import { Image } from 'react-native';
 
 const TabIcons = {
 	i_School: require('../theme/images/icon_tab_school_inactive.png'),
@@ -16,7 +16,6 @@ const TabIcons = {
 
 const TabIcon = (props) => {	
 	let iconState = props.focused ? props.iconName+"_a" : props.iconName;
-	console.log("iconState", props, iconState)
 	return (
 		<Image
 		  source={ TabIcons[ iconState ] }

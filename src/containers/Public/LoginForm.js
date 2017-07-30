@@ -25,7 +25,6 @@ class LoginForm extends Component {
 		navigate('SignUp');
 	}
 	_doSignin(){
-		console.log("doSignin", this.props.email, this.props.password);
 		this.props.UserLogin({email: this.props.email, password: this.props.password});
 	}
 	_showError(){

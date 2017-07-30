@@ -1,8 +1,8 @@
 import { AsyncStorage } from 'react-native';
-import firebase from 'firebase';
+import firebase from '../firebase';
 import { 
 	TOKEN_ID,
-	TOKEN_LOOKUP,
+	VERIFY_ISSIGNED,	
 	INPUT_CHANGED, 
 	IS_WAITING, 
 	LOGIN_FAIL, 
@@ -11,18 +11,17 @@ import {
 	SIGNUP_SUCCESS, 
 	SIGN_OUT } from '../constants';
 
-const _saveAuth = (currentUser) => {
-	currentUser.getIdToken().then(value => {
-		AsyncStorage.multiSet([
-			[TOKEN_ID, value],
-			['displayScreen', currentUser.userInfo().displayName ],
-			['uid', currentUser.userInfo().uid ]
-		]);
-	});
-}
-
-const _removeAuth = () => {
-	AsyncStorage.multiRemove([TOKEN_ID, 'displayScreen', 'uid']);
+export const IsSigned = () => {
+	return (dispath) => {
+		firebase.auth().onAuthStateChanged((user) => {
+			if (user) {
+				dispath({
+					type: LOGIN_SUCCESS,
+					payload: user
+				});
+			}
+		});
+	}
 }
 
 export const UserLogin = ({email, password}) => {
@@ -34,7 +33,6 @@ export const UserLogin = ({email, password}) => {
 					type: LOGIN_SUCCESS,
 					payload: user
 				});
-				_saveAuth(user);
 			})
 			.catch( error => {
 				dispath({
@@ -46,10 +44,11 @@ export const UserLogin = ({email, password}) => {
 }
 
 export const UserSignOut = () => {
-	_removeAuth();
-	return({
-		type: SIGN_OUT
-	});
+	return (dispath) => {
+		firebase.auth().signOut()
+			.then( ()=> { dispath({ type: SIGN_OUT })})
+			.catch( error => console.log(error) )
+	}
 }
 
 export const UserSignUp = ({fullname, email, contact, password, repassword}) => {
@@ -74,7 +73,6 @@ export const UserSignUp = ({fullname, email, contact, password, repassword}) => 
 						displayName: fullname,
 						phoneNumber: contact
 					});
-					_saveAuth(user);
 				})
 				.catch ( error => {
 					dispath({

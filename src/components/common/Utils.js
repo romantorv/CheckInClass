@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { Styles } from '../../theme';
 
 const Divider = () => {
@@ -22,4 +22,24 @@ const AlertError = (props) => {
 	)
 }
 
-export { Divider, VDivider, AlertError }
+const Avatar = (props) => {
+
+	_generateImg = (props) => {
+		if (props.avatarSource !== null && props.avatarSource !== undefined && props.avatarSource !== "")
+			return <Image 
+				source={{uri: props.avatarSource}}
+				resizeMode={ props.resizeMode || "cover" }
+				style={[Styles.avatarImage, props.style]}
+			/>
+		else 
+			return <Image 
+				source={require('../../theme/images/img_default_avatar.png')}
+				resizeMode={ props.resizeMode || "cover" }
+				style={[Styles.avatarImage, props.style]}
+			/>
+	}
+
+	return _generateImg(props);
+}
+
+export { Divider, VDivider, AlertError, Avatar }

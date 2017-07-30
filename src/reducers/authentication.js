@@ -1,5 +1,3 @@
-import {AsyncStorage} from 'react-native';
- 
 import { 
 	AUTH_RESET,
 	INPUT_CHANGED,
@@ -9,7 +7,8 @@ import {
 	SIGNUP_FAIL,
 	SIGNUP_SUCCESS,
 	SIGN_OUT,
-	TOKEN_ID
+	TOKEN_ID,
+	VERIFY_ISSIGNED
 } from '../constants';
 
 const INIT_STATE = {
@@ -21,7 +20,8 @@ const INIT_STATE = {
 	errorCode: "",
 	errorMessage: "",
 	user: null,
-	isWaiting: false
+	isWaiting: false,
+	isTokenExisted: false
 }
 
 export default (state = INIT_STATE, action) => {
@@ -33,7 +33,7 @@ export default (state = INIT_STATE, action) => {
 		case IS_WAITING:
 			return { ...state, isWaiting: true, errorMessage:"", errorCode: "" };
 		case LOGIN_SUCCESS:
-			return { ...INIT_STATE, user: action.payload };
+			return { ...INIT_STATE, user: action.payload, isTokenExisted:true };
 		case LOGIN_FAIL:
 			return { ...state, isWaiting: false, errorCode: action.payload.code, errorMessage: action.payload.message };
 		case SIGNUP_SUCCESS:
@@ -42,6 +42,8 @@ export default (state = INIT_STATE, action) => {
 			return { ...state, isWaiting: false, errorCode: action.payload.code, errorMessage: action.payload.message}
 		case SIGN_OUT:
 			return INIT_STATE;
+		case VERIFY_ISSIGNED:
+			return { ...state, isTokenExisted: action.payload };
 		default:
 			return state;
 	}

@@ -13,6 +13,7 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* CheckInClassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CheckInClassTests.m */; };
+		03A88C91066F7C7E4F3A2ED2 /* libPods-CheckInClassTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E07A94212ABC05460875A57 /* libPods-CheckInClassTests.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -36,7 +37,9 @@
 		2DCD954D1E0B4F2C00145EB5 /* CheckInClassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CheckInClassTests.m */; };
 		4B1BEA4273E2461599426FFC /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E47FA213AFDA441B90AA47B4 /* WorkSans-Medium.ttf */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
+		74109DFFF981F7DFCC52F222 /* libPods-CheckInClass.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 949044F38532B1A6E03322DC /* libPods-CheckInClass.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		A10AD91F1F2C830A0006DFB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A10AD91E1F2C830A0006DFB5 /* GoogleService-Info.plist */; };
 		C06CD0715F7641E88C9AA1BE /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D4A82F9E27D40E0AEEABD45 /* WorkSans-Regular.ttf */; };
 		F7B2094C4F0641F392953775 /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7ACE342D9F44B2888981CE5 /* WorkSans-Light.ttf */; };
 /* End PBXBuildFile section */
@@ -285,8 +288,15 @@
 		2D02E4901E0B4A5D006451C7 /* CheckInClass-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CheckInClass-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D4A82F9E27D40E0AEEABD45 /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-Regular.ttf"; path = "../src/theme/fonts/WorkSans-Regular.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		6D42288FD9F17662B040A3C0 /* Pods-CheckInClass.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckInClass.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckInClass/Pods-CheckInClass.debug.xcconfig"; sourceTree = "<group>"; };
+		6E6CB1CE1312D9F8063D7DAE /* Pods-CheckInClassTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckInClassTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckInClassTests/Pods-CheckInClassTests.debug.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		7976999FC26AB80E508E8E16 /* Pods-CheckInClass.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckInClass.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckInClass/Pods-CheckInClass.release.xcconfig"; sourceTree = "<group>"; };
+		7E07A94212ABC05460875A57 /* libPods-CheckInClassTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CheckInClassTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		8B68317F00884BA8F71946C5 /* Pods-CheckInClassTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckInClassTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckInClassTests/Pods-CheckInClassTests.release.xcconfig"; sourceTree = "<group>"; };
+		949044F38532B1A6E03322DC /* libPods-CheckInClass.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CheckInClass.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10AD91E1F2C830A0006DFB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Google Drive/MyApp/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E47FA213AFDA441B90AA47B4 /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-Medium.ttf"; path = "../src/theme/fonts/WorkSans-Medium.ttf"; sourceTree = "<group>"; };
 		F7ACE342D9F44B2888981CE5 /* WorkSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "WorkSans-Light.ttf"; path = "../src/theme/fonts/WorkSans-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -297,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
+				03A88C91066F7C7E4F3A2ED2 /* libPods-CheckInClassTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +326,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				74109DFFF981F7DFCC52F222 /* libPods-CheckInClass.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +435,7 @@
 		13B07FAE1A68108700A75B9A /* CheckInClass */ = {
 			isa = PBXGroup;
 			children = (
+				A10AD91E1F2C830A0006DFB5 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -461,6 +474,17 @@
 				2D4A82F9E27D40E0AEEABD45 /* WorkSans-Regular.ttf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		1D23D8F56BACBE6CE077045E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D42288FD9F17662B040A3C0 /* Pods-CheckInClass.debug.xcconfig */,
+				7976999FC26AB80E508E8E16 /* Pods-CheckInClass.release.xcconfig */,
+				6E6CB1CE1312D9F8063D7DAE /* Pods-CheckInClassTests.debug.xcconfig */,
+				8B68317F00884BA8F71946C5 /* Pods-CheckInClassTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
@@ -516,6 +540,8 @@
 				00E356EF1AD99517003FC87E /* CheckInClassTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				1A5B65922DF949448D677434 /* Resources */,
+				1D23D8F56BACBE6CE077045E /* Pods */,
+				F43AE1F76BB1AA12AA0022DB /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -532,6 +558,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F43AE1F76BB1AA12AA0022DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				949044F38532B1A6E03322DC /* libPods-CheckInClass.a */,
+				7E07A94212ABC05460875A57 /* libPods-CheckInClassTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -539,9 +574,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "CheckInClassTests" */;
 			buildPhases = (
+				4D5E62537A2F3CC5994C22E1 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				70B0EE7FB920DB332D09D9F8 /* [CP] Embed Pods Frameworks */,
+				9A1AA585B09B6AAB87F8B833 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -557,10 +595,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "CheckInClass" */;
 			buildPhases = (
+				60A87FFF8B87D08A93FA4FD0 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				EE445C8B3310132278D7CA96 /* [CP] Embed Pods Frameworks */,
+				D2F00A32ADBAA01EDE9E9F30 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -927,6 +968,7 @@
 				F7B2094C4F0641F392953775 /* WorkSans-Light.ttf in Resources */,
 				4B1BEA4273E2461599426FFC /* WorkSans-Medium.ttf in Resources */,
 				C06CD0715F7641E88C9AA1BE /* WorkSans-Regular.ttf in Resources */,
+				A10AD91F1F2C830A0006DFB5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -975,6 +1017,96 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		4D5E62537A2F3CC5994C22E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		60A87FFF8B87D08A93FA4FD0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		70B0EE7FB920DB332D09D9F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheckInClassTests/Pods-CheckInClassTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A1AA585B09B6AAB87F8B833 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheckInClassTests/Pods-CheckInClassTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2F00A32ADBAA01EDE9E9F30 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheckInClass/Pods-CheckInClass-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE445C8B3310132278D7CA96 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheckInClass/Pods-CheckInClass-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1043,6 +1175,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E6CB1CE1312D9F8063D7DAE /* Pods-CheckInClassTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = YBSLJ528ZN;
@@ -1065,6 +1198,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B68317F00884BA8F71946C5 /* Pods-CheckInClassTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -1084,6 +1218,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D42288FD9F17662B040A3C0 /* Pods-CheckInClass.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1107,6 +1242,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7976999FC26AB80E508E8E16 /* Pods-CheckInClass.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
