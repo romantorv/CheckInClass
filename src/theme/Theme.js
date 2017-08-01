@@ -110,6 +110,15 @@ const Styles = StyleSheet.create({
 		height: 60,
 		fontSize: 18
 	},
+	buttonHeader: {
+		marginRight: 15
+	},
+		buttonHeaderText: {
+			fontSize: 13,
+			fontWeight: '400',
+			fontFamily: fontPrimary,
+			color: colorInvert
+		},
 	avatarImage: {
 		width: 250,
 		height: 250,
@@ -196,13 +205,13 @@ const RouterStyles = {
 		backButtonTextStyle: {
 			color: colorInvert,
 			fontFamily: fontPrimary,
-			fontSize: 12,
+			fontSize: 13,
 			fontWeight: '300'
 		},
 		leftButtonTextStyle: {
 			color: colorInvert,
 			fontFamily: fontPrimary,
-			fontSize: 12,
+			fontSize: 13,
 			fontWeight: '300'
 		},
 		rightButtonStyle: {

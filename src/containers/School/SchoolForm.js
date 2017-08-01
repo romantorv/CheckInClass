@@ -3,16 +3,17 @@ import { View, ScrollView, Text } from 'react-native';
 import { connect } from 'react-redux';
 //
 import { onInputChanged, schoolFetchInfo, schoolSaveInfo } from '../../actions';
-import { Grid, Row, Cell, Button, Caption, InputGroup, Subheading } from '../../components/common';
+import { Grid, Row, Cell, Button, ButtonSave, ButtonBack, Caption, InputGroup, Subheading } from '../../components/common';
 import { Styles, RouterStyles } from '../../theme';
 import { TabIcon,  } from '../../components';
 
 class SchoolFormComponent extends Component {
-	static navigationOptions = {
-		title: "School Information",
-		tabBarLabel: "School Info",
-		tabBarIcon: (tabItem) => <TabIcon iconName="i_School" focused={tabItem.focused} />,
-		headerRight: (action) => <TabIcon iconName="i_School" focused={true}/>,
+	static navigationOptions = ({navigation}) => {
+		const { params = {} } = navigation.state;
+		return {
+			title: "School Information",
+			headerRight: <ButtonSave onPress={ ()=> params.doSave() }>SAVE</ButtonSave>
+		}
 	}
 
 	constructor(props) {
@@ -20,7 +21,17 @@ class SchoolFormComponent extends Component {
 	}
 
 	componentDidMount(){
+		this.props.navigation.setParams({
+		 	doSave: this._onSave.bind(this)
+		 })
 		this.props.schoolFetchInfo();
+	}
+
+	_onSave(){
+		const { schoolname, address1, address2, website, email, tel, fax, summary } = this.props;
+		this.props.schoolSaveInfo({
+			schoolname, address1, address2, website, email, tel, fax, summary
+		});
 	}
 
 	render(){
