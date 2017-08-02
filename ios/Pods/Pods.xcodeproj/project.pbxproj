@@ -457,7 +457,7 @@
 /* Begin PBXFileReference section */
 		0003038CFC16AA5A2C679BC84B8E4965 /* GPBUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBUtilities.m; path = objectivec/GPBUtilities.m; sourceTree = "<group>"; };
 		0019B5D038CC0087ED116E1A4545FF85 /* RCTRedBox.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTRedBox.m; sourceTree = "<group>"; };
-		002D5EC9BC6CD7EB07658EF3E0A26807 /* RCTProfileTrampoline-x86_64.S */ = {isa = PBXFileReference; includeInIndex = 1; path = "RCTProfileTrampoline-x86_64.S"; sourceTree = "<group>"; };
+		002D5EC9BC6CD7EB07658EF3E0A26807 /* RCTProfileTrampoline-x86_64.S */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.asm; path = "RCTProfileTrampoline-x86_64.S"; sourceTree = "<group>"; };
 		00DC886A73D45677E31AA4FABD4DC5E3 /* RCTTabBarItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTTabBarItem.m; sourceTree = "<group>"; };
 		0132D7CE35F0B0F6D95E475BEA6F8551 /* RCTErrorInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTErrorInfo.m; sourceTree = "<group>"; };
 		01B1F2BC9DABEB0C966B88DD0453E5CA /* GPBDescriptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBDescriptor.m; path = objectivec/GPBDescriptor.m; sourceTree = "<group>"; };
@@ -517,9 +517,9 @@
 		207F60A3812C0C79EDE00E2231CAACA5 /* Pods-CheckInClass-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckInClass-frameworks.sh"; sourceTree = "<group>"; };
 		2136BC50DC6C4DE5E7895710963F8BCB /* RCTUIManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTUIManager.h; sourceTree = "<group>"; };
 		2282FBAAC22F92FBEB6A378B6D9244A4 /* RCTPerformanceLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTPerformanceLogger.h; sourceTree = "<group>"; };
-		2295778967E65DB1C71F13491B4C56E9 /* libRNFirebase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libRNFirebase.a; path = libRNFirebase.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2295778967E65DB1C71F13491B4C56E9 /* libRNFirebase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNFirebase.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		231CA519570419D201AA19B5B6A223E6 /* RCTBorderDrawing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTBorderDrawing.m; sourceTree = "<group>"; };
-		2337BCEAA4DCAB5E55CDC5C44E76BCA1 /* RCTJSCErrorHandling.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = RCTJSCErrorHandling.mm; sourceTree = "<group>"; };
+		2337BCEAA4DCAB5E55CDC5C44E76BCA1 /* RCTJSCErrorHandling.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTJSCErrorHandling.mm; sourceTree = "<group>"; };
 		23DFA35BE4A74F375E40321EDD7E658C /* Protobuf.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Protobuf.xcconfig; sourceTree = "<group>"; };
 		23F52725C557FE228A2E4ADE74F702B7 /* SourceContext.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SourceContext.pbobjc.m; path = objectivec/google/protobuf/SourceContext.pbobjc.m; sourceTree = "<group>"; };
 		24FA4E5956D39DF0816F8968956DD96D /* RNFirebaseAuth.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNFirebaseAuth.m; sourceTree = "<group>"; };
@@ -529,15 +529,15 @@
 		285E45472AD739CBF799380EF5506722 /* RCTMultipartDataTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTMultipartDataTask.h; sourceTree = "<group>"; };
 		2864BEB0EC54B5354E4DD399DEC4619D /* RNFirebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNFirebase.h; sourceTree = "<group>"; };
 		28D78A851F2950A7852E551D92496FEB /* RCTNavigator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTNavigator.m; sourceTree = "<group>"; };
-		29FC844782D8FBC1ABFFF86D3F27D80E /* JSCWrapper.cpp */ = {isa = PBXFileReference; includeInIndex = 1; path = JSCWrapper.cpp; sourceTree = "<group>"; };
+		29FC844782D8FBC1ABFFF86D3F27D80E /* JSCWrapper.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; path = JSCWrapper.cpp; sourceTree = "<group>"; };
 		2A09A1D4D196087C3C5983948B894251 /* RCTTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTTabBar.h; sourceTree = "<group>"; };
 		2A79B322D6F6D10BA15E90030D9CD8E8 /* GTMDebugSelectorValidation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMDebugSelectorValidation.h; path = DebugUtils/GTMDebugSelectorValidation.h; sourceTree = "<group>"; };
 		2BBC86F07ADB2CBAB15C5AA6CB7FA245 /* RNFirebaseDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNFirebaseDatabase.m; sourceTree = "<group>"; };
 		2BFA2E03A93AB26D98B816CBF23641FC /* RCTSlider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTSlider.h; sourceTree = "<group>"; };
 		2CF0834F517C9658F7989D647350273B /* GTMSessionFetcher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GTMSessionFetcher.xcconfig; sourceTree = "<group>"; };
-		2E9550E4FF513A812FB90C57CE583E36 /* pb_decode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_decode.c; sourceTree = "<group>"; };
+		2E9550E4FF513A812FB90C57CE583E36 /* pb_decode.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = pb_decode.c; sourceTree = "<group>"; };
 		2EB3AAC1D5940A9B72ECC47E20627947 /* RCTBridge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTBridge.m; sourceTree = "<group>"; };
-		2F7F2A18D8833CDB19FD0896367AE80E /* libPods-CheckInClassTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-CheckInClassTests.a"; path = "libPods-CheckInClassTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F7F2A18D8833CDB19FD0896367AE80E /* libPods-CheckInClassTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CheckInClassTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CEF227E459EE7CF19309F73A3AB1DD /* RCTNullability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTNullability.h; sourceTree = "<group>"; };
 		30DEB6728D1AC0E73270939C5C99672A /* RCTNavItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTNavItem.m; sourceTree = "<group>"; };
 		31AB76C6CB82C1EC69ED2A6923C9C05E /* RCTRefreshControlManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTRefreshControlManager.m; sourceTree = "<group>"; };
@@ -560,8 +560,8 @@
 		3BB70907BCDAF1BF937A8CF89C7B59B3 /* Pods-CheckInClassTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CheckInClassTests-dummy.m"; sourceTree = "<group>"; };
 		3C4EFC93F2DE8F6F5517E40DB6A93D1A /* RCTNavItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTNavItem.h; sourceTree = "<group>"; };
 		3C93B615A5038F2FC4E20A31D3870D3A /* RCTUIManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTUIManager.m; sourceTree = "<group>"; };
-		3D1FB0A8E3A5A713A86D56AD7E6D55BA /* YGEnums.c */ = {isa = PBXFileReference; includeInIndex = 1; path = YGEnums.c; sourceTree = "<group>"; };
-		3D235EA9F845564DA9926287BAAA46F2 /* RCTProfileTrampoline-arm64.S */ = {isa = PBXFileReference; includeInIndex = 1; path = "RCTProfileTrampoline-arm64.S"; sourceTree = "<group>"; };
+		3D1FB0A8E3A5A713A86D56AD7E6D55BA /* YGEnums.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = YGEnums.c; sourceTree = "<group>"; };
+		3D235EA9F845564DA9926287BAAA46F2 /* RCTProfileTrampoline-arm64.S */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.asm; path = "RCTProfileTrampoline-arm64.S"; sourceTree = "<group>"; };
 		3D4287420E436C6CBC7E603BCDA306B7 /* RCTPlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTPlatform.m; sourceTree = "<group>"; };
 		3D9F2BC9555666C43688FF493AB3B18F /* RCTUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTUtils.h; sourceTree = "<group>"; };
 		3DC07B207696C321D5A4B8E8D398C467 /* RCTJSCErrorHandling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTJSCErrorHandling.h; sourceTree = "<group>"; };
@@ -569,14 +569,14 @@
 		3E9D5D6D5F5145CA2953749033FB458A /* Pods-CheckInClass.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckInClass.release.xcconfig"; sourceTree = "<group>"; };
 		3EC5F6EE6C9791053507316A2F24453F /* GPBCodedInputStream_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBCodedInputStream_PackagePrivate.h; path = objectivec/GPBCodedInputStream_PackagePrivate.h; sourceTree = "<group>"; };
 		3F14E4E7D26BDF0F1301DD5943586125 /* RCTMultipartDataTask.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTMultipartDataTask.m; sourceTree = "<group>"; };
-		3F5BD1FB08CD6C9964B5ADFE7476A7F3 /* RCTLog.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = RCTLog.mm; sourceTree = "<group>"; };
+		3F5BD1FB08CD6C9964B5ADFE7476A7F3 /* RCTLog.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTLog.mm; sourceTree = "<group>"; };
 		3FFF9FB73F7CDB499D3147BC341E56B5 /* Type.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Type.pbobjc.h; path = objectivec/google/protobuf/Type.pbobjc.h; sourceTree = "<group>"; };
 		415F37CB11C13E492722A7B5E9452E04 /* GPBUnknownFieldSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBUnknownFieldSet.h; path = objectivec/GPBUnknownFieldSet.h; sourceTree = "<group>"; };
 		41C2256759F171F2090C6823BAE44859 /* RCTView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTView.h; sourceTree = "<group>"; };
 		4246FB6B4CF0EE147228F6EBF0707E44 /* RCTAppState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTAppState.m; sourceTree = "<group>"; };
 		425E184999C349D73EA06A1629A78418 /* RCTKeyboardObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTKeyboardObserver.m; sourceTree = "<group>"; };
 		430C4515217EF5AF14F07447FCD0B74C /* RNFirebase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNFirebase.m; sourceTree = "<group>"; };
-		433E49D730EB1EEF631D0D99846E9D60 /* pb_common.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_common.c; sourceTree = "<group>"; };
+		433E49D730EB1EEF631D0D99846E9D60 /* pb_common.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = pb_common.c; sourceTree = "<group>"; };
 		434FEA2DB8DE8AB71A56EE0B7C6C2A96 /* pb_encode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_encode.h; sourceTree = "<group>"; };
 		4389BCD0BBE3327D875538B3916D426D /* RNFirebaseRemoteConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNFirebaseRemoteConfig.h; sourceTree = "<group>"; };
 		4395F96E372BE806D50D56F363989F7C /* RCTPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTPicker.h; sourceTree = "<group>"; };
@@ -590,9 +590,9 @@
 		4798A2EFFCF41D19F95859A4A4BAE923 /* nanopb-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "nanopb-prefix.pch"; sourceTree = "<group>"; };
 		48A3F86F1D7F7FE129000BBDC0B7E443 /* GTMSessionFetcher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GTMSessionFetcher-prefix.pch"; sourceTree = "<group>"; };
 		48DF69CC397D41F3D45F128B775FBB51 /* RCTRootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTRootView.h; sourceTree = "<group>"; };
-		4924F3867E755B064E6FCD37405F9BF3 /* RCTBatchedBridge.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = RCTBatchedBridge.mm; sourceTree = "<group>"; };
+		4924F3867E755B064E6FCD37405F9BF3 /* RCTBatchedBridge.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTBatchedBridge.mm; sourceTree = "<group>"; };
 		49B77AED302D56CB17EF51900CCDC03F /* Api.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Api.pbobjc.m; path = objectivec/google/protobuf/Api.pbobjc.m; sourceTree = "<group>"; };
-		49D6A9D4F8F97D6609DD83B50F58248E /* JSBundleType.cpp */ = {isa = PBXFileReference; includeInIndex = 1; path = JSBundleType.cpp; sourceTree = "<group>"; };
+		49D6A9D4F8F97D6609DD83B50F58248E /* JSBundleType.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; path = JSBundleType.cpp; sourceTree = "<group>"; };
 		49FCA8F0A85809967A529D7D7EB2CDCB /* RCTActivityIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTActivityIndicatorView.h; sourceTree = "<group>"; };
 		4B5FE28BAAFA2B26B5025C2BFD9DE7D4 /* RCTPerformanceLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTPerformanceLogger.m; sourceTree = "<group>"; };
 		4BCF977D138BD8B5AF5311975F9249FA /* RCTModuleMethod.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTModuleMethod.h; sourceTree = "<group>"; };
@@ -602,18 +602,18 @@
 		4E81CBE6428619372CEB7ADCDC10B26F /* Duration.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Duration.pbobjc.h; path = objectivec/google/protobuf/Duration.pbobjc.h; sourceTree = "<group>"; };
 		4EE6B9D249705D9CAE9B5AC808258AA1 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
 		508E46083DC097CC76CF86D14B153E07 /* RCTDevSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTDevSettings.h; sourceTree = "<group>"; };
-		510FBD301264B7FAFEE989E979039BE4 /* RCTProfileTrampoline-arm.S */ = {isa = PBXFileReference; includeInIndex = 1; path = "RCTProfileTrampoline-arm.S"; sourceTree = "<group>"; };
+		510FBD301264B7FAFEE989E979039BE4 /* RCTProfileTrampoline-arm.S */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.asm; path = "RCTProfileTrampoline-arm.S"; sourceTree = "<group>"; };
 		51545557F4B23BCCCF93AEF98A73D373 /* Yoga-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Yoga-dummy.m"; sourceTree = "<group>"; };
 		53230A97CFEF21E9F214370524CB0D1E /* RCTExceptionsManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTExceptionsManager.m; sourceTree = "<group>"; };
 		5358640F57C43AA2F67424D2396456B6 /* RNFirebaseAnalytics.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNFirebaseAnalytics.m; sourceTree = "<group>"; };
 		539327F86E72793430F806D573AB60C6 /* RCTURLRequestDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTURLRequestDelegate.h; sourceTree = "<group>"; };
-		549B62B16D64C647A69873B2D63781A0 /* libYoga.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libYoga.a; path = libYoga.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		549B62B16D64C647A69873B2D63781A0 /* libYoga.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYoga.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		54A4C45B082A52E3DF7A490BFD64ED93 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		54DE2FA78C337D72986908D95032DADC /* RCTAccessibilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTAccessibilityManager.h; sourceTree = "<group>"; };
 		55E257EAE44E9C54FA4917FC8C0E47CA /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
 		560C92961F01EA69F25C6FB44143F9A1 /* RCTRootViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTRootViewDelegate.h; sourceTree = "<group>"; };
 		5624025FFBFE9CE50FAE3D9B819BC25F /* YGNodeList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YGNodeList.h; sourceTree = "<group>"; };
-		56B66F68E31E3161CC435E09E262EDB9 /* RCTJavaScriptLoader.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = RCTJavaScriptLoader.mm; sourceTree = "<group>"; };
+		56B66F68E31E3161CC435E09E262EDB9 /* RCTJavaScriptLoader.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTJavaScriptLoader.mm; sourceTree = "<group>"; };
 		56E151B277C6F929D90D6FFD3098ED22 /* RCTTiming.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTTiming.h; sourceTree = "<group>"; };
 		574C1450877A9AFE807561BAEEAAF7B9 /* GTMNSDictionary+URLArguments.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSDictionary+URLArguments.m"; path = "Foundation/GTMNSDictionary+URLArguments.m"; sourceTree = "<group>"; };
 		577AC971830706054F3B0DF313ADA254 /* RNFirebaseAuth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNFirebaseAuth.h; sourceTree = "<group>"; };
@@ -627,7 +627,7 @@
 		5BFB6882CAB17F83032EA511D21BB526 /* RCTModuleMethod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTModuleMethod.m; sourceTree = "<group>"; };
 		5CCC1A48A0CAB6A8657B4DCFA7C240C9 /* RCTJSCProfiler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTJSCProfiler.m; sourceTree = "<group>"; };
 		5DBC5B7D8475C0630D7D6524A8C34ECC /* GPBUnknownFieldSet_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBUnknownFieldSet_PackagePrivate.h; path = objectivec/GPBUnknownFieldSet_PackagePrivate.h; sourceTree = "<group>"; };
-		5E281E10A2950ABDD2197C4C414618DF /* systemJSCWrapper.cpp */ = {isa = PBXFileReference; includeInIndex = 1; path = systemJSCWrapper.cpp; sourceTree = "<group>"; };
+		5E281E10A2950ABDD2197C4C414618DF /* systemJSCWrapper.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; path = systemJSCWrapper.cpp; sourceTree = "<group>"; };
 		5E32D910B14CADA41A78082814BF5F89 /* RCTAnimationType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTAnimationType.h; sourceTree = "<group>"; };
 		5E759233797D9AF0B04498883C7A1A0F /* RCTFrameUpdate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTFrameUpdate.h; sourceTree = "<group>"; };
 		5F836E7B566EE2F8F7A498DDBDAE8B03 /* oss-compat-util.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "oss-compat-util.h"; sourceTree = "<group>"; };
@@ -639,7 +639,7 @@
 		61EB784A6F01BB08D015B4C04CA21AC7 /* GPBWireFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBWireFormat.h; path = objectivec/GPBWireFormat.h; sourceTree = "<group>"; };
 		61F8755DC83B17918D5921C8215121C5 /* GTMSessionFetcherLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMSessionFetcherLogging.h; path = Source/GTMSessionFetcherLogging.h; sourceTree = "<group>"; };
 		6270A0E6356ED6959108678DD765480C /* RCTDatePickerManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTDatePickerManager.m; sourceTree = "<group>"; };
-		627C589CC96B1725F740A5BD122CA53F /* libGoogleToolboxForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGoogleToolboxForMac.a; path = libGoogleToolboxForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		627C589CC96B1725F740A5BD122CA53F /* libGoogleToolboxForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGoogleToolboxForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		62FAF605966E49FFDE35651CA99D8AE6 /* RNFirebaseAdMob.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNFirebaseAdMob.h; sourceTree = "<group>"; };
 		6377AFDBD88884A470FD30BA88A6C946 /* RCTRootContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTRootContentView.h; sourceTree = "<group>"; };
 		63F389E1DD42973DEB564D634B669BBA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
@@ -651,7 +651,7 @@
 		68A1CA58D74D40012118BA62F02C7B1D /* RCTTVRemoteHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTTVRemoteHandler.h; sourceTree = "<group>"; };
 		68A44DD143E4FDBA15C3ED4CDCF6D9E3 /* SourceContext.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SourceContext.pbobjc.h; path = objectivec/google/protobuf/SourceContext.pbobjc.h; sourceTree = "<group>"; };
 		691146DB47201D906D1A5F5E904162B7 /* RCTReloadCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTReloadCommand.h; sourceTree = "<group>"; };
-		6918DDC8BEC86BE09C8FC8E0A0024671 /* libnanopb.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libnanopb.a; path = libnanopb.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6918DDC8BEC86BE09C8FC8E0A0024671 /* libnanopb.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libnanopb.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		693709E9DDB34C2C5AE15534C2FAC84C /* RCTDatePicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTDatePicker.m; sourceTree = "<group>"; };
 		6AC5AA39C28CDEAAEC199358691D1E29 /* RCTAsyncLocalStorage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTAsyncLocalStorage.m; sourceTree = "<group>"; };
 		6BBBEEA2563DC6FCB8E674E52145C442 /* Duration.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Duration.pbobjc.m; path = objectivec/google/protobuf/Duration.pbobjc.m; sourceTree = "<group>"; };
@@ -666,7 +666,7 @@
 		719E874653BC33575418F3567C126DDD /* FirebaseDynamicLinks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDynamicLinks.framework; path = Frameworks/FirebaseDynamicLinks.framework; sourceTree = "<group>"; };
 		724554BABA75B78116A63873FC329348 /* RNFirebaseCrash.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNFirebaseCrash.m; sourceTree = "<group>"; };
 		7368D2DF4AC0858D914140308613F197 /* RCTBridgeDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTBridgeDelegate.h; sourceTree = "<group>"; };
-		73C08E594944538606F9D9FFAAA0B3DD /* RCTProfileTrampoline-i386.S */ = {isa = PBXFileReference; includeInIndex = 1; path = "RCTProfileTrampoline-i386.S"; sourceTree = "<group>"; };
+		73C08E594944538606F9D9FFAAA0B3DD /* RCTProfileTrampoline-i386.S */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.asm; path = "RCTProfileTrampoline-i386.S"; sourceTree = "<group>"; };
 		748A1AD3DAF622DCE56C31AAF6E75477 /* RCTDisplayLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTDisplayLink.h; sourceTree = "<group>"; };
 		74B77E863C21D7C15048BB4C0119670A /* RCTRedBox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTRedBox.h; sourceTree = "<group>"; };
 		75AD8B0CF61809F3717A677DAB4DA2AE /* RCTScrollContentShadowView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTScrollContentShadowView.m; sourceTree = "<group>"; };
@@ -686,7 +686,7 @@
 		7FC092D0741E257B3833309C24F328B3 /* RCTTabBarManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTTabBarManager.m; sourceTree = "<group>"; };
 		8024C461C41B3F7509346451918E4186 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
 		807A878696914CF1B57EB56EA9A347EC /* RCTSegmentedControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTSegmentedControl.h; sourceTree = "<group>"; };
-		81371555F1EC3163309341FDF054E2A4 /* RCTJSCExecutor.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = RCTJSCExecutor.mm; sourceTree = "<group>"; };
+		81371555F1EC3163309341FDF054E2A4 /* RCTJSCExecutor.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTJSCExecutor.mm; sourceTree = "<group>"; };
 		81A132C1BA4CD0333C7D95B24FACFDAF /* RCTNavigator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTNavigator.h; sourceTree = "<group>"; };
 		81DA90DBC569253DB4DB1939C139E50A /* Pods-CheckInClassTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckInClassTests-frameworks.sh"; sourceTree = "<group>"; };
 		82340962B0E03C6D059D82321E0DB369 /* RCTDeviceInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTDeviceInfo.m; sourceTree = "<group>"; };
@@ -706,7 +706,7 @@
 		8BD8BB23391BDA756E34191F213C554B /* RCTShadowView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTShadowView.h; sourceTree = "<group>"; };
 		8C3B139952860E9E6D09F86A47C10818 /* Empty.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Empty.pbobjc.h; path = objectivec/google/protobuf/Empty.pbobjc.h; sourceTree = "<group>"; };
 		8CEC6BD06E0CA3912C43A2705DEC35FD /* Timestamp.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Timestamp.pbobjc.m; path = objectivec/google/protobuf/Timestamp.pbobjc.m; sourceTree = "<group>"; };
-		8DABBCA98425A9D7AE360AD5AF4852C7 /* libProtobuf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libProtobuf.a; path = libProtobuf.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DABBCA98425A9D7AE360AD5AF4852C7 /* libProtobuf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libProtobuf.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E28ACF2C4704B79DFC6E1F1C657982B /* RCTSwitchManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTSwitchManager.m; sourceTree = "<group>"; };
 		8E2AA73972AE0287A7936DFAF6DA1BB6 /* RNFirebaseAdMobRewardedVideo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNFirebaseAdMobRewardedVideo.h; sourceTree = "<group>"; };
 		8F2182695A597974F82BCEA7EA35A2B1 /* RCTNavItemManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTNavItemManager.h; sourceTree = "<group>"; };
@@ -717,12 +717,12 @@
 		9213A242EA23142F0640DDD1A903D8CD /* RNFirebaseStorage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNFirebaseStorage.m; sourceTree = "<group>"; };
 		92780668956FBA80CF35F2EF934E8A32 /* GPBBootstrap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBBootstrap.h; path = objectivec/GPBBootstrap.h; sourceTree = "<group>"; };
 		936F6ECF94D4EFEF28758BD9D925E1BC /* GPBUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBUtilities.h; path = objectivec/GPBUtilities.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93B6797E6BF8C1F40A4A5CD5C0D9BEE1 /* RCTSlider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTSlider.m; sourceTree = "<group>"; };
 		950473C0633D784975A80DEB388C9A78 /* RNFirebaseMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNFirebaseMessaging.h; sourceTree = "<group>"; };
 		951852A75A34BBA9B84FD8328A98B398 /* YGEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = YGEnums.h; sourceTree = "<group>"; };
-		95758CBB15C3012EC2A02ADCF64DF30B /* YGNodeList.c */ = {isa = PBXFileReference; includeInIndex = 1; path = YGNodeList.c; sourceTree = "<group>"; };
-		9607E23652EDBEB1DF3A7894E57C610F /* RCTFont.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = RCTFont.mm; sourceTree = "<group>"; };
+		95758CBB15C3012EC2A02ADCF64DF30B /* YGNodeList.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = YGNodeList.c; sourceTree = "<group>"; };
+		9607E23652EDBEB1DF3A7894E57C610F /* RCTFont.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTFont.mm; sourceTree = "<group>"; };
 		9695A17A8FFBB9EE2CADF52C8D8334B1 /* RCTActivityIndicatorViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTActivityIndicatorViewManager.h; sourceTree = "<group>"; };
 		96AA39217C74BE91A4CD09E0E6FF8738 /* RCTEventDispatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTEventDispatcher.m; sourceTree = "<group>"; };
 		975E92632C00FC599E6788A9049FAD87 /* RCTDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTDefines.h; sourceTree = "<group>"; };
@@ -783,8 +783,8 @@
 		B84E20CC5B19240EAC35957EAAC657A7 /* FirebaseMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseMessaging.framework; path = Frameworks/FirebaseMessaging.framework; sourceTree = "<group>"; };
 		B8F145BA86F71755BE20A505DD45C1CF /* JSCWrapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSCWrapper.h; sourceTree = "<group>"; };
 		BA11878ECFB412AD434422608C73101E /* Type.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Type.pbobjc.m; path = objectivec/google/protobuf/Type.pbobjc.m; sourceTree = "<group>"; };
-		BA1606E749B611C3BBEB5E73895F3DEC /* pb_encode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_encode.c; sourceTree = "<group>"; };
-		BA803FED0A3331181A7ACE45191281CD /* libPods-CheckInClass.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-CheckInClass.a"; path = "libPods-CheckInClass.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1606E749B611C3BBEB5E73895F3DEC /* pb_encode.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = pb_encode.c; sourceTree = "<group>"; };
+		BA803FED0A3331181A7ACE45191281CD /* libPods-CheckInClass.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CheckInClass.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC5AD4008B648DA240DBEE01802B869 /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseNanoPB.framework; path = Frameworks/FirebaseNanoPB.framework; sourceTree = "<group>"; };
 		BB60C0A60FEED7F17C447ECA7B0C005A /* FirebaseStorage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseStorage.framework; path = Frameworks/FirebaseStorage.framework; sourceTree = "<group>"; };
 		BBE62D2E947376AF3B3209FBB91E126C /* RCTProfile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTProfile.m; sourceTree = "<group>"; };
@@ -827,7 +827,7 @@
 		D6FB56627F878C3E16B5200F796E38FD /* RCTSliderManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTSliderManager.h; sourceTree = "<group>"; };
 		D7659FB49B4AE9AC55DD2ABC44767C48 /* RCTTVNavigationEventEmitter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTTVNavigationEventEmitter.h; sourceTree = "<group>"; };
 		D9B78168301BD300A13A5531AD5EBA70 /* NativeExpressComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NativeExpressComponent.m; sourceTree = "<group>"; };
-		D9E7069B26B84217E6A18F8E87161D21 /* libGTMSessionFetcher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGTMSessionFetcher.a; path = libGTMSessionFetcher.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9E7069B26B84217E6A18F8E87161D21 /* libGTMSessionFetcher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGTMSessionFetcher.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F218E4137388CFB997ECECE78DC7FA /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		DA613ED0D6A574C6F6670CCA42A0F02C /* GPBWellKnownTypes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBWellKnownTypes.m; path = objectivec/GPBWellKnownTypes.m; sourceTree = "<group>"; };
 		DA7648B6568E230798E960F1F61822B8 /* RCTModalHostViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTModalHostViewController.h; sourceTree = "<group>"; };
@@ -837,10 +837,10 @@
 		DDB4C4A9C18EABCAD7DFEE475A74EF2A /* RNFirebaseAnalytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RNFirebaseAnalytics.h; sourceTree = "<group>"; };
 		DE5940FB295E2CDF438A5738CFE38293 /* GTMSessionFetcherService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GTMSessionFetcherService.h; path = Source/GTMSessionFetcherService.h; sourceTree = "<group>"; };
 		DF51598FD86E8EB24EE2788DB28930D7 /* RCTDatePickerManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTDatePickerManager.h; sourceTree = "<group>"; };
-		DFAFD9F9A5EB4B380356093CC9AD37E5 /* Yoga.c */ = {isa = PBXFileReference; includeInIndex = 1; path = Yoga.c; sourceTree = "<group>"; };
+		DFAFD9F9A5EB4B380356093CC9AD37E5 /* Yoga.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; path = Yoga.c; sourceTree = "<group>"; };
 		E1A1BA4E51838AFE97B05DF1A35F1B2B /* GPBArray_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBArray_PackagePrivate.h; path = objectivec/GPBArray_PackagePrivate.h; sourceTree = "<group>"; };
 		E318EB9D85DBDEFD44EBCB7F9F402651 /* pb_decode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_decode.h; sourceTree = "<group>"; };
-		E41627746B7AFEFACF4446516E6C3E28 /* RCTDevSettings.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = RCTDevSettings.mm; sourceTree = "<group>"; };
+		E41627746B7AFEFACF4446516E6C3E28 /* RCTDevSettings.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTDevSettings.mm; sourceTree = "<group>"; };
 		E51EA73832D62763366F88565ECA1EDE /* RCTBorderDrawing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTBorderDrawing.h; sourceTree = "<group>"; };
 		E5CE555D095FBB7F1FF6C54DA904338D /* RCTRefreshControlManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTRefreshControlManager.h; sourceTree = "<group>"; };
 		E81F1FB489F1BC06937153CBF026D9B1 /* RCTViewControllerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTViewControllerProtocol.h; sourceTree = "<group>"; };
@@ -863,7 +863,7 @@
 		F2AEDDF4D9BBA5B1D1028914D814CEF9 /* Api.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Api.pbobjc.h; path = objectivec/google/protobuf/Api.pbobjc.h; sourceTree = "<group>"; };
 		F2CEA18FA393FC19CAE8B4AEC8DD7DCE /* RCTModalHostView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTModalHostView.h; sourceTree = "<group>"; };
 		F3EFB77DF8A416E9F94C7472CD958A36 /* GPBWellKnownTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBWellKnownTypes.h; path = objectivec/GPBWellKnownTypes.h; sourceTree = "<group>"; };
-		F4109C4DDB67FD2DF7BFFAEB82A94598 /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libReact.a; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4109C4DDB67FD2DF7BFFAEB82A94598 /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F557DA358F7077D67C7A0841A6D37E62 /* RCTTabBarItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTTabBarItem.h; sourceTree = "<group>"; };
 		F6AAB664E3CF64239CCC300CDA101054 /* GPBDictionary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBDictionary.m; path = objectivec/GPBDictionary.m; sourceTree = "<group>"; };
 		F77082222D03AE3DA2D9C883338ADC74 /* RCTPickerManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTPickerManager.m; sourceTree = "<group>"; };
@@ -871,7 +871,7 @@
 		F800096A9B3D807476106E203CC2DD32 /* RCTSegmentedControlManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTSegmentedControlManager.m; sourceTree = "<group>"; };
 		F854DBDCAB946222C52FC4DF619FC926 /* RCTAssert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTAssert.h; sourceTree = "<group>"; };
 		F9CE7C4BFD1157E92CF04B3A2982EA76 /* RCTBundleURLProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTBundleURLProvider.h; sourceTree = "<group>"; };
-		FA781C76EB301204CCA5A17977A2057C /* RCTModuleData.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = RCTModuleData.mm; sourceTree = "<group>"; };
+		FA781C76EB301204CCA5A17977A2057C /* RCTModuleData.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; path = RCTModuleData.mm; sourceTree = "<group>"; };
 		FAC3AD2F5991E173330B5EE50C86FFC9 /* GTMNSDictionary+URLArguments.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSDictionary+URLArguments.h"; path = "Foundation/GTMNSDictionary+URLArguments.h"; sourceTree = "<group>"; };
 		FCDF143E4DE3F1178E603AF7617BF4A5 /* RNFirebaseRemoteConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RNFirebaseRemoteConfig.m; sourceTree = "<group>"; };
 		FEE532A66B795D67C9512F2428B6FB6A /* RCTFrameUpdate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTFrameUpdate.m; sourceTree = "<group>"; };
@@ -972,7 +972,6 @@
 				4389BCD0BBE3327D875538B3916D426D /* RNFirebaseRemoteConfig.h */,
 				FCDF143E4DE3F1178E603AF7617BF4A5 /* RNFirebaseRemoteConfig.m */,
 			);
-			name = config;
 			path = config;
 			sourceTree = "<group>";
 		};
@@ -981,7 +980,6 @@
 			children = (
 				B7EE11F800CD11A573EB242F1B87C5DD /* Frameworks */,
 			);
-			name = FirebaseInstanceID;
 			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
@@ -990,7 +988,6 @@
 			children = (
 				4924F3867E755B064E6FCD37405F9BF3 /* RCTBatchedBridge.mm */,
 			);
-			name = Base;
 			path = Base;
 			sourceTree = "<group>";
 		};
@@ -1041,7 +1038,6 @@
 				DFAFD9F9A5EB4B380356093CC9AD37E5 /* Yoga.c */,
 				8F61BABEFD2D57F9F478119E47AC3F18 /* Yoga.h */,
 			);
-			name = yoga;
 			path = yoga;
 			sourceTree = "<group>";
 		};
@@ -1089,7 +1085,6 @@
 			children = (
 				50244F025F14E15D750FFAA29CD5584F /* Frameworks */,
 			);
-			name = FirebaseAuth;
 			path = FirebaseAuth;
 			sourceTree = "<group>";
 		};
@@ -1098,7 +1093,6 @@
 			children = (
 				B81B54BDEB2284DB04661C7D2E7AD3F7 /* jschelpers */,
 			);
-			name = ReactCommon;
 			path = ReactCommon;
 			sourceTree = "<group>";
 		};
@@ -1107,7 +1101,6 @@
 			children = (
 				3823A22C940941CF9356E5A48CD73C54 /* Frameworks */,
 			);
-			name = FirebaseDynamicLinks;
 			path = FirebaseDynamicLinks;
 			sourceTree = "<group>";
 		};
@@ -1170,7 +1163,6 @@
 				73C08E594944538606F9D9FFAAA0B3DD /* RCTProfileTrampoline-i386.S */,
 				002D5EC9BC6CD7EB07658EF3E0A26807 /* RCTProfileTrampoline-x86_64.S */,
 			);
-			name = Profiler;
 			path = Profiler;
 			sourceTree = "<group>";
 		};
@@ -1179,7 +1171,6 @@
 			children = (
 				5327E5E26888FDBD5E59EBC554403AF6 /* Frameworks */,
 			);
-			name = "Google-Mobile-Ads-SDK";
 			path = "Google-Mobile-Ads-SDK";
 			sourceTree = "<group>";
 		};
@@ -1188,7 +1179,6 @@
 			children = (
 				5E7DFF27559C42164FE7042CEDD31B76 /* cxxreact */,
 			);
-			name = ReactCommon;
 			path = ReactCommon;
 			sourceTree = "<group>";
 		};
@@ -1205,7 +1195,6 @@
 			children = (
 				843129B451BDD5E3A514F5F12241F41B /* Core */,
 			);
-			name = Firebase;
 			path = Firebase;
 			sourceTree = "<group>";
 		};
@@ -1280,7 +1269,6 @@
 				A6CF3C6276D957A1FDA036C2BCD83446 /* JSBundleType.h */,
 				5F836E7B566EE2F8F7A498DDBDAE8B03 /* oss-compat-util.h */,
 			);
-			name = cxxreact;
 			path = cxxreact;
 			sourceTree = "<group>";
 		};
@@ -1290,7 +1278,6 @@
 				A3FE292156A86537A37E210570CEB3A9 /* RNFirebasePerformance.h */,
 				1093202E7B0DA50C44588FD399A02D4D /* RNFirebasePerformance.m */,
 			);
-			name = perf;
 			path = perf;
 			sourceTree = "<group>";
 		};
@@ -1338,7 +1325,6 @@
 				AA7222E0DE2FD0248DCE3FD91E036B64 /* RCTUIManagerObserverCoordinator.h */,
 				91E9B8DB5E0C507222D16BAC29D330B4 /* RCTUIManagerObserverCoordinator.m */,
 			);
-			name = Modules;
 			path = Modules;
 			sourceTree = "<group>";
 		};
@@ -1365,7 +1351,6 @@
 			children = (
 				AA4F9D78B5BAA417B02C8FB4B190D8D2 /* RNFirebase */,
 			);
-			name = ios;
 			path = ios;
 			sourceTree = "<group>";
 		};
@@ -1375,7 +1360,6 @@
 				609EF5440C1D8203E740801A17E79827 /* RCTJSCExecutor.h */,
 				81371555F1EC3163309341FDF054E2A4 /* RCTJSCExecutor.mm */,
 			);
-			name = Executors;
 			path = Executors;
 			sourceTree = "<group>";
 		};
@@ -1400,7 +1384,6 @@
 				EED8A557BB4E88F6F29C381C60FA2E15 /* Core */,
 				99AB7BCAB53FD9B742132B34ABD6658A /* Support Files */,
 			);
-			name = GTMSessionFetcher;
 			path = GTMSessionFetcher;
 			sourceTree = "<group>";
 		};
@@ -1442,7 +1425,6 @@
 				09DCD7456091FFFBE3D327D87CC35408 /* Base */,
 				71B5AF6BC34B9E8D96B77EF6069D5EA9 /* Executors */,
 			);
-			name = React;
 			path = React;
 			sourceTree = "<group>";
 		};
@@ -1482,7 +1464,6 @@
 				BF8F73DE724B8453545875744E39C79F /* RNFirebaseStorage.h */,
 				9213A242EA23142F0640DDD1A903D8CD /* RNFirebaseStorage.m */,
 			);
-			name = storage;
 			path = storage;
 			sourceTree = "<group>";
 		};
@@ -1570,7 +1551,6 @@
 				D2CA875D62615CDF0FBB7337507DA6B2 /* RCTUtils.m */,
 				844E8D8B07C140AC5466AAB4D2F2467B /* RCTWebSocketObserverProtocol.h */,
 			);
-			name = Base;
 			path = Base;
 			sourceTree = "<group>";
 		};
@@ -1579,7 +1559,6 @@
 			children = (
 				19A112DA0346E2068398BAD192A6A01D /* Frameworks */,
 			);
-			name = FirebaseDatabase;
 			path = FirebaseDatabase;
 			sourceTree = "<group>";
 		};
@@ -1599,7 +1578,6 @@
 				60C15ED1D92AB1659177660052D2A140 /* perf */,
 				9B54E21BB9E866EDBC41D2DB11AB2933 /* storage */,
 			);
-			name = RNFirebase;
 			path = RNFirebase;
 			sourceTree = "<group>";
 		};
@@ -1614,7 +1592,6 @@
 				9EC15323378416112F553684D9489EB7 /* NSString+URLArguments */,
 				85C8907540749BE8C6DFFF7D6C389C39 /* Support Files */,
 			);
-			name = GoogleToolboxForMac;
 			path = GoogleToolboxForMac;
 			sourceTree = "<group>";
 		};
@@ -1642,7 +1619,6 @@
 				734D991C94D6FFDCFD5219470700F3A3 /* encode */,
 				0C34E7A0079BC040123F82564B4A049B /* Support Files */,
 			);
-			name = nanopb;
 			path = nanopb;
 			sourceTree = "<group>";
 		};
@@ -1652,7 +1628,6 @@
 				577AC971830706054F3B0DF313ADA254 /* RNFirebaseAuth.h */,
 				24FA4E5956D39DF0816F8968956DD96D /* RNFirebaseAuth.m */,
 			);
-			name = auth;
 			path = auth;
 			sourceTree = "<group>";
 		};
@@ -1672,7 +1647,6 @@
 				B8F145BA86F71755BE20A505DD45C1CF /* JSCWrapper.h */,
 				5E281E10A2950ABDD2197C4C414618DF /* systemJSCWrapper.cpp */,
 			);
-			name = jschelpers;
 			path = jschelpers;
 			sourceTree = "<group>";
 		};
@@ -1692,7 +1666,6 @@
 			children = (
 				15BE217FE70D06CACA6F522F58F36ABB /* Frameworks */,
 			);
-			name = FirebaseAnalytics;
 			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
@@ -1718,7 +1691,6 @@
 			children = (
 				66E4521D862EADFB29C0C186D1A54F14 /* Frameworks */,
 			);
-			name = FirebaseCrash;
 			path = FirebaseCrash;
 			sourceTree = "<group>";
 		};
@@ -1728,7 +1700,6 @@
 				DDB4C4A9C18EABCAD7DFEE475A74EF2A /* RNFirebaseAnalytics.h */,
 				5358640F57C43AA2F67424D2396456B6 /* RNFirebaseAnalytics.m */,
 			);
-			name = analytics;
 			path = analytics;
 			sourceTree = "<group>";
 		};
@@ -1751,7 +1722,6 @@
 				465D6D3332156D27F8EAE4CF4A8D511A /* Profiler */,
 				EE012B105EFB22D10AFF5087CEE3117D /* Views */,
 			);
-			name = React;
 			path = React;
 			sourceTree = "<group>";
 		};
@@ -1771,7 +1741,6 @@
 				950473C0633D784975A80DEB388C9A78 /* RNFirebaseMessaging.h */,
 				0F1C6B438F7ED095FF87F7B98B1457B0 /* RNFirebaseMessaging.m */,
 			);
-			name = messaging;
 			path = messaging;
 			sourceTree = "<group>";
 		};
@@ -1780,7 +1749,6 @@
 			children = (
 				5C68EA5541C1865E2A8F6FB774057B43 /* Frameworks */,
 			);
-			name = FirebaseStorage;
 			path = FirebaseStorage;
 			sourceTree = "<group>";
 		};
@@ -1789,7 +1757,6 @@
 			children = (
 				DBDFC793ECF93DA4D6BB0E41839BBFCD /* Frameworks */,
 			);
-			name = FirebaseRemoteConfig;
 			path = FirebaseRemoteConfig;
 			sourceTree = "<group>";
 		};
@@ -1813,7 +1780,6 @@
 			children = (
 				D31F4B03315131A6BD97AAC0013AA090 /* Frameworks */,
 			);
-			name = FirebaseCore;
 			path = FirebaseCore;
 			sourceTree = "<group>";
 		};
@@ -1822,7 +1788,6 @@
 			children = (
 				C649CF04511F3DEA56877B8DBEF0BF1F /* Frameworks */,
 			);
-			name = FirebaseMessaging;
 			path = FirebaseMessaging;
 			sourceTree = "<group>";
 		};
@@ -1840,7 +1805,6 @@
 				7E05EE95A0FE45C92FE772DCFA14051D /* RNFirebaseDatabase.h */,
 				2BBC86F07ADB2CBAB15C5AA6CB7FA245 /* RNFirebaseDatabase.m */,
 			);
-			name = database;
 			path = database;
 			sourceTree = "<group>";
 		};
@@ -1919,7 +1883,6 @@
 				1A050A0C270F8BF3EF8001F4AD58FBFA /* Wrappers.pbobjc.m */,
 				BA3A68BDAE0141C4E1384994C9C78D32 /* Support Files */,
 			);
-			name = Protobuf;
 			path = Protobuf;
 			sourceTree = "<group>";
 		};
@@ -1942,7 +1905,6 @@
 				CDFE469EBD20723F3AC0CD5C4AD2722F /* RNFirebaseCrash.h */,
 				724554BABA75B78116A63873FC329348 /* RNFirebaseCrash.m */,
 			);
-			name = crash;
 			path = crash;
 			sourceTree = "<group>";
 		};
@@ -1964,7 +1926,6 @@
 				8E2AA73972AE0287A7936DFAF6DA1BB6 /* RNFirebaseAdMobRewardedVideo.h */,
 				682478D04CD8BCC9481F69242BF2203C /* RNFirebaseAdMobRewardedVideo.m */,
 			);
-			name = admob;
 			path = admob;
 			sourceTree = "<group>";
 		};
@@ -2069,7 +2030,6 @@
 				EBEA9CE4F2A8908CB7E79C2AC9094AFD /* UIView+React.h */,
 				A5A5BB60F451204E1C4920AA01A34B06 /* UIView+React.m */,
 			);
-			name = Views;
 			path = Views;
 			sourceTree = "<group>";
 		};

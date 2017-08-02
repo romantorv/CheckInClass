@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import { View, ScrollView, Text } from 'react-native';
+import { View, ScrollView, Text, CameraRoll } from 'react-native';
 import { connect } from 'react-redux';
 //
 import { onInputChanged, schoolFetchInfo, schoolSaveInfo } from '../../actions';
-import { Grid, Row, Cell, Button, ButtonSave, ButtonBack, Caption, InputGroup, Subheading } from '../../components/common';
+import { Grid, Row, Cell, Button, ButtonSave, ButtonBack, Caption, InputGroup, Subheading, ImageThumb } from '../../components/common';
 import { Styles, RouterStyles } from '../../theme';
 import { TabIcon,  } from '../../components';
 
@@ -34,6 +34,13 @@ class SchoolFormComponent extends Component {
 		});
 	}
 
+	_getPhotos = () => {
+		CameraRoll.getPhotos({
+			first: 20,
+			assetType: 'All'
+		}).then( response => console.log(response) );
+	}
+
 	render(){
 		return(
 			<ScrollView style={Styles.pageContainer}>
@@ -41,7 +48,14 @@ class SchoolFormComponent extends Component {
 					<Grid>
 						<Row isNoCell={true}>
 							<View style={Styles.formWrapper}>
+								
 								<Subheading>Photos gallery</Subheading>
+								<View style={Styles.schoolForm_PhotosContainer}>
+									<ImageThumb width="160" height="90" />
+									
+								</View>
+								<Button onPress={ this._getPhotos.bind(this) }>UPLOAD PHOTO</Button>
+								<Caption style={{marginBottom:10}}>Hint: should use landscape photo for best view of school introduction screen</Caption>
 							</View>
 						</Row>
 						<Row isNoCell={true}>
