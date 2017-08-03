@@ -34,6 +34,7 @@
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   [FIRApp configure];
+  
   return YES;
 }
 
