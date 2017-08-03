@@ -15,4 +15,40 @@ const Button = (props) => {
 	)
 }
 
-export { Button }
+const ButtonAdd = (props) =>{
+	return (
+		<TouchableOpacity
+			onPress = {props.onPress}
+		>
+			<View style={ Styles.buttonHeader }>
+				<Text style={Styles.buttonHeaderText}>{props.children}</Text>
+			</View>
+		</TouchableOpacity>
+	)
+}
+
+const ButtonSave = (props) =>{
+	return (
+		<TouchableOpacity
+			onPress = {props.onPress}
+		>
+			<View style={ Styles.buttonHeader }>
+				<Text style={Styles.buttonHeaderText}>{props.children}</Text>
+			</View>
+		</TouchableOpacity>
+	)
+}
+
+const ButtonBack = (props) =>{
+	return (
+		<TouchableOpacity
+			onPress = {props.onPress}
+		>
+			<View style={ Styles.buttonHeader }>
+				<Text style={Styles.buttonHeaderText}>{props.children}</Text>
+			</View>
+		</TouchableOpacity>
+	)
+}
+
+export { Button, ButtonAdd, ButtonBack, ButtonSave }

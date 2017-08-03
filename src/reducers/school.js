@@ -15,6 +15,12 @@ export default (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case INPUT_CHANGED:
 			return {...state, [action.payload.name]: action.payload.value };
+		case SCHOOL_FETCH_DETAIL:
+			console.log("action payload: ", action.payload );
+			return {...state, ...action.payload};
+		case SCHOOL_UPDATE_DETAIL:
+			console.log("action payload: ", action.payload );
+			return state;
 		default:
 			return state;
 	}

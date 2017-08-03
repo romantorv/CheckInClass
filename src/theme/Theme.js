@@ -110,6 +110,15 @@ const Styles = StyleSheet.create({
 		height: 60,
 		fontSize: 18
 	},
+	buttonHeader: {
+		marginRight: 15
+	},
+		buttonHeaderText: {
+			fontSize: 13,
+			fontWeight: '400',
+			fontFamily: fontPrimary,
+			color: colorInvert
+		},
 	avatarImage: {
 		width: 250,
 		height: 250,
@@ -179,8 +188,35 @@ const Styles = StyleSheet.create({
 			fontSize: 14,
 			fontWeight: '500',
 			textAlign: 'left'
-		}
-	
+		},
+	imageThumbContainer: {
+		borderRadius: 2,
+		paddingBottom: 2,
+		marginRight: 15,
+		marginBottom: 15,
+		backgroundColor: colorInvert
+	},
+		imageThumb: {
+			borderRadius: 2,
+			borderBottomLeftRadius: 0,
+			borderBottomRightRadius: 0
+		},
+		imageThumbAction: {
+			justifyContent: 'center',
+			alignItems: 'center',
+			height:40
+		},
+		imageThumbButton: {
+			fontFamily: fontPrimary,
+			fontSize: 12,
+			fontWeight: '400',
+			color: colorPrimary
+		},
+	schoolForm_PhotosContainer: {
+		flexDirection: 'row',
+		justifyContent: 'flex-start',
+		flexWrap: 'wrap'
+	}
 });
 
 const RouterStyles = {
@@ -196,13 +232,13 @@ const RouterStyles = {
 		backButtonTextStyle: {
 			color: colorInvert,
 			fontFamily: fontPrimary,
-			fontSize: 12,
+			fontSize: 13,
 			fontWeight: '300'
 		},
 		leftButtonTextStyle: {
 			color: colorInvert,
 			fontFamily: fontPrimary,
-			fontSize: 12,
+			fontSize: 13,
 			fontWeight: '300'
 		},
 		rightButtonStyle: {

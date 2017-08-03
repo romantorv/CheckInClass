@@ -7,6 +7,10 @@ import { Heading, Subheading, Button, Avatar } from '../../components/common';
 import { Styles } from '../../theme';
 
 class SettingsComponent extends Component {
+	static navigationOptions = {
+		title: "Settings"
+	}
+	
 	constructor(props){
 		super(props);
 	}

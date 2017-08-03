@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow CheckInClass access your camera roll</string>
 	<key>CFBundleDisplayName</key>
 	<string>CheckInClass</string>
 	<key>CFBundleExecutable</key>
