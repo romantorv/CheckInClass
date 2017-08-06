@@ -6,6 +6,10 @@
 	<string>en</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow CheckInClass access your camera roll</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow CheckInClass access your Camera</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Allow CheckInClass access your microphone</string>
 	<key>CFBundleDisplayName</key>
 	<string>CheckInClass</string>
 	<key>CFBundleExecutable</key>

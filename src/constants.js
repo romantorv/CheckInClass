@@ -12,6 +12,9 @@ export const VERIFY_ISSIGNED = "verifying_is_signed";
 export const INPUT_CHANGED = "input_changed";
 export const ATTACH_SUCCESS = "attach_file_success";
 export const ATTACH_FAIL = "attach_file_failed";
+export const FILE_REMOVE_SUCCESS = "file_removed_successs";
+export const FILE_REMOVE_FAIL = "file_removed_fail";
 // SCHOOL INFO
 export const SCHOOL_FETCH_DETAIL = "fetch_school_info";
 export const SCHOOL_UPDATE_DETAIL = "update_school_info";
+// ATTACHMENT

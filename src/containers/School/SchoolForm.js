@@ -1,11 +1,25 @@
 import React, {Component} from 'react';
-import { View, ScrollView, Text, CameraRoll } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 import { connect } from 'react-redux';
+import ImagePicker from 'react-native-image-picker';
+import _ from 'lodash';
 //
-import { onInputChanged, schoolFetchInfo, schoolSaveInfo } from '../../actions';
+import { onInputChanged, schoolFetchInfo, schoolSaveInfo, schoolAttachPhoto } from '../../actions';
 import { Grid, Row, Cell, Button, ButtonSave, ButtonBack, Caption, InputGroup, Subheading, ImageThumb } from '../../components/common';
 import { Styles, RouterStyles } from '../../theme';
 import { TabIcon,  } from '../../components';
+
+const cameraRollSettings = {
+	title: 'Upload school photos',
+	mediaType: 'photo',
+	quality: 0.8,
+	maxWidth: 1600,
+	maxHeight: 1600,
+	storageOptions: {
+		skipBackup: true,
+		path: 'images'
+	}
+}
 
 class SchoolFormComponent extends Component {
 	static navigationOptions = ({navigation}) => {
@@ -35,10 +49,33 @@ class SchoolFormComponent extends Component {
 	}
 
 	_getPhotos = () => {
-		CameraRoll.getPhotos({
-			first: 20,
-			assetType: 'All'
-		}).then( response => console.log(response) );
+		ImagePicker.showImagePicker(cameraRollSettings, (response) => {
+			console.log('Response = ', response);
+
+			if (response.didCancel) {
+				console.log('User cancelled image picker');
+			}
+			else if (response.error) {
+				console.log('ImagePicker Error: ', response.error);
+			}
+			else if (response.customButton) {
+				console.log('User tapped custom button: ', response.customButton);
+			}
+			else {
+				this.props.schoolAttachPhoto({imgName: response.fileName, imageURI: response.uri});
+				// You can also display the image using data:
+				// let source = { uri: 'data:image/jpeg;base64,' + response.data };
+			}
+		});
+	}
+
+	_renderGallery(){
+		if ( !_.isEmpty(this.props.gallery )) {
+			var imageGallery = this.props.gallery;
+			return _.map(imageGallery, (image, key) => {
+				return <ImageThumb key={key} photoURI={image.downloadUrl} width="160" height="90" />
+			});
+		}
 	}
 
 	render(){
@@ -48,11 +85,9 @@ class SchoolFormComponent extends Component {
 					<Grid>
 						<Row isNoCell={true}>
 							<View style={Styles.formWrapper}>
-								
 								<Subheading>Photos gallery</Subheading>
 								<View style={Styles.schoolForm_PhotosContainer}>
-									<ImageThumb width="160" height="90" />
-									
+									{this._renderGallery( )}									
 								</View>
 								<Button onPress={ this._getPhotos.bind(this) }>UPLOAD PHOTO</Button>
 								<Caption style={{marginBottom:10}}>Hint: should use landscape photo for best view of school introduction screen</Caption>
@@ -137,8 +172,9 @@ class SchoolFormComponent extends Component {
 }
 
 const mapStateToProps = (state) => {
-	const { schoolname, address1, address2, website, email, tel, fax, summary } = state.school;
-	return { schoolname, address1, address2, website, email, tel, fax, summary };
+	const { schoolname, address1, address2, website, email, tel, fax, summary, images } = state.school;
+	console.log("mapStateToProps: ", images);
+	return { schoolname, address1, address2, website, email, tel, fax, summary, gallery: images };
 };
 
-export default connect(mapStateToProps, { onInputChanged, schoolFetchInfo, schoolSaveInfo})(SchoolFormComponent);
+export default connect(mapStateToProps, { onInputChanged, schoolFetchInfo, schoolSaveInfo, schoolAttachPhoto })(SchoolFormComponent);

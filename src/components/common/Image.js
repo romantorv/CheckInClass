@@ -6,7 +6,7 @@ const ImageThumb = (props) => {
 	return(
 		<View style={Styles.imageThumbContainer}>
 			<Image
-			 source={require('../../theme/images/img_schoolreal.jpg')}
+			 source={{uri: props.photoURI}}
 			 resizeMode={ props.resizeMode || "cover" }
 			 style={[Styles.imageThumb, {width: Number(props.width) || 160, height:Number(props.height) || 90}, props.style]} />
 			<View style={Styles.imageThumbAction}>
