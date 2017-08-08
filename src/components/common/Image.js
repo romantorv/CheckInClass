@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, View, Text } from 'react-native';
+import { Image, View, Text, TouchableOpacity } from 'react-native';
 import { Styles } from '../../theme';
 
 const ImageThumb = (props) => {
@@ -16,4 +16,20 @@ const ImageThumb = (props) => {
 	)
 }
 
-export { ImageThumb }
+const ImageThumbWithDelete = (props) => {
+	return(
+		<View style={Styles.imageThumbContainer}>
+			<Image
+			 source={{uri: props.photoURI}}
+			 resizeMode={ props.resizeMode || "cover" }
+			 style={[Styles.imageThumb, {width: Number(props.width) || 160, height:Number(props.height) || 90}, props.style]} />
+			<View style={Styles.imageThumbAction}>
+				<TouchableOpacity onPress={props.onDelete}>
+					<Text style={Styles.imageThumbButton}>DELETE</Text>
+				</TouchableOpacity>
+			</View>
+		</View>
+	)
+}
+
+export { ImageThumb, ImageThumbWithDelete }

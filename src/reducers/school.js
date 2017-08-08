@@ -1,10 +1,13 @@
+import _ from 'lodash';
 import {
 	IS_WAITING,
 	SCHOOL_FETCH_DETAIL,
 	SCHOOL_UPDATE_DETAIL,
 	INPUT_CHANGED,
 	ATTACH_SUCCESS,
-	ATTACH_FAIL
+	ATTACH_FAIL,
+	FILE_REMOVE_FAIL,
+	FILE_REMOVE_SUCCESS
 } from '../constants';
 
 const INITIAL_STATE = {
@@ -17,6 +20,7 @@ const INITIAL_STATE = {
 	fax: "",
 	summary: "",
 	images: {},
+	allImages : "",
 	isWaiting: false,
 	errorMessage: ""
 };
@@ -35,10 +39,23 @@ export default (state = INITIAL_STATE, action) => {
 		case ATTACH_SUCCESS: 
 			var newImages = state.images;
 			newImages[action.payload.key] = action.payload.value;
-			console.log("newImages: ", newImages);
-			return { ...state, isWaiting: false, images: newImages }; 
+			var newStrImages = state.allImages + action.payload.key + ";";
+			return { ...state, isWaiting: false, images: newImages, allImages: newStrImages }; 
 		case ATTACH_FAIL:
 			return { ...state, errorMessage: action.payload.message, isWaiting: false };
+		case FILE_REMOVE_SUCCESS:
+			var removedId = action.payload;
+			var newImages = {};
+			var newStrImages = "";
+			_.map(state.images, (value, key) => {
+				if (key !== removedId){
+					newImages[key]=value;
+					newStrImages += key+";"
+				}
+			});
+			return { ...state, isWaiting: false, images: newImages, allImages: newStrImages };
+		case FILE_REMOVE_FAIL:
+			return { ...state, isWaiting: false, errorMessage: action.payload }
 		default:
 			return state;
 	}

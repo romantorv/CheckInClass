@@ -1,5 +1,10 @@
 import firebase from '../firebase';
-import { SCHOOL_FETCH_DETAIL, SCHOOL_UPDATE_DETAIL, IS_WAITING, ATTACH_SUCCESS, ATTACH_FAIL } from '../constants';
+import _ from 'lodash';
+import { 
+	SCHOOL_FETCH_DETAIL, SCHOOL_UPDATE_DETAIL, 
+	IS_WAITING, 
+	ATTACH_SUCCESS, ATTACH_FAIL,
+	FILE_REMOVE_FAIL, FILE_REMOVE_SUCCESS } from '../constants';
 
 const _fetchSchoolInfo = () => {
 	return (dispatch) => {
@@ -18,7 +23,13 @@ export const schoolFetchInfo = () => {
 		const uid = firebase.auth().currentUser.uid;
 		firebase.database().ref(`Schools/${uid}/Information`)
 			.once('value')
-			.then(response => dispatch({ type: SCHOOL_FETCH_DETAIL, payload: response.toJSON() }))
+			.then(response => { 
+				var strImages = "";
+				var responseJSON = response.toJSON();
+				_.map( responseJSON.images, (value, key)=>{ strImages += `${key};` });
+				dispatch({ type: SCHOOL_FETCH_DETAIL, payload: {...responseJSON, allImages:strImages} })
+		
+			})
 	}
 }
 
@@ -62,6 +73,22 @@ export const schoolAttachPhoto = ({ imgName, imageURI }) => {
 	};
 }
 
-/*export const schoolRemovePhoto = (photoId) => {
-
-}*/
+export const schoolRemovePhoto = ({imageID, imageRef}) => {
+	return (dispatch)=>{
+		dispatch({type: IS_WAITING});
+		const uid = firebase.auth().currentUser.uid;
+		
+		firebase.storage()
+			.ref(imageRef)
+			.delete()
+			.then( () => {
+				firebase.database().ref(`Schools/${uid}/Information/images/${imageID}`)
+					.remove()
+					.then( () => {
+						dispatch({type: FILE_REMOVE_SUCCESS, payload: imageID })
+					})
+					.catch( err => console.log(error) )
+			})
+			.catch( err => dispatch({ type:FILE_REMOVE_FAIL, payload: err.message }))
+	}
+}

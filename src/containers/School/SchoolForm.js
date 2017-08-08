@@ -4,15 +4,19 @@ import { connect } from 'react-redux';
 import ImagePicker from 'react-native-image-picker';
 import _ from 'lodash';
 //
-import { onInputChanged, schoolFetchInfo, schoolSaveInfo, schoolAttachPhoto } from '../../actions';
-import { Grid, Row, Cell, Button, ButtonSave, ButtonBack, Caption, InputGroup, Subheading, ImageThumb } from '../../components/common';
+import { 
+	onInputChanged, 
+	schoolFetchInfo, schoolSaveInfo, 
+	schoolAttachPhoto, schoolRemovePhoto
+	} from '../../actions';
+import { Grid, Row, Cell, Button, ButtonSave, ButtonBack, Caption, InputGroup, Subheading, ImageThumbWithDelete } from '../../components/common';
 import { Styles, RouterStyles } from '../../theme';
 import { TabIcon,  } from '../../components';
 
 const cameraRollSettings = {
 	title: 'Upload school photos',
 	mediaType: 'photo',
-	quality: 0.8,
+	quality: 0.75,
 	maxWidth: 1600,
 	maxHeight: 1600,
 	storageOptions: {
@@ -73,7 +77,11 @@ class SchoolFormComponent extends Component {
 		if ( !_.isEmpty(this.props.gallery )) {
 			var imageGallery = this.props.gallery;
 			return _.map(imageGallery, (image, key) => {
-				return <ImageThumb key={key} photoURI={image.downloadUrl} width="160" height="90" />
+				return <ImageThumbWithDelete
+						onDelete={ () => this.props.schoolRemovePhoto({imageID: key, imageRef: image.ref}) } 
+						key={key} 
+						photoURI={image.downloadUrl} 
+						width="160" height="90" />
 			});
 		}
 	}
@@ -172,9 +180,12 @@ class SchoolFormComponent extends Component {
 }
 
 const mapStateToProps = (state) => {
-	const { schoolname, address1, address2, website, email, tel, fax, summary, images } = state.school;
+	const { schoolname, address1, address2, website, email, tel, fax, summary, images, allImages } = state.school;
 	console.log("mapStateToProps: ", images);
-	return { schoolname, address1, address2, website, email, tel, fax, summary, gallery: images };
+	return { schoolname, address1, address2, website, email, tel, fax, summary, gallery: images, allImages };
 };
 
-export default connect(mapStateToProps, { onInputChanged, schoolFetchInfo, schoolSaveInfo, schoolAttachPhoto })(SchoolFormComponent);
+export default connect(mapStateToProps, { 
+	onInputChanged, 
+	schoolFetchInfo, schoolSaveInfo, 
+	schoolAttachPhoto, schoolRemovePhoto })(SchoolFormComponent);
