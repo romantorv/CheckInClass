@@ -107,6 +107,7 @@ const PrivateScreens = TabNavigator(
 			}
 		}
 	}, {
+		initialRouteName: 'Classes',
 		lazy: true,
 		tabBarOptions: defaultTabStyle
 	}

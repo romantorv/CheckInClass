@@ -26,7 +26,6 @@ const INITIAL_STATE = {
 };
 
 export default (state = INITIAL_STATE, action) => {
-	console.log("action: ", action);
 	switch (action.type) {
 		case IS_WAITING:
 			return { ...state, isWaiting: true };
@@ -35,7 +34,7 @@ export default (state = INITIAL_STATE, action) => {
 		case SCHOOL_FETCH_DETAIL:
 			return { ...state, ...action.payload, isWaiting: false };
 		case SCHOOL_UPDATE_DETAIL:
-			return state;
+			return { ...state, isWaiting: false };
 		case ATTACH_SUCCESS: 
 			var newImages = state.images;
 			newImages[action.payload.key] = action.payload.value;

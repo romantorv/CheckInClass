@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image, KeyboardAvoidingView } from 'react-native';
 import { connect } from 'react-redux';
 import { NavigationActions } from 'react-navigation';
+import _ from 'lodash';
 import { AlertError ,InputGroup, Button, Subheading, Paragraph, Caption, Divider } from '../../components/common';
 import { onAuthReset, onInputChanged, UserLogin } from '../../actions';
 
@@ -19,7 +20,11 @@ class LoginForm extends Component {
 	componentWillMount(){
 		this.props.onAuthReset();
 	}
-
+	_renderSignInBtn(){
+		if ( _.isEmpty(this.props.email) || _.isEmpty(this.props.password) )
+			return <Button styleName="buttonXL" disabled={true}>SIGN IN</Button>
+		return <Button styleName="buttonXL" onPress={this._doSignin.bind(this)} isWaiting={this.props.isWaiting}>SIGN IN</Button>
+	}
 	_gotoSignUp() {
 		const { navigate } = this.props.navigation;
 		navigate('SignUp');
@@ -37,7 +42,7 @@ class LoginForm extends Component {
 	render(){
 		return(
 			<View style={Styles.pageContainer}>
-				<View style={Styles.centerLayout}>
+				<View style={Styles.centerLayout}> 
 				<KeyboardAvoidingView
 				scrollEnabled={false}
 				behavior="position"
@@ -49,12 +54,14 @@ class LoginForm extends Component {
 						<InputGroup
 						 onChangeText={ value => this.props.onInputChanged({ name:"email", value }) }
 						 value={this.props.email}
-						 placeholder="e.g: john@email.com" />
+						 placeholder="e.g: john@email.com"
+						 keyboardType="email-address"
+						 autoCapitalize="none" />
 						<InputGroup
 						 onChangeText={ value => this.props.onInputChanged({ name:"password", value }) }
 						 value={this.props.password}
 						 placeholder="Enter your secure password" secureTextEntry={true} />
-						<Button styleName="buttonXL" onPress={this._doSignin.bind(this)}>SIGN IN</Button>
+						{ this._renderSignInBtn() }
 						<Paragraph style={Styles.link}>Forgot password?</Paragraph>
 						<Divider />
 						<Paragraph>

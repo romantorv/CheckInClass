@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import { View, ScrollView, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import ImagePicker from 'react-native-image-picker';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import _ from 'lodash';
 //
 import { 
@@ -16,7 +17,7 @@ import { TabIcon,  } from '../../components';
 const cameraRollSettings = {
 	title: 'Upload school photos',
 	mediaType: 'photo',
-	quality: 0.75,
+	quality: 0.7,
 	maxWidth: 1600,
 	maxHeight: 1600,
 	storageOptions: {
@@ -54,8 +55,6 @@ class SchoolFormComponent extends Component {
 
 	_getPhotos = () => {
 		ImagePicker.showImagePicker(cameraRollSettings, (response) => {
-			console.log('Response = ', response);
-
 			if (response.didCancel) {
 				console.log('User cancelled image picker');
 			}
@@ -67,16 +66,14 @@ class SchoolFormComponent extends Component {
 			}
 			else {
 				this.props.schoolAttachPhoto({imgName: response.fileName, imageURI: response.uri});
-				// You can also display the image using data:
-				// let source = { uri: 'data:image/jpeg;base64,' + response.data };
 			}
 		});
 	}
 
 	_renderGallery(){
-		if ( !_.isEmpty(this.props.gallery )) {
-			var imageGallery = this.props.gallery;
-			return _.map(imageGallery, (image, key) => {
+		if ( !_.isEmpty(this.props.images )) {
+			console.log()
+			return _.map(this.props.images, (image, key) => {
 				return <ImageThumbWithDelete
 						onDelete={ () => this.props.schoolRemovePhoto({imageID: key, imageRef: image.ref}) } 
 						key={key} 
@@ -88,7 +85,7 @@ class SchoolFormComponent extends Component {
 
 	render(){
 		return(
-			<ScrollView style={Styles.pageContainer}>
+			<KeyboardAwareScrollView style={Styles.pageContainer}>
 				<View style={Styles.defaultLayout}>
 					<Grid>
 						<Row isNoCell={true}>
@@ -97,7 +94,7 @@ class SchoolFormComponent extends Component {
 								<View style={Styles.schoolForm_PhotosContainer}>
 									{this._renderGallery( )}									
 								</View>
-								<Button onPress={ this._getPhotos.bind(this) }>UPLOAD PHOTO</Button>
+								<Button onPress={ this._getPhotos.bind(this) } isWaiting={this.props.isWaiting}>UPLOAD PHOTO</Button>
 								<Caption style={{marginBottom:10}}>Hint: should use landscape photo for best view of school introduction screen</Caption>
 							</View>
 						</Row>
@@ -130,6 +127,8 @@ class SchoolFormComponent extends Component {
 										<InputGroup
 										 label="WEBSITE"
 										 placeholder="e.g: www.bloosom-childcare.com"
+										 autoCapitalize="none"
+										 keyboardType="web-search"
 										 onChangeText={ (value) => this.props.onInputChanged( {name: 'website', value} )}
 										 value={ this.props.website } />
 									</Cell>
@@ -137,6 +136,8 @@ class SchoolFormComponent extends Component {
 										<InputGroup
 										 label="EMAIL"
 										 placeholder="e.g: admin@email.com"
+										 autoCapitalize="none"
+										 keyboardType="email-address"
 										 onChangeText={ (value) => this.props.onInputChanged( {name: 'email', value} )}
 										 value={ this.props.email } />
 									</Cell>
@@ -146,6 +147,7 @@ class SchoolFormComponent extends Component {
 										<InputGroup 
 										 label="TELEPHONE"
 										 placeholder="e.g: +65 1111 1111"
+										 keyboardType="phone-pad"
 										 onChangeText={ (value) => this.props.onInputChanged( {name: 'tel', value} )}
 										 value={ this.props.tel } />
 									</Cell>
@@ -153,6 +155,7 @@ class SchoolFormComponent extends Component {
 										<InputGroup
 										 label="FAX"
 										 placeholder="e.g: +65 2222 2222"
+										 keyboardType="phone-pad"
 										 onChangeText={ (value) => this.props.onInputChanged( {name: 'fax', value} )}
 										 value={ this.props.fax } />
 									</Cell>
@@ -165,6 +168,7 @@ class SchoolFormComponent extends Component {
 								<InputGroup
 								 placeholder="Write some information about your school"
 								 inputRows="5"
+								 autoCorrect={true}
 								 onChangeText={ (value) => this.props.onInputChanged( {name: 'summary', value} )}
 								 value={ this.props.summary }
 								/>
@@ -174,15 +178,14 @@ class SchoolFormComponent extends Component {
 					
 					
 				</View>
-			</ScrollView>
+			</KeyboardAwareScrollView>
 		)
 	}
 }
 
 const mapStateToProps = (state) => {
-	const { schoolname, address1, address2, website, email, tel, fax, summary, images, allImages } = state.school;
-	console.log("mapStateToProps: ", images);
-	return { schoolname, address1, address2, website, email, tel, fax, summary, gallery: images, allImages };
+	const { schoolname, address1, address2, website, email, tel, fax, summary, images, allImages, isWaiting } = state.school;
+	return { schoolname, address1, address2, website, email, tel, fax, summary, images, allImages, isWaiting };
 };
 
 export default connect(mapStateToProps, { 

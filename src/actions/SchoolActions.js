@@ -6,17 +6,6 @@ import {
 	ATTACH_SUCCESS, ATTACH_FAIL,
 	FILE_REMOVE_FAIL, FILE_REMOVE_SUCCESS } from '../constants';
 
-const _fetchSchoolInfo = () => {
-	return (dispatch) => {
-		const uid = firebase.auth().currentUser.uid;
-		firebase.database().ref(`Schools/${uid}/Information`)
-			.on('value', (snapshot) => {
-				dispatch({ type: SCHOOL_FETCH_DETAIL, payload: snapshot.toJSON() });
-			})
-			//.then(response => dispatch({ type: SCHOOL_FETCH_DETAIL, payload: response.toJSON() }))
-	}	
-}
-
 export const schoolFetchInfo = () => {
 	return (dispatch) => {
 		dispatch({ type: IS_WAITING });
@@ -25,10 +14,9 @@ export const schoolFetchInfo = () => {
 			.once('value')
 			.then(response => { 
 				var strImages = "";
-				var responseJSON = response.toJSON();
-				_.map( responseJSON.images, (value, key)=>{ strImages += `${key};` });
+				var responseJSON = response.toJSON();				
+				_.map( response.images, (value, key)=>{ strImages += `${key};` });
 				dispatch({ type: SCHOOL_FETCH_DETAIL, payload: {...responseJSON, allImages:strImages} })
-		
 			})
 	}
 }
@@ -38,7 +26,7 @@ export const schoolSaveInfo = (schoolDetail) => {
 		const uid = firebase.auth().currentUser.uid;
 		dispatch({ type: IS_WAITING });
 		firebase.database().ref(`Schools/${uid}/Information`)
-			.set(schoolDetail)
+			.update(schoolDetail)
 			.then(() => dispatch({ type: SCHOOL_UPDATE_DETAIL }))
 			.catch(error => console(error));
 	}

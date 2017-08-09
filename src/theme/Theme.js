@@ -216,7 +216,46 @@ const Styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'flex-start',
 		flexWrap: 'wrap'
-	}
+	},
+	classItemContainer: {
+		backgroundColor: '#FFFFFF',
+		borderRadius: 2,
+		width: '100%',
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'stretch'
+	},
+		classItemWrapper: {
+			flexDirection: 'row'
+		},
+		classImageThumb: {
+			width: 90,
+			height: 60,
+			borderRadius: 2
+		},
+		classInfoWrapper: {
+			paddingLeft: GUTTER,
+			flexDirection: 'column',
+			justifyContent: 'center',
+			alignItems: 'flex-start'
+		},
+		classActionWrapper: {
+			flexDirection: 'row',
+			justifyContent: 'center',
+			alignItems: 'center',
+			paddingRight: GUTTER
+		},
+		classTitle: {
+			color: colorHighlight,
+			fontFamily: fontPrimary,
+			fontSize: 18,
+			lineHeight: 27
+		},
+		classLegend: {
+			color: colorPrimary,
+			fontFamily: fontPrimary,
+			fontSize: 14
+		}
 });
 
 const RouterStyles = {

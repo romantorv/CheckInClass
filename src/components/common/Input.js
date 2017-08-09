@@ -27,6 +27,8 @@ const InputGroup = (props) => {
 					style={[ Styles.input, props.style ]}
 					placeholder = { props.placeholder }
 					autoCorrect = { props.autoCorrect || false }
+					autoCapitalize = { props.autoCapitalize || 'sentences' }
+					keyboardType = { props.keyboardType || 'default'}
 					multiline = { _isMultiRows() }
 					secureTextEntry = { props.secureTextEntry }
 					onChangeText = { props.onChangeText }
