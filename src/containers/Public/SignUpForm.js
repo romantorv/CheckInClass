@@ -45,8 +45,8 @@ class SignUpForm extends Component {
 				behavior="position"
 				resetScrollToCoords={{ x: 0, y: 0 }}>
 					<View style={Styles.loginForm}>
-						<Paragraph style={Styles.link} onPress={ this._goBackSignIn.bind(this) }>BACK</Paragraph>
-						<Heading>REGISTER FORM</Heading>
+						<Paragraph style={[Styles.link, {textAlign: 'center'}]} onPress={ this._goBackSignIn.bind(this) }>BACK</Paragraph>
+						<Heading style={{textAlign:'center'}}>REGISTER FORM</Heading>
 						{this._showError()}
 						<InputGroup 
 						 label="FULLNAME" 

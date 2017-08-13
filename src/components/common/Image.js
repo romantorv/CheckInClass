@@ -4,7 +4,7 @@ import { Styles } from '../../theme';
 
 const ImageThumb = (props) => {
 	return(
-		<View style={Styles.imageThumbContainer}>
+		<View style={[Styles.imageThumbContainer, {width: Number(props.width) || 160 }]}>
 			<Image
 			 source={{uri: props.photoURI}}
 			 resizeMode={ props.resizeMode || "cover" }
@@ -18,7 +18,7 @@ const ImageThumb = (props) => {
 
 const ImageThumbWithDelete = (props) => {
 	return(
-		<View style={Styles.imageThumbContainer}>
+		<View style={[Styles.imageThumbContainer, {width: Number(props.width) || 160 }]}>
 			<Image
 			 source={{uri: props.photoURI}}
 			 resizeMode={ props.resizeMode || "cover" }
@@ -32,4 +32,20 @@ const ImageThumbWithDelete = (props) => {
 	)
 }
 
-export { ImageThumb, ImageThumbWithDelete }
+const ImageThumbWithAttach = (props) => {
+	return(
+		<View style={[Styles.imageThumbContainer, {width: Number(props.width) || 160 }]}>
+			<Image
+			 source={{uri: props.photoURI}}
+			 resizeMode={ props.resizeMode || "cover" }
+			 style={[Styles.imageThumb, {width: Number(props.width) || 160, height:Number(props.height) || 90}, props.style]} />
+			<View style={Styles.imageThumbAction}>
+				<TouchableOpacity onPress={props.onAttach}>
+					<Text style={Styles.imageThumbButton}>{props.buttonLabel || "ATTACH PHOTO"}</Text>
+				</TouchableOpacity>
+			</View>
+		</View>
+	)
+}
+
+export { ImageThumb, ImageThumbWithDelete, ImageThumbWithAttach }

@@ -23,6 +23,13 @@ const Styles = StyleSheet.create({
 		paddingBottom: 15,
 		paddingTop: 25
 	},
+	splitLayout: {
+		flex: 1,
+		flexDirection: 'row',
+		justifyContent: 'flex-start',
+		alignContent: 'stretch'
+		
+	},
 	gridLayout: {
 		flex: 1,
 		flexDirection: 'column',
@@ -34,7 +41,7 @@ const Styles = StyleSheet.create({
 			flex:1,
 			flexDirection: 'row',
 			justifyContent: 'flex-start',
-			alignItems: 'stretch',
+			alignContent: 'stretch',
 			marginLeft: -(GUTTER/2),
 			marginRight: -(GUTTER/2)
 		},
@@ -110,8 +117,11 @@ const Styles = StyleSheet.create({
 		height: 60,
 		fontSize: 18
 	},
-	buttonHeader: {
+	buttonHeaderRight: {
 		marginRight: 15
+	},
+	buttonHeaderLeft: {
+		marginLeft: 15
 	},
 		buttonHeaderText: {
 			fontSize: 13,
@@ -127,14 +137,15 @@ const Styles = StyleSheet.create({
 		borderColor: colorInvert
 	},
 	loginForm:{
-		width: 320,
-		alignItems: 'center'
+		width: 320,		
+		alignContent: 'stretch'
 	},
 		loginTitle:{
 			fontFamily: fontPrimary,
 			fontWeight: '300',
 			fontSize: 36,
 			letterSpacing: 1,
+			textAlign: 'center',
 			color: colorHighlight
 		},
 	formWrapper:{
@@ -146,8 +157,8 @@ const Styles = StyleSheet.create({
 		width: '100%'
 	},
 	inputGroupContainer: {
-		alignItems: 'flex-start',
-		marginBottom: 15
+		marginBottom: 15,
+		alignContent: 'stretch',
 	},
 		inputLabel: {
 			fontWeight: '500',
@@ -255,7 +266,38 @@ const Styles = StyleSheet.create({
 			color: colorPrimary,
 			fontFamily: fontPrimary,
 			fontSize: 14
-		}
+		},
+	stackItemContainer: {
+		borderRadius: 2,
+		backgroundColor: '#FFFFFF',
+		padding: 10,
+		marginBottom: 15,
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		alignContent: 'stretch'
+	},
+		stackItemWrapper: {
+			flexDirection: 'row',
+			justifyContent: 'flex-start',
+			alignItems: 'center'
+		},
+		stackItemImage: {
+			marginRight: 10
+		},
+		stackItemLabel: {
+			color: colorPrimary,
+			fontFamily: fontPrimary,
+			fontSize: 14
+		},
+		stackItemAction: {
+			justifyContent: 'flex-end'
+		},
+		stackItemActionText: {
+			color: colorPrimary,
+			fontFamily: fontPrimary,
+			fontSize: 12
+		}	
 });
 
 const RouterStyles = {
@@ -267,6 +309,14 @@ const RouterStyles = {
 			fontFamily: fontPrimary,
 			fontSize: 20,
 			fontWeight: '200'
+		},
+		leftButtonStyle: {
+			flexDirection: 'row',
+			justifyContent: 'flex-start',
+			alignItems: 'flex-start',
+			flex: 1,
+			height: 20,
+			paddingLeft: 13
 		},
 		backButtonTextStyle: {
 			color: colorInvert,

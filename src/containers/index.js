@@ -33,7 +33,8 @@ const SchoolInfoScreens = StackNavigator({
 	navigationOptions: defaultStackStyle
 });
 const ClassesScreens = StackNavigator({
-	ClassList:{ screen: ClassListComponent }
+	ClassList: { screen: ClassListComponent },
+	ClassForm: { screen: ClassEditFormComponent }
 }, {
 	navigationOptions: defaultStackStyle
 });

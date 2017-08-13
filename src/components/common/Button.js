@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, View, ActivityIndicator } from 'react-native';
-import { Styles } from '../../theme';
+import { Styles, RouterStyles } from '../../theme';
 
 const Button = (props) => {
 	_renderButtonContent = (isWaiting = false) => {
@@ -33,7 +33,7 @@ const ButtonAdd = (props) =>{
 		<TouchableOpacity
 			onPress = {props.onPress}
 		>
-			<View style={ Styles.buttonHeader }>
+			<View style={ Styles.buttonHeaderRight }>
 				<Text style={Styles.buttonHeaderText}>{props.children}</Text>
 			</View>
 		</TouchableOpacity>
@@ -45,7 +45,7 @@ const ButtonSave = (props) =>{
 		<TouchableOpacity
 			onPress = {props.onPress}
 		>
-			<View style={ Styles.buttonHeader }>
+			<View style={ Styles.buttonHeaderRight }>
 				<Text style={Styles.buttonHeaderText}>{props.children}</Text>
 			</View>
 		</TouchableOpacity>
@@ -57,7 +57,7 @@ const ButtonBack = (props) =>{
 		<TouchableOpacity
 			onPress = {props.onPress}
 		>
-			<View style={ Styles.buttonHeader }>
+			<View style={ Styles.buttonHeaderLeft }>
 				<Text style={Styles.buttonHeaderText}>{props.children}</Text>
 			</View>
 		</TouchableOpacity>

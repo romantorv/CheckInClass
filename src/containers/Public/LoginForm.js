@@ -48,7 +48,9 @@ class LoginForm extends Component {
 				behavior="position"
 				resetScrollToCoords={{ x: 0, y: 0 }}>
 					<View style={Styles.loginForm}>
-						<Image source={ require('../../theme/images/AppIcon.png')} style={{marginBottom:20}} />
+						<View style={{alignItems: 'center'}}>
+							<Image source={ require('../../theme/images/AppIcon.png')} style={{marginBottom:20}} />
+						</View>
 						<Text style={[Styles.loginTitle, {marginBottom:15}]}>CheckInClass</Text>
 						{this._showError()}
 						<InputGroup
@@ -62,9 +64,9 @@ class LoginForm extends Component {
 						 value={this.props.password}
 						 placeholder="Enter your secure password" secureTextEntry={true} />
 						{ this._renderSignInBtn() }
-						<Paragraph style={Styles.link}>Forgot password?</Paragraph>
+						<Paragraph style={[Styles.link, {textAlign: 'center'}]}>Forgot password?</Paragraph>
 						<Divider />
-						<Paragraph>
+						<Paragraph style={{textAlign: 'center'}}>
 							Have no account yet? <Text style={Styles.link} onPress={this._gotoSignUp.bind(this)}>Sign Up</Text>
 						</Paragraph>
 					</View>

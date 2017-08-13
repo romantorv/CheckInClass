@@ -17,4 +17,7 @@ export const FILE_REMOVE_FAIL = "file_removed_fail";
 // SCHOOL INFO
 export const SCHOOL_FETCH_DETAIL = "fetch_school_info";
 export const SCHOOL_UPDATE_DETAIL = "update_school_info";
-// ATTACHMENT
+// CLASS
+export const CLASS_CREATE_SUCCESS = "create_class_success";
+export const CLASS_CREATE_FAIL = "create_class_fail";
+export const CLASS_INSERT_TEACHER = "insert_teacher_to_class";

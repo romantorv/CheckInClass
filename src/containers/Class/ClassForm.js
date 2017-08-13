@@ -7,6 +7,15 @@ class ClassFormComponent extends Component {
 	static navigationOptions = {
 		title: "School Information"
 	}
+
+	constructor(props){
+		super(props);
+	}
+
+	componentDidMount() {
+		console.log("this.props.navigation", this.props.navigation);
+	}
+
 	render(){
 		return(
 			<ScrollView style={Styles.pageContainer}>
