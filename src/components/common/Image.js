@@ -33,10 +33,15 @@ const ImageThumbWithDelete = (props) => {
 }
 
 const ImageThumbWithAttach = (props) => {
+	_imageSource = () => {
+		if (props.photoURI !== '')
+			return {uri: photoURI}
+		return require('../../theme/images/img_default_class.png');
+	}
 	return(
 		<View style={[Styles.imageThumbContainer, {width: Number(props.width) || 160 }]}>
 			<Image
-			 source={{uri: props.photoURI}}
+			 source={ _imageSource() }
 			 resizeMode={ props.resizeMode || "cover" }
 			 style={[Styles.imageThumb, {width: Number(props.width) || 160, height:Number(props.height) || 90}, props.style]} />
 			<View style={Styles.imageThumbAction}>

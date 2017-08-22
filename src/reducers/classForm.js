@@ -3,6 +3,7 @@ import {
 	ATTACH_SUCCESS,
 	ATTACH_FAIL,
 	INPUT_CHANGED,
+	CLASS_NEW,
 	CLASS_CREATE_SUCCESS,
 	CLASS_CREATE_FAIL,
 	CLASS_INSERT_TEACHER
@@ -25,6 +26,8 @@ export default (state = INITIAL_STATE, action) => {
 			return { ...state, isWaiting: true };
 		case INPUT_CHANGED: 
 			return { ...state, [action.payload.name]: action.payload.value };
+		case CLASS_NEW: 
+			return { ...state, classid: action.payload, isWaiting: false, errorMessage:"" };
 		case CLASS_CREATE_FAIL: 
 			return { ...state, errorMessage: action.payload };
 		case CLASS_CREATE_SUCCESS: 

@@ -10,7 +10,8 @@ export const schoolFetchInfo = () => {
 	return (dispatch) => {
 		dispatch({ type: IS_WAITING });
 		const uid = firebase.auth().currentUser.uid;
-		firebase.database().ref(`Schools/${uid}/Information`)
+		const schoolInfoRef = `Schools/${uid}/Information`;
+		firebase.database().ref(schoolInfoRef)
 			.once('value')
 			.then(response => { 
 				var strImages = "";
@@ -24,8 +25,9 @@ export const schoolFetchInfo = () => {
 export const schoolSaveInfo = (schoolDetail) => {
 	return (dispatch) => {
 		const uid = firebase.auth().currentUser.uid;
+		const schoolInfoRef = `Schools/${uid}/Information`;
 		dispatch({ type: IS_WAITING });
-		firebase.database().ref(`Schools/${uid}/Information`)
+		firebase.database().ref(schoolInfoRef)
 			.update(schoolDetail)
 			.then(() => dispatch({ type: SCHOOL_UPDATE_DETAIL }))
 			.catch(error => console(error));
@@ -38,12 +40,13 @@ export const schoolAttachPhoto = ({ imgName, imageURI }) => {
 		dispatch({ type: IS_WAITING });
 		//
 		const uid = firebase.auth().currentUser.uid;
+		const schoolInfoRef = `Schools/${uid}/Information`;
 		var timeStamp = new Date().getTime();
 		firebase.storage()
-			.ref(`Users/${uid}/schoolInfo/${timeStamp.toString()}${imgName}`)
+			.ref(`${schoolInfoRef}/${timeStamp.toString()}${imgName}`)
 			.putFile(imageURI)
 			.then(response => {
-				firebase.database().ref(`Schools/${uid}/Information/images`)
+				firebase.database().ref(schoolInfoRef).child('images')
 					.push(response)
 					.then(result => {
 						dispatch({ 
@@ -65,12 +68,12 @@ export const schoolRemovePhoto = ({imageID, imageRef}) => {
 	return (dispatch)=>{
 		dispatch({type: IS_WAITING});
 		const uid = firebase.auth().currentUser.uid;
-		
+		const schoolInfoRef = `Schools/${uid}/Information`;
 		firebase.storage()
 			.ref(imageRef)
 			.delete()
 			.then( () => {
-				firebase.database().ref(`Schools/${uid}/Information/images/${imageID}`)
+				firebase.database().ref(schoolInfoRef).child(`images/${imageID}`)
 					.remove()
 					.then( () => {
 						dispatch({type: FILE_REMOVE_SUCCESS, payload: imageID })

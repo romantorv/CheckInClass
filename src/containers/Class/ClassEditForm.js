@@ -3,7 +3,7 @@ import { View, Text, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import ImagePicker from 'react-native-image-picker';
 import _ from 'lodash';
-import { onInputChanged, ClassFormSave, ClassAttachPhoto } from '../../actions';
+import { onInputChanged, ClassFormSave, ClassAttachPhoto, ClassCreatNew } from '../../actions';
 import { Styles } from '../../theme';
 import { ButtonBack, ButtonSave, Button, Grid, Row, Cell, Subheading, InputGroup, ImageThumbWithAttach } from '../../components/common';
 import { TabIcon, SimpleAvatarStack } from '../../components';
@@ -39,13 +39,21 @@ class ClassEditFormComponent extends Component {
 		this.props.navigation.setParams({
 			doSave: this._onSave.bind(this)
 		})
+		const navParams = this.props.navigation.state.params;
+		try {
+			console.log("navParams.actionType", navParams.actionType);
+			if ( navParams.actionType === "create" ) this.props.ClassCreatNew();
+		} catch (error) {
+			console.log(error);
+		}
+		
 	}
 
 	_onSave(){
 		if ( _.isEmpty(this.props.classname) ) return false;
 
-		const { classname, summary } = this.props;
-		this.props.ClassFormSave({ classname, summary });
+		const { classid, classname, summary } = this.props;
+		this.props.ClassFormSave({ classid, classname, summary });
 	}
 
 	_getPhotos = () => {
@@ -128,4 +136,8 @@ const mapStateToProps = (state) => {
 	return { isWaiting, classid, classname, classimage, summary, teachers, allallteachers };
 }
 
-export default connect(mapStateToProps, { onInputChanged, ClassFormSave, ClassAttachPhoto })(ClassEditFormComponent);
+export default connect(mapStateToProps, { 
+	onInputChanged,
+	ClassCreatNew, 
+	ClassFormSave, 
+	ClassAttachPhoto })(ClassEditFormComponent);
