@@ -33,18 +33,19 @@ export const ClassFormSave = (formDetail) => {
 	}
 }
 
-export const ClassAttachPhoto = ({ classId, imgName, imageURI }) => {
+export const ClassAttachPhoto = (formDetail) => {
 	return (dispatch) => {
 		dispatch({type: IS_WAITING});
 		const uid = firebase.auth().currentUser.uid;
-		const classRef = `Schools/${uid}/Classes`;
+		const { classid, imgName, imageURI } = formDetail;
+		const classRef = `Schools/${uid}/Classes/${classid}`;
 		var timeStamp = new Date().getTime();
-		firebase.storage().ref(`${classRef}/${timeStamp.toString()}${imgName}`)
+		firebase.storage().ref(classRef).child(`${timeStamp.toString()}_${imgName}`)
 			.putFile(imageURI)
 			.then( result => {
 				console.log("result:", result);
-				firebase.database().ref(classRef).child(`${classId}/image`)
-					.set(result)
+				firebase.database().ref(classRef).child('image')
+					.update(result)
 					.then( res => dispatch({type: ATTACH_SUCCESS, payload: result.downloadUrl }))
 					.catch( err => dispatch({type: ATTACH_FAIL, payload: err.message}))
 					

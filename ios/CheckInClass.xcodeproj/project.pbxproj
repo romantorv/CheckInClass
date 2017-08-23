@@ -41,7 +41,7 @@
 		74109DFFF981F7DFCC52F222 /* libPods-CheckInClass.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 949044F38532B1A6E03322DC /* libPods-CheckInClass.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		A10900021F322E670094BE9F /* libRCTCameraRoll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A10900011F322DF40094BE9F /* libRCTCameraRoll.a */; };
-		A10AD91F1F2C830A0006DFB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A10AD91E1F2C830A0006DFB5 /* GoogleService-Info.plist */; };
+		A1422D951F4D717600693D37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1422D941F4D717600693D37 /* GoogleService-Info.plist */; };
 		A1E9A7F21F34C4B700BB0A27 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E9A7F11F34C4A700BB0A27 /* libRNImagePicker.a */; };
 		C06CD0715F7641E88C9AA1BE /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D4A82F9E27D40E0AEEABD45 /* WorkSans-Regular.ttf */; };
 		F7B2094C4F0641F392953775 /* WorkSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7ACE342D9F44B2888981CE5 /* WorkSans-Light.ttf */; };
@@ -321,7 +321,7 @@
 		8B68317F00884BA8F71946C5 /* Pods-CheckInClassTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckInClassTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckInClassTests/Pods-CheckInClassTests.release.xcconfig"; sourceTree = "<group>"; };
 		949044F38532B1A6E03322DC /* libPods-CheckInClass.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CheckInClass.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A109FFFC1F322DF40094BE9F /* RCTCameraRoll.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTCameraRoll.xcodeproj; path = "../node_modules/react-native/Libraries/CameraRoll/RCTCameraRoll.xcodeproj"; sourceTree = "<group>"; };
-		A10AD91E1F2C830A0006DFB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Google Drive/MyApp/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A1422D941F4D717600693D37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A1E9A7EC1F34C4A700BB0A27 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
 		AFA98533DE9343208DAF692C /* RNFirebase.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFirebase.xcodeproj; path = "../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj"; sourceTree = "<group>"; };
 		D65F344764954C5F9F6FE0A1 /* libRNFirebase.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFirebase.a; sourceTree = "<group>"; };
@@ -466,7 +466,7 @@
 		13B07FAE1A68108700A75B9A /* CheckInClass */ = {
 			isa = PBXGroup;
 			children = (
-				A10AD91E1F2C830A0006DFB5 /* GoogleService-Info.plist */,
+				A1422D941F4D717600693D37 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -1059,7 +1059,7 @@
 				F7B2094C4F0641F392953775 /* WorkSans-Light.ttf in Resources */,
 				4B1BEA4273E2461599426FFC /* WorkSans-Medium.ttf in Resources */,
 				C06CD0715F7641E88C9AA1BE /* WorkSans-Regular.ttf in Resources */,
-				A10AD91F1F2C830A0006DFB5 /* GoogleService-Info.plist in Resources */,
+				A1422D951F4D717600693D37 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

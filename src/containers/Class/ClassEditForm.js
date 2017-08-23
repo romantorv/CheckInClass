@@ -69,7 +69,7 @@ class ClassEditFormComponent extends Component {
 			}
 			else {
 				this.props.ClassAttachPhoto({
-					classId: this.props.classid,
+					classid: this.props.classid,
 					imgName: response.fileName,
 					imageURI: response.uri
 				});
@@ -89,7 +89,7 @@ class ClassEditFormComponent extends Component {
 								<View style={[Styles.inputGroupContainer, {marginBottom:0}]}>
 									<Text style={Styles.inputLabel}>CLASS PHOTO</Text>
 									<ImageThumbWithAttach
-										photoURI={this.props.classimage}
+										photoURI={ this.props.classimage }
 										onAttach={ this._getPhotos.bind(this) }
 										width="160" height="90" />
 								</View>
