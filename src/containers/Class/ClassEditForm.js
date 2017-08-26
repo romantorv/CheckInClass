@@ -3,7 +3,7 @@ import { View, Text, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import ImagePicker from 'react-native-image-picker';
 import _ from 'lodash';
-import { onInputChanged, ClassFormSave, ClassAttachPhoto, ClassCreatNew } from '../../actions';
+import { onInputChanged, ClassFormSave, ClassAttachPhoto, ClassCreatNew, ClassEdit, ClassFormReset } from '../../actions';
 import { Styles } from '../../theme';
 import { ButtonBack, ButtonSave, Button, Grid, Row, Cell, Subheading, InputGroup, ImageThumbWithAttach } from '../../components/common';
 import { TabIcon, SimpleAvatarStack } from '../../components';
@@ -25,7 +25,7 @@ class ClassEditFormComponent extends Component {
 	static navigationOptions = ({navigation}) => {
 		const { params = {} } = navigation.state;
 		return {
-			title: (params.actionType === "create") ? "Create a new Class" : "Editing class",
+			title: (params.actionType === "create") ? "Create a new Class" : `Editing "${_.truncate(params.classname,{'length': 30})}"`,
 			headerLeft: <ButtonBack onPress={ () => navigation.goBack() }>BACK</ButtonBack>,
 			headerRight: <ButtonSave onPress={ ()=> params.doSave() }>SAVE</ButtonSave>
 		}
@@ -35,14 +35,18 @@ class ClassEditFormComponent extends Component {
 		super(props);
 	}
 
+	componentWillMount() {
+		this.props.ClassFormReset();
+	}
+
 	componentDidMount() {
 		this.props.navigation.setParams({
 			doSave: this._onSave.bind(this)
 		})
 		const navParams = this.props.navigation.state.params;
 		try {
-			console.log("navParams.actionType", navParams.actionType);
 			if ( navParams.actionType === "create" ) this.props.ClassCreatNew();
+			if ( navParams.actionType === "edit" ) this.props.ClassEdit(navParams.classid);
 		} catch (error) {
 			console.log(error);
 		}
@@ -52,8 +56,8 @@ class ClassEditFormComponent extends Component {
 	_onSave(){
 		if ( _.isEmpty(this.props.classname) ) return false;
 
-		const { classid, classname, summary } = this.props;
-		this.props.ClassFormSave({ classid, classname, summary });
+		const { classid, classname, summary, createdat } = this.props;
+		this.props.ClassFormSave({ classid, classname, summary, createdat });
 	}
 
 	_getPhotos = () => {
@@ -89,7 +93,7 @@ class ClassEditFormComponent extends Component {
 								<View style={[Styles.inputGroupContainer, {marginBottom:0}]}>
 									<Text style={Styles.inputLabel}>CLASS PHOTO</Text>
 									<ImageThumbWithAttach
-										photoURI={ this.props.classimage }
+										photoURI={ this.props.image }
 										onAttach={ this._getPhotos.bind(this) }
 										width="160" height="90" />
 								</View>
@@ -132,12 +136,14 @@ class ClassEditFormComponent extends Component {
 }
 
 const mapStateToProps = (state) => {
-	const { isWaiting, classid, classname, classimage, summary, teachers, allallteachers } = state.classForm;
-	return { isWaiting, classid, classname, classimage, summary, teachers, allallteachers };
+	const { isWaiting, classid, classname, image, summary, teachers, allallteachers, createdat } = state.classForm;
+	return { isWaiting, classid, classname, image, summary, teachers, allallteachers, createdat };
 }
 
 export default connect(mapStateToProps, { 
 	onInputChanged,
+	ClassFormReset,
 	ClassCreatNew, 
+	ClassEdit,
 	ClassFormSave, 
 	ClassAttachPhoto })(ClassEditFormComponent);

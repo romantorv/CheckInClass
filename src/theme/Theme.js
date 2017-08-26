@@ -58,6 +58,11 @@ const Styles = StyleSheet.create({
 		fontSize: 14,
 		fontFamily: fontPrimary
 	},
+	textSmall: {
+		color: colorPrimary,
+		fontFamily: fontPrimary,
+		fontSize: 12
+	},
 	heading: {
 		fontSize: 24,
 		fontFamily: fontPrimary,
@@ -234,7 +239,8 @@ const Styles = StyleSheet.create({
 		width: '100%',
 		flexDirection: 'row',
 		justifyContent: 'space-between',
-		alignItems: 'stretch'
+		alignItems: 'stretch',
+		marginBottom: GUTTER
 	},
 		classItemWrapper: {
 			flexDirection: 'row'

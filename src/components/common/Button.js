@@ -10,7 +10,7 @@ const Button = (props) => {
 	}
 
 	_isDisabled = () => {
-		if ( props.disabled || props.isWaiting)
+		if (props.disabled || props.isWaiting)
 			return true;
 		return false;
 	}
@@ -18,50 +18,64 @@ const Button = (props) => {
 	return (
 		<TouchableOpacity
 			style={Styles.buttonWrapper}
-			onPress = {props.onPress}
-			disabled = { _isDisabled() }
+			onPress={props.onPress}
+			disabled={_isDisabled()}
 		>
-			<View style={ Styles.button }>
-				{ _renderButtonContent(props.isWaiting) }
+			<View style={Styles.button}>
+				{_renderButtonContent(props.isWaiting)}
 			</View>
 		</TouchableOpacity>
 	)
 }
 
-const ButtonAdd = (props) =>{
+const ButtonAdd = (props) => {
 	return (
 		<TouchableOpacity
-			onPress = {props.onPress}
+			onPress={props.onPress}
 		>
-			<View style={ Styles.buttonHeaderRight }>
+			<View style={Styles.buttonHeaderRight}>
 				<Text style={Styles.buttonHeaderText}>{props.children}</Text>
 			</View>
 		</TouchableOpacity>
 	)
 }
 
-const ButtonSave = (props) =>{
+const ButtonSave = (props) => {
 	return (
 		<TouchableOpacity
-			onPress = {props.onPress}
+			onPress={props.onPress}
 		>
-			<View style={ Styles.buttonHeaderRight }>
+			<View style={Styles.buttonHeaderRight}>
 				<Text style={Styles.buttonHeaderText}>{props.children}</Text>
 			</View>
 		</TouchableOpacity>
 	)
 }
 
-const ButtonBack = (props) =>{
+const ButtonBack = (props) => {
 	return (
 		<TouchableOpacity
-			onPress = {props.onPress}
+			onPress={props.onPress}
 		>
-			<View style={ Styles.buttonHeaderLeft }>
+			<View style={Styles.buttonHeaderLeft}>
 				<Text style={Styles.buttonHeaderText}>{props.children}</Text>
 			</View>
 		</TouchableOpacity>
 	)
 }
 
-export { Button, ButtonAdd, ButtonBack, ButtonSave }
+const LinkEdit = (props) => {
+	return (
+		<TouchableOpacity onPress={props.onPress} >
+			<Text style={[Styles.textSmall, Styles.link, props.style]}>{props.children}</Text>
+		</TouchableOpacity>
+	)
+}
+const LinkDelete = (props) => {
+	return (
+		<TouchableOpacity onPress={props.onPress} >
+			<Text style={[Styles.textSmall, props.style]}>{props.children}</Text>
+		</TouchableOpacity>
+	)
+}
+export { Button, ButtonAdd, ButtonBack, ButtonSave, LinkEdit, LinkDelete }
