@@ -2,6 +2,22 @@ import React from 'react';
 import { Image, View, Text, TouchableOpacity } from 'react-native';
 import { Styles } from '../../theme';
 
+const defaultAvatar = require('../../theme/images/img_default_avatar.png');
+
+const AvatarThumb = ({imageURI, size = 35, resizeMode = "cover"}) => {
+	_imageSource = () => {
+		if ( imageURI !== "" && imageURI !== null && imageURI !== undefined )
+			return {uri: imageURI};
+		return defaultAvatar;
+	}
+
+	return <Image
+				style={[Styles.stackItemImage, { width: size, height: size, borderRadius: size/2 }]}
+				resizeMode={ resizeMode }
+				source={ _imageSource() }
+			/>
+}	
+
 const ImageThumb = (props) => {
 	return(
 		<View style={[Styles.imageThumbContainer, {width: Number(props.width) || 160 }]}>
@@ -53,4 +69,4 @@ const ImageThumbWithAttach = (props) => {
 	)
 }
 
-export { ImageThumb, ImageThumbWithDelete, ImageThumbWithAttach }
+export { AvatarThumb, ImageThumb, ImageThumbWithDelete, ImageThumbWithAttach }

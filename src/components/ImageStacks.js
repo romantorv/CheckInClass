@@ -5,7 +5,6 @@ import { Styles } from '../theme';
 const defaultImage = require('../theme/images/img_default_avatar.png');
 
 const avatarImage = ({imageURI, size = 35, resizeMode = "cover"}) => {
-
 	if ( imageURI !== "" && imageURI !== null && imageURI !== undefined )
 		return <Image
 				style={[Styles.stackItemImage, { width: size, height: size, borderRadius: size/2 }]}
@@ -38,7 +37,6 @@ export const SimpleAvatarStack = (props) => {
 }
 
 export const TeacherItem = (props) => {
-	
 	return (
 		<View style={Styles.stackItemContainer}>
 			<View style={Styles.stackItemWrapper}>

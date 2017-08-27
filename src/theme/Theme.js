@@ -42,6 +42,7 @@ const Styles = StyleSheet.create({
 			flexDirection: 'row',
 			justifyContent: 'flex-start',
 			alignContent: 'stretch',
+			alignItems: 'stretch',
 			marginLeft: -(GUTTER/2),
 			marginRight: -(GUTTER/2)
 		},
@@ -164,6 +165,8 @@ const Styles = StyleSheet.create({
 	inputGroupContainer: {
 		marginBottom: 15,
 		alignContent: 'stretch',
+		alignItems: 'stretch',
+		width: '100%'
 	},
 		inputLabel: {
 			fontWeight: '500',
@@ -179,7 +182,7 @@ const Styles = StyleSheet.create({
 			paddingRight: 15,
 			height: 55,
 			flexDirection: 'row',
-			justifyContent: 'center',
+			justifyContent: 'center'
 		},
 		input: {
 			fontFamily: fontPrimary,

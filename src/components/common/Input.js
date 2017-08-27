@@ -15,13 +15,13 @@ const InputGroup = (props) => {
 	_multiRowHeight = () => {
 		if (props.inputRows > 1) {
 			let rows = props.inputRows;
-			return { height: (55 + (rows-1)*18), paddingTop:10 };
+			return { height: (55 + (rows-1)*18), paddingTop:10, paddingBottom:10 };
 		}
 	}
 
 	return(
 		<View style={Styles.inputGroupContainer}>
-			{this._hasLabel(props.label)}
+			{_hasLabel(props.label)}
 			<View style={[Styles.inputWrapper, _multiRowHeight()]}>
 				<TextInput 
 					style={[ Styles.input, props.style ]}

@@ -25,11 +25,12 @@ const AlertError = (props) => {
 const Avatar = (props) => {
 
 	_generateImg = (props) => {
+		const { size = 35 } = props;
 		if (props.avatarSource !== null && props.avatarSource !== undefined && props.avatarSource !== "")
 			return <Image 
 				source={{uri: props.avatarSource}}
 				resizeMode={ props.resizeMode || "cover" }
-				style={[Styles.avatarImage, props.style]}
+				style={[Styles.avatarImage, { width: props.size, height: props.size, borderRadius: size/2 }, props.style]}
 			/>
 		else 
 			return <Image 

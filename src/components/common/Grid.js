@@ -10,9 +10,9 @@ const Row = (props) => {
 	_isNoCell = ()=>{
 	 	if (props.isNoCell === true) {
 			 return Styles.gridRowNoCell;
-		 }
+		}
 	}
-	return <View style={[Styles.gridRow, this._isNoCell(), props.style]}>{props.children}</View>
+	return <View style={[Styles.gridRow, _isNoCell(), props.style]}>{props.children}</View>
 }
 
 const Cell = (props) => {

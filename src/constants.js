@@ -26,3 +26,12 @@ export const CLASS_CREATE_FAIL = "create_class_fail";
 export const CLASS_INSERT_TEACHER = "insert_teacher_to_class";
 export const CLASS_FETCH_LIST_SUCCESS = "fetch_class_list_success";
 export const CLASS_FETCH_LIST_FAIL = "fetch_class_list_fail";
+// TEACHER 
+export const TEACHER_INPUT_CHANGED = "input_teacher_form_changed";
+export const TEACHER_RESET = "reset_teacher_form";
+export const TEACHER_NEW = "create_teacher";
+export const TEACHER_EDIT = "edit_teacher";
+export const TEACHER_ATTACH_PHOTO_SUCCESS = "attach_teacher_photo_success";
+export const TEACHER_ATTACH_PHOTO_FAIL = "attach_teacher_photo_fail";
+export const TEACHER_SAVE_SUCCESS = "save_teacher_success";
+export const TEACHER_SAVE_FAIL = "save_teacher_fail";
