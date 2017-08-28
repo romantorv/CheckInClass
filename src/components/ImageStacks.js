@@ -35,21 +35,3 @@ export const SimpleAvatarStack = (props) => {
 		</View>
 	)
 }
-
-export const TeacherItem = (props) => {
-	return (
-		<View style={Styles.stackItemContainer}>
-			<View style={Styles.stackItemWrapper}>
-			{ avatarImage({
-					imageURI: props.imageURI,
-					size: 70,
-					resizeMode: props.resizeMode}) 
-				}
-				<Text style={Styles.stackItemLabel}>Sarah Obama</Text>
-			</View>
-			<TouchableOpacity style={Styles.stackItemAction}>
-				<Text style={Styles.stackItemActionText}>DELETE</Text>
-			</TouchableOpacity>
-		</View>
-	)
-}

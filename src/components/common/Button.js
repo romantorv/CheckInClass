@@ -28,6 +28,14 @@ const Button = (props) => {
 	)
 }
 
+const Link = (props) => {
+	return (
+		<TouchableOpacity onPress={props.onPress} >
+			<Text style={[Styles.link, props.style]}>{props.children}</Text>
+		</TouchableOpacity>
+	)
+}
+
 const ButtonAdd = (props) => {
 	return (
 		<TouchableOpacity
@@ -78,4 +86,4 @@ const LinkDelete = (props) => {
 		</TouchableOpacity>
 	)
 }
-export { Button, ButtonAdd, ButtonBack, ButtonSave, LinkEdit, LinkDelete }
+export { Button, ButtonAdd, ButtonBack, ButtonSave, Link, LinkEdit, LinkDelete }

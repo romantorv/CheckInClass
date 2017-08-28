@@ -276,6 +276,45 @@ const Styles = StyleSheet.create({
 			fontFamily: fontPrimary,
 			fontSize: 14
 		},
+
+	teacherItemContainer: {
+		backgroundColor: '#FFFFFF',
+		borderRadius: 2,
+		width: '100%',
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'stretch',
+		marginBottom: GUTTER,
+		padding: GUTTER
+	},
+		teacherItemWrapper: {
+			flexDirection: 'row'
+		},
+		teacherInfoWrapper: {
+			paddingLeft: GUTTER,
+			flexDirection: 'column',
+			justifyContent: 'center',
+			alignItems: 'flex-start'
+		},
+		teacherActionWrapper: {
+			flexDirection: 'row',
+			justifyContent: 'center',
+			alignItems: 'center',
+		},
+		teacherName: {
+			color: colorPrimary,
+			fontFamily: fontPrimary,
+			fontSize: 18,
+			fontWeight: '400',
+			lineHeight: 22
+		},
+		teacherTitle: {
+			color: '#8C8C8C',
+			fontFamily: fontPrimary,
+			fontSize: 14,
+			lineHeight: 22,
+			marginBottom: 5
+		},
 	stackItemContainer: {
 		borderRadius: 2,
 		backgroundColor: '#FFFFFF',

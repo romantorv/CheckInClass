@@ -1,4 +1,5 @@
 import {
+	TEACHER_ISWAITING,
 	TEACHER_ATTACH_PHOTO_FAIL,
 	TEACHER_ATTACH_PHOTO_SUCCESS,
 	TEACHER_EDIT,
@@ -23,12 +24,14 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
 	switch (action.type) {
+		case TEACHER_ISWAITING:
+			return { ...state, isWaiting: true, errorMessage: "" }
 		case TEACHER_INPUT_CHANGED:
 			return { ...state, [action.payload.name]: action.payload.value };
 		case TEACHER_RESET:
 			return INITIAL_STATE;
 		case TEACHER_EDIT:
-			return { ...INITIAL_STATE, ...action.payload };
+			return { ...INITIAL_STATE, teacherid: action.payload.teacherid, ...action.payload.teacher };
 		case TEACHER_NEW:
 			return { ...INITIAL_STATE, teacherid: action.payload };
 		case TEACHER_SAVE_SUCCESS:

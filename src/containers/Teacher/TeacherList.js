@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView, FlatList } from 'react-native';
 import { connect } from 'react-redux';
-import { ButtonAdd } from '../../components/common';
+import _ from 'lodash';
+import { TeacherFetchList } from '../../actions';
+import { ButtonAdd, Grid, Row } from '../../components/common';
+import { TeacherItem  } from '../../components';
+import { Styles } from '../../theme';
 
 class TeacherList extends Component {
 	static navigationOptions = ({ navigation }) => {
@@ -12,14 +16,46 @@ class TeacherList extends Component {
 		}
 	}
 
+	componentDidMount(){
+		this.props.TeacherFetchList();
+	}
+
+	_renderlistOfTeachers() {
+		var listOfTeachers = [];
+		_.map(this.props.teachers, (value, key) => {
+			listOfTeachers.push({ ...value, id: key });
+		})
+
+		return <FlatList
+			data={listOfTeachers}
+			keyExtractor={item => item.id}
+			renderItem={({ item }) => (
+				<TeacherItem 
+					teacherInfo={item} 
+					onEditPress={ ()=> this.props.navigation.navigate('TeacherForm', { actionType: 'edit', teacherid: item.id, firstname: item.firstname })}
+					onDeletePress={ ()=> console.log("Press Delete")}
+				/>
+			)}
+		/>
+	}
+
 	render() {
 		return (
-			<View />
+			<ScrollView style={Styles.pageContainer}>
+				<View style={Styles.defaultLayout}>
+					<Grid>
+						<Row isNoCell={true}>
+							{ this._renderlistOfTeachers() }
+						</Row>
+					</Grid>
+				</View>
+			</ScrollView>
 		)
 	}
 }
 
 const mapStateToProps = (state) => {
-	return {};
+	const { teachers, allteacher } = state.teachers;
+	return { teachers, allteacher };
 }
-export default connect(mapStateToProps, {})(TeacherList);
+export default connect(mapStateToProps, {TeacherFetchList})(TeacherList);

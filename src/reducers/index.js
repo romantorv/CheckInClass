@@ -4,6 +4,7 @@ import AuthReducer from './authentication';
 import SchoolInforReducer from './school';
 import ClassListReducer from './classList';
 import ClassFormReducer from './classForm';
+import TeacherListReducer from './teacherList';
 import TeacherFormReducer from './teacherForm';
 
 const AppReducers = combineReducers({
@@ -11,7 +12,7 @@ const AppReducers = combineReducers({
 	school: SchoolInforReducer,
 	classes: ClassListReducer,
 	classForm: ClassFormReducer,
-	teachers: null,
+	teachers: TeacherListReducer,
 	teacherForm: TeacherFormReducer,
 	students: null,
 	studentForm: null
