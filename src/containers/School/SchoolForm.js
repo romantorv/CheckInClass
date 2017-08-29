@@ -76,7 +76,7 @@ class SchoolFormComponent extends Component {
 				return <ImageThumbWithDelete
 						onDelete={ () => this.props.schoolRemovePhoto({imageID: key, imageRef: value.ref}) } 
 						key={key} 
-						photoURI={image.downloadUrl} 
+						photoURI={value.downloadUrl} 
 						width="160" height="90" />
 			});
 		}

@@ -71,7 +71,7 @@ export const schoolAttachPhoto = ({ imgName, imageURI }) => {
 
 export const schoolRemovePhoto = ({imageID, imageRef}) => {
 	return (dispatch)=>{
-		dispatch({type: SCHOOL_INPUT_CHANGED});
+		dispatch({type: SCHOOL_ISWAITING});
 		const uid = firebase.auth().currentUser.uid;
 		const schoolInfoRef = `Schools/${uid}/Information`;
 		firebase.storage()

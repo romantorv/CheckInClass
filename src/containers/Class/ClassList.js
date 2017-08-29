@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ScrollView, View, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import { ClassFetchList } from '../../actions';
+import { ClassFetchList, ClassRemove } from '../../actions';
 import { Grid, Row, ButtonAdd } from '../../components/common';
 import { TabIcon, ClassItem } from '../../components';
 import { Styles } from '../../theme';
@@ -39,13 +39,15 @@ class ClassListComponent extends Component {
 		return <FlatList
 			data={listOfClasses}
 			keyExtractor={item => item.id}
-			renderItem={({ item }) => (
-				<ClassItem
+			renderItem={ ({ item }) => {
+				var imageRef = "";
+				if ( typeof(item.image) === "object" ) imageRef = item.image.ref;
+				return <ClassItem
 					classInfo={item}
 					onEditPress={ ()=> this.props.navigation.navigate('ClassForm', { actionType: 'edit', classid: item.id, classname: item.classname })}
-					onDeletePress={ ()=> console.log("Press Delete")}
+					onDeletePress={ ()=> this.props.ClassRemove({classid: item.id, imageRef})}
 				/>
-			)}
+			}}
 		/>
 	}
 
@@ -69,4 +71,4 @@ const mapStateToProps = (state) => {
 	return { classes, allclasses };
 }
 
-export default connect(mapStateToProps, { ClassFetchList })(ClassListComponent);
+export default connect(mapStateToProps, { ClassFetchList, ClassRemove })(ClassListComponent);

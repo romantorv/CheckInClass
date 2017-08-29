@@ -8,12 +8,21 @@ import {
 	CLASS_RESET,
 	CLASS_NEW, 
 	CLASS_EDIT,
+	CLASS_REMOVE_FAIL,
+	CLASS_REMOVE_SUCCESS,
 	CLASS_CREATE_FAIL,
 	CLASS_CREATE_SUCCESS,
 	CLASS_INSERT_TEACHER,
 	CLASS_FETCH_LIST_SUCCESS,
 	CLASS_FETCH_LIST_FAIL
 } from '../constants';
+
+export const ClassOnInputChanged = ({name, value}) => {
+	return {
+		type: CLASS_INPUT_CHANGED,
+		payload: {name, value}
+	}
+}
 
 export const ClassFormReset = () =>{
 	return { type: CLASS_RESET };
@@ -36,6 +45,25 @@ export const ClassEdit = (classid) => {
 			.once('value')
 			.then(response => dispatch({ type: CLASS_EDIT, payload: {classid, class: response.toJSON()} }))
 			.catch(error => dispatch({ type: CLASS_CREATE_FAIL, payload: error.message }))
+	}
+}
+
+export const ClassRemove = (classItem) => {
+	return (dispatch) => {
+		dispatch({type: CLASS_ISWAITING});
+		const uid = firebase.auth().currentUser.uid;
+		const classRef = `Schools/${uid}/Classes`;
+		const { classid, imageRef } = classItem;
+		firebase.database().ref(classRef)
+			.child(classid)
+			.remove()
+			.then( () => { 
+				firebase.storage().ref(imageRef)
+					.delete()
+					.then( () => dispatch({type: CLASS_REMOVE_SUCCESS}))
+					.catch( error => dispatch({ type: CLASS_REMOVE_FAIL, payload: error.message }))
+			})
+			.catch(error => dispatch({ type: CLASS_REMOVE_FAIL, payload: error.message }))
 	}
 }
 

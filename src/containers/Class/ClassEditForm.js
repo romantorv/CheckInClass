@@ -3,7 +3,7 @@ import { View, Text, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import ImagePicker from 'react-native-image-picker';
 import _ from 'lodash';
-import { onInputChanged, ClassFormSave, ClassAttachPhoto, ClassCreatNew, ClassEdit, ClassFormReset } from '../../actions';
+import { ClassOnInputChanged, ClassFormSave, ClassAttachPhoto, ClassCreatNew, ClassEdit, ClassFormReset } from '../../actions';
 import { Styles } from '../../theme';
 import { ButtonBack, ButtonSave, Button, Grid, Row, Cell, Subheading, InputGroup, ImageThumbWithAttach } from '../../components/common';
 import { TabIcon, SimpleAvatarStack } from '../../components';
@@ -100,14 +100,14 @@ class ClassEditFormComponent extends Component {
 								<InputGroup 
 								 label="CLASS NAME" 
 								 placeholder="e.g: Little Angel Dance"
-								 onChangeText={ (value)=>this.props.onInputChanged({name: 'classname', value}) }
+								 onChangeText={ (value)=>this.props.ClassOnInputChanged({name: 'classname', value}) }
 								 value={ this.props.classname }
 								/>
 								<InputGroup 
 								 label="CLASS INTRODUCTION" 
 								 placeholder="e.g: Some words about the class"
 								 inputRows = {4}
-								 onChangeText={ (value)=>this.props.onInputChanged({name: 'summary', value}) }
+								 onChangeText={ (value)=>this.props.ClassOnInputChanged({name: 'summary', value}) }
 								 value={this.props.summary}
 								/>
 								<View style={Styles.inputGroupContainer}>
@@ -141,7 +141,7 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, { 
-	onInputChanged,
+	ClassOnInputChanged,
 	ClassFormReset,
 	ClassCreatNew, 
 	ClassEdit,
