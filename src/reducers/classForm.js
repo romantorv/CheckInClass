@@ -1,8 +1,8 @@
 import { 
-	IS_WAITING,
-	ATTACH_SUCCESS,
-	ATTACH_FAIL,
-	INPUT_CHANGED,
+	CLASS_ISWAITING,
+	CLASS_ATTACH_PHOTO_FAIL,
+	CLASS_ATTACH_PHOTO_SUCCESS,
+	CLASS_INPUT_CHANGED,
 	CLASS_RESET,
 	CLASS_NEW,
 	CLASS_EDIT,
@@ -25,11 +25,10 @@ const INITIAL_STATE = {
 }
 
 export default (state = INITIAL_STATE, action) => {
-	console.log("see my stat", state);
 	switch (action.type) {
-		case IS_WAITING:
+		case CLASS_ISWAITING:
 			return { ...state, isWaiting: true, errorMessage: "" };
-		case INPUT_CHANGED: 
+		case CLASS_INPUT_CHANGED: 
 			return { ...state, [action.payload.name]: action.payload.value };
 		case CLASS_RESET:
 			return INITIAL_STATE;
@@ -39,13 +38,15 @@ export default (state = INITIAL_STATE, action) => {
 			const {classname, summary, image } = action.payload.class;
 			return { ...INITIAL_STATE,
 				classid: action.payload.classid,
-				classname, summary, image: image.downloadUrl };
+				...action.payload.class };
 		case CLASS_CREATE_FAIL: 
 			return { ...state, isWaiting: false, errorMessage: action.payload };
 		case CLASS_CREATE_SUCCESS: 
 			return { ...state, isWaiting: false, errorMessage: "" };
-		case ATTACH_SUCCESS: 
-			return { ...state, isWaiting: false, errorMessage: "", image: action.payload}
+		case CLASS_ATTACH_PHOTO_SUCCESS: 
+			return { ...state, isWaiting: false, errorMessage: "", image: action.payload }
+		case CLASS_ATTACH_PHOTO_FAIL:
+			return { ...state, isWaiting: false, errorMessage: action.payload };
 		default:
 			return state;
 	}

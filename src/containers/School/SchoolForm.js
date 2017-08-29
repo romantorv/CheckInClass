@@ -6,7 +6,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import _ from 'lodash';
 //
 import { 
-	onInputChanged, 
+	schoolInputChanged, 
 	schoolFetchInfo, schoolSaveInfo, 
 	schoolAttachPhoto, schoolRemovePhoto
 	} from '../../actions';
@@ -72,10 +72,9 @@ class SchoolFormComponent extends Component {
 
 	_renderGallery(){
 		if ( !_.isEmpty(this.props.images )) {
-			console.log()
-			return _.map(this.props.images, (image, key) => {
+			return _.map(this.props.images, (value, key) => {
 				return <ImageThumbWithDelete
-						onDelete={ () => this.props.schoolRemovePhoto({imageID: key, imageRef: image.ref}) } 
+						onDelete={ () => this.props.schoolRemovePhoto({imageID: key, imageRef: value.ref}) } 
 						key={key} 
 						photoURI={image.downloadUrl} 
 						width="160" height="90" />
@@ -104,21 +103,21 @@ class SchoolFormComponent extends Component {
 								<InputGroup
 								 label="SCHOOL NAME"
 								 placeholder="e.g: Bloosom Childcare @ AMK" 
-								 onChangeText={ (value) => this.props.onInputChanged( {name: 'schoolname', value} )}
+								 onChangeText={ (value) => this.props.schoolInputChanged( {name: 'schoolname', value} )}
 								 value={ this.props.schoolname }/>
 								<Row>
 									<Cell>
 										<InputGroup
 										 label="ADDRESS #1"
 										 placeholder="e.g: 14 Sunshine Avenue"
-										 onChangeText={ (value) => this.props.onInputChanged( {name: 'address1', value} )}
+										 onChangeText={ (value) => this.props.schoolInputChanged( {name: 'address1', value} )}
 										 value={ this.props.address1 } />
 									</Cell>
 									<Cell>
 										<InputGroup
 										 label="ADDRESS #2"
 										 placeholder="e.g: Los Angeles, CA, United States 1234"
-										 onChangeText={ (value) => this.props.onInputChanged( {name: 'address2', value} )}
+										 onChangeText={ (value) => this.props.schoolInputChanged( {name: 'address2', value} )}
 										 value={ this.props.address2 } />
 									</Cell>
 								</Row>
@@ -129,7 +128,7 @@ class SchoolFormComponent extends Component {
 										 placeholder="e.g: www.bloosom-childcare.com"
 										 autoCapitalize="none"
 										 keyboardType="web-search"
-										 onChangeText={ (value) => this.props.onInputChanged( {name: 'website', value} )}
+										 onChangeText={ (value) => this.props.schoolInputChanged( {name: 'website', value} )}
 										 value={ this.props.website } />
 									</Cell>
 									<Cell>
@@ -138,7 +137,7 @@ class SchoolFormComponent extends Component {
 										 placeholder="e.g: admin@email.com"
 										 autoCapitalize="none"
 										 keyboardType="email-address"
-										 onChangeText={ (value) => this.props.onInputChanged( {name: 'email', value} )}
+										 onChangeText={ (value) => this.props.schoolInputChanged( {name: 'email', value} )}
 										 value={ this.props.email } />
 									</Cell>
 								</Row>
@@ -148,7 +147,7 @@ class SchoolFormComponent extends Component {
 										 label="TELEPHONE"
 										 placeholder="e.g: +65 1111 1111"
 										 keyboardType="phone-pad"
-										 onChangeText={ (value) => this.props.onInputChanged( {name: 'tel', value} )}
+										 onChangeText={ (value) => this.props.schoolInputChanged( {name: 'tel', value} )}
 										 value={ this.props.tel } />
 									</Cell>
 									<Cell>
@@ -156,7 +155,7 @@ class SchoolFormComponent extends Component {
 										 label="FAX"
 										 placeholder="e.g: +65 2222 2222"
 										 keyboardType="phone-pad"
-										 onChangeText={ (value) => this.props.onInputChanged( {name: 'fax', value} )}
+										 onChangeText={ (value) => this.props.schoolInputChanged( {name: 'fax', value} )}
 										 value={ this.props.fax } />
 									</Cell>
 								</Row>
@@ -169,7 +168,7 @@ class SchoolFormComponent extends Component {
 								 placeholder="Write some information about your school"
 								 inputRows="5"
 								 autoCorrect={true}
-								 onChangeText={ (value) => this.props.onInputChanged( {name: 'summary', value} )}
+								 onChangeText={ (value) => this.props.schoolInputChanged( {name: 'summary', value} )}
 								 value={ this.props.summary }
 								/>
 							</View>
@@ -189,6 +188,6 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, { 
-	onInputChanged, 
+	schoolInputChanged, 
 	schoolFetchInfo, schoolSaveInfo, 
 	schoolAttachPhoto, schoolRemovePhoto })(SchoolFormComponent);

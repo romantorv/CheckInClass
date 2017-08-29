@@ -50,8 +50,8 @@ const ImageThumbWithDelete = (props) => {
 
 const ImageThumbWithAttach = (props) => {
 	_imageSource = () => {
-		if (props.photoURI !== '')
-			return {uri: props.photoURI}
+		if ( props.photoURI !== "" && props.photoURI !== null && props.photoURI !== undefined )
+			return {uri: props.photoURI};
 		return require('../../theme/images/img_default_class.png');
 	}
 	return(

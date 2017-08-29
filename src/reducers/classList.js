@@ -1,5 +1,5 @@
 import {
-	IS_WAITING,
+	CLASS_ISWAITING,
 	CLASS_FETCH_LIST_FAIL,
 	CLASS_FETCH_LIST_SUCCESS
 } from '../constants';
@@ -14,7 +14,7 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
 	console.log("current action", action)
 	switch (action.type) {
-		case IS_WAITING:
+		case CLASS_ISWAITING:
 			return { ...state, isWaiting: true };
 		case CLASS_FETCH_LIST_FAIL:
 			return { ...state, isWaiting: false, errorMessage: action.payload };

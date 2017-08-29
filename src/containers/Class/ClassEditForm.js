@@ -93,7 +93,7 @@ class ClassEditFormComponent extends Component {
 								<View style={[Styles.inputGroupContainer, {marginBottom:0}]}>
 									<Text style={Styles.inputLabel}>CLASS PHOTO</Text>
 									<ImageThumbWithAttach
-										photoURI={ this.props.image }
+										photoURI={ this.props.image.downloadUrl }
 										onAttach={ this._getPhotos.bind(this) }
 										width="160" height="90" />
 								</View>

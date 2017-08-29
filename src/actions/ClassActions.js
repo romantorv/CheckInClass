@@ -1,10 +1,10 @@
 import firebase from '../firebase';
 import _ from 'lodash';
 import {
-	IS_WAITING,
-	ATTACH_FAIL,
-	ATTACH_SUCCESS,
-	INPUT_CHANGED,
+	CLASS_ISWAITING,
+	CLASS_ATTACH_PHOTO_FAIL,
+	CLASS_ATTACH_PHOTO_SUCCESS,
+	CLASS_INPUT_CHANGED,
 	CLASS_RESET,
 	CLASS_NEW, 
 	CLASS_EDIT,
@@ -41,7 +41,7 @@ export const ClassEdit = (classid) => {
 
 export const ClassFormSave = (formDetail) => {
 	return (dispatch) => {
-		dispatch({ type: IS_WAITING });
+		dispatch({ type: CLASS_ISWAITING });
 		const uid = firebase.auth().currentUser.uid;
 		const classRef = `Schools/${uid}/Classes`;
 		const { classid, classname, summary, isactive, createdat } = formDetail;
@@ -56,7 +56,7 @@ export const ClassFormSave = (formDetail) => {
 
 export const ClassAttachPhoto = (formDetail) => {
 	return (dispatch) => {
-		dispatch({ type: IS_WAITING });
+		dispatch({ type: CLASS_ISWAITING });
 		const uid = firebase.auth().currentUser.uid;
 		const { classid, imgName, imageURI } = formDetail;
 		const classRef = `Schools/${uid}/Classes/${classid}`;
@@ -67,17 +67,17 @@ export const ClassAttachPhoto = (formDetail) => {
 				console.log("result:", result);
 				firebase.database().ref(classRef).child('image')
 					.update(result)
-					.then(res => dispatch({ type: ATTACH_SUCCESS, payload: result.downloadUrl }))
-					.catch(err => dispatch({ type: ATTACH_FAIL, payload: err.message }))
+					.then(res => dispatch({ type: CLASS_ATTACH_PHOTO_SUCCESS, payload: result.downloadUrl }))
+					.catch(err => dispatch({ type: CLASS_ATTACH_PHOTO_FAIL, payload: err.message }))
 
 			})
-			.catch(err => dispatch({ type: ATTACH_FAIL, payload: err.message }))
+			.catch(err => dispatch({ type: CLASS_ATTACH_PHOTO_FAIL, payload: err.message }))
 	}
 }
 
 export const ClassFetchList = () => {
 	return (dispatch) => {
-		dispatch({ type: IS_WAITING });
+		dispatch({ type: CLASS_ISWAITING });
 		const uid = firebase.auth().currentUser.uid;
 		const classRef = `Schools/${uid}/Classes`;
 		firebase.database().ref(classRef)
