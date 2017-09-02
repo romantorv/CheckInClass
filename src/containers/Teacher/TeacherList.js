@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import { TeacherFetchList } from '../../actions';
+import { TeacherFetchList, TeacherRemove } from '../../actions';
 import { ButtonAdd, Grid, Row } from '../../components/common';
 import { TeacherItem  } from '../../components';
 import { Styles } from '../../theme';
@@ -29,13 +29,21 @@ class TeacherList extends Component {
 		return <FlatList
 			data={listOfTeachers}
 			keyExtractor={item => item.id}
-			renderItem={({ item }) => (
-				<TeacherItem 
+			stickySectionHeadersEnabled = { true }
+			ListHeaderComponent = { <Text>Search Bar</Text>}
+			renderItem={ ({ item }) => {
+				var imageRef = "";
+				if ( typeof(item.image) === "object" ) imageRef = item.image.ref;
+
+				return <TeacherItem 
 					teacherInfo={item} 
 					onEditPress={ ()=> this.props.navigation.navigate('TeacherForm', { actionType: 'edit', teacherid: item.id, firstname: item.firstname })}
-					onDeletePress={ ()=> console.log("Press Delete")}
+					onDeletePress={ ()=> this.props.TeacherRemove({
+						teacherid: item.id,
+						imageRef
+					})}
 				/>
-			)}
+			} }
 		/>
 	}
 
@@ -58,4 +66,4 @@ const mapStateToProps = (state) => {
 	const { teachers, allteacher } = state.teachers;
 	return { teachers, allteacher };
 }
-export default connect(mapStateToProps, {TeacherFetchList})(TeacherList);
+export default connect(mapStateToProps, {TeacherFetchList, TeacherRemove})(TeacherList);

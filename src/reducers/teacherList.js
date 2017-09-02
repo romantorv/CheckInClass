@@ -1,5 +1,7 @@
 import {
 	TEACHER_ISWAITING,
+	TEACHER_REMOVE_FAIL,
+	TEACHER_REMOVE_SUCCESS,
 	TEACHER_FETCH_LIST_FAIL,
 	TEACHER_FETCH_LIST_SUCCESS
 } from '../constants';
@@ -15,6 +17,10 @@ export default (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case TEACHER_ISWAITING:
 			return { ...state, isWaiting: true };
+		case TEACHER_REMOVE_FAIL:
+			return { ...state, isWaiting: false, errorMessage: action.payload };
+		case TEACHER_REMOVE_SUCCESS:
+			return { ...state, isWaiting: false, errorMessage: "" };
 		case TEACHER_FETCH_LIST_FAIL:
 			return { ...state, isWaiting: false, errorMessage: action.payload };
 		case TEACHER_FETCH_LIST_SUCCESS:

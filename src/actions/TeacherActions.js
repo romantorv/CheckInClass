@@ -1,10 +1,11 @@
 import firebase from '../firebase';
-import _ from 'lodash';
 import {
 	TEACHER_ISWAITING,
 	TEACHER_ATTACH_PHOTO_FAIL,
 	TEACHER_ATTACH_PHOTO_SUCCESS,
 	TEACHER_EDIT,
+	TEACHER_REMOVE_FAIL,
+	TEACHER_REMOVE_SUCCESS,
 	TEACHER_INPUT_CHANGED,
 	TEACHER_NEW,
 	TEACHER_RESET,
@@ -32,6 +33,30 @@ export const TeacherCreatNew = () => {
 		dispatch({ type: TEACHER_NEW, payload: newTeacher.key });
 	}
 }
+
+export const TeacherRemove = (teacherItem) => {
+	return (dispatch) => {
+		dispatch({type: TEACHER_ISWAITING});
+		const uid = firebase.auth().currentUser.uid;
+		const teacherRef = `Schools/${uid}/Teachers`;
+		const { teacherid, imageRef } = teacherItem;
+		firebase.database().ref(teacherRef)
+			.child(teacherid)
+			.remove()
+			.then( () => { 
+				if (imageRef !== undefined && imageRef !== "" && imageRef !== null) {
+					firebase.storage().ref(imageRef)
+						.delete()
+						.then( () => dispatch({type: TEACHER_REMOVE_SUCCESS}))
+						.catch( error => dispatch({ type: TEACHER_REMOVE_FAIL, payload: `storage error: ${error.message}` }))
+				} else {
+					dispatch({type: TEACHER_REMOVE_SUCCESS});
+				}
+			})
+			.catch(error => dispatch({ type: TEACHER_REMOVE_FAIL, payload: `db error: ${error.message}` }))
+	}
+}
+
 export const TeacherEdit = (teacherid) => {
 	return (dispatch) => {
 		const uid = firebase.auth().currentUser.uid;
@@ -81,20 +106,26 @@ export const TeacherFetchList = () => {
 	return (dispatch) => {
 		dispatch({ type: TEACHER_ISWAITING });
 		const uid = firebase.auth().currentUser.uid;
-		const teacherRef = `Schools/${uid}/Teachers`;
+		const teacherRef = `Schools/${uid}`;
 		firebase.database().ref(teacherRef)
-			.on(
-			'value',
-			(result) => {
-				var teacherListObj = result.toJSON();
-				var teacherListStr = "";
-				_.map(teacherListObj, (value, key) => { teacherListStr += `,${key}` })
-				dispatch({
-					type: TEACHER_FETCH_LIST_SUCCESS,
-					payload: { teachers: teacherListObj, allteachers: teacherListStr }
-				})
-			},
-			(error) => dispatch({ type: TEACHER_FETCH_LIST_FAIL, payload: error.message })
+			.child('Teachers')
+			.orderByChild("firstname")
+			.on( 'value',
+				(snapshot) => {
+					var teacherListObj = {};
+					var teacherListArr = [];
+
+					snapshot.forEach( childSnapshot => {
+						teacherListObj[childSnapshot.key] = childSnapshot.val();
+						teacherListArr.push(childSnapshot.key);
+					});
+
+					dispatch({
+						type: TEACHER_FETCH_LIST_SUCCESS,
+						payload: { teachers: teacherListObj, allteachers: teacherListArr.join(',') }
+					})
+				},
+				(error) => dispatch({ type: TEACHER_FETCH_LIST_FAIL, payload: error.message })
 			)
 	}
 }

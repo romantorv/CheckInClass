@@ -1,5 +1,4 @@
 import firebase from '../firebase';
-import _ from 'lodash';
 import {
 	CLASS_ISWAITING,
 	CLASS_ATTACH_PHOTO_FAIL,
@@ -58,10 +57,14 @@ export const ClassRemove = (classItem) => {
 			.child(classid)
 			.remove()
 			.then( () => { 
+				if (imageRef !== undefined && imageRef !== "" && imageRef !== null) {
 				firebase.storage().ref(imageRef)
 					.delete()
 					.then( () => dispatch({type: CLASS_REMOVE_SUCCESS}))
 					.catch( error => dispatch({ type: CLASS_REMOVE_FAIL, payload: error.message }))
+				} else { 
+					dispatch({type: CLASS_REMOVE_SUCCESS});
+				}
 			})
 			.catch(error => dispatch({ type: CLASS_REMOVE_FAIL, payload: error.message }))
 	}
@@ -92,7 +95,6 @@ export const ClassAttachPhoto = (formDetail) => {
 		firebase.storage().ref(classRef).child(`${timeStamp.toString()}_${imgName}`)
 			.putFile(imageURI)
 			.then(result => {
-				console.log("result:", result);
 				firebase.database().ref(classRef).child('image')
 					.update(result)
 					.then(res => dispatch({ type: CLASS_ATTACH_PHOTO_SUCCESS, payload: result.downloadUrl }))
@@ -109,18 +111,23 @@ export const ClassFetchList = () => {
 		const uid = firebase.auth().currentUser.uid;
 		const classRef = `Schools/${uid}/Classes`;
 		firebase.database().ref(classRef)
-			.on(
-			'value',
-			(result) => {
-				var classListObj = result.toJSON();
-				var classListStr = "";
-				_.map(classListObj, (value, key) => { classListStr += `,${key}` })
-				dispatch({
-					type: CLASS_FETCH_LIST_SUCCESS,
-					payload: { classes: classListObj, allclasses: classListStr }
-				})
-			},
-			(error) => dispatch({ type: CLASS_FETCH_LIST_FAIL, payload: error.message })
+			.orderByChild("classname")
+			.on('value',
+				(snapshot) => {
+					var classListObj = {};
+					var classListArr = [];
+
+					snapshot.forEach( classItem => {
+						classListObj[classItem.key] = classItem.val();
+						classListArr.push(classItem.key)
+					})
+
+					dispatch({
+						type: CLASS_FETCH_LIST_SUCCESS,
+						payload: { classes: classListObj, allclasses: classListArr.join(',') }
+					})
+				},
+				(error) => dispatch({ type: CLASS_FETCH_LIST_FAIL, payload: error.message })
 			)
 	}
 }
