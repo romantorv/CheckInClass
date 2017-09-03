@@ -231,6 +231,23 @@ const Styles = StyleSheet.create({
 			fontWeight: '400',
 			color: colorPrimary
 		},
+	searchInputContainer: {
+		backgroundColor: colorInvert,
+		borderRadius: 2,
+		paddingLeft: GUTTER,
+		paddingRight: GUTTER,
+		marginBottom: GUTTER,
+		height: 55,
+		flexDirection: 'row',
+		justifyContent: 'center',
+
+	},
+		searchInputIconWrapper: {
+			flexDirection: 'column',
+			justifyContent: 'center',
+			paddingRight: GUTTER+5,
+			paddingLeft: 5
+		},	
 	schoolForm_PhotosContainer: {
 		flexDirection: 'row',
 		justifyContent: 'flex-start',

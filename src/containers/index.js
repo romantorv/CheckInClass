@@ -11,6 +11,8 @@ import ClassEditFormComponent from './Class/ClassEditForm';
 import ClassStudentListComponent from './Class/ClassStudentList';
 import TeacherList from './Teacher/TeacherList';
 import TeacherEditForm from './Teacher/TeacherEditForm';
+import StudentList from './Student/StudentList';
+import StudentEditForm from './Student/StudentEditForm';
 import SettingsComponent from './Public/Settings';
 //
 import { IsSigned } from '../actions';
@@ -47,7 +49,8 @@ const TeachersScreens = StackNavigator({
 	navigationOptions: defaultStackStyle
 });
 const StudentsScreens = StackNavigator({
-	StudentList:  { screen: ClassStudentListComponent }
+	StudentList:  { screen: StudentList },
+	StudentForm:  { screen: StudentEditForm }
 }, {
 	navigationOptions: defaultStackStyle
 });
@@ -111,7 +114,7 @@ const PrivateScreens = TabNavigator(
 			}
 		}
 	}, {
-		initialRouteName: 'Teachers',
+		initialRouteName: 'Students',
 		lazy: true,
 		tabBarOptions: defaultTabStyle
 	}
