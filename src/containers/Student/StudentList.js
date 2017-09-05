@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import { TeacherFetchList, TeacherRemove } from '../../actions';
+import { StudentFetchList, StudentRemove } from '../../actions';
 import { ButtonAdd, Grid, Row, SearchInput } from '../../components/common';
 import { TeacherItem, SimpleAvatarStack  } from '../../components';
 import { Styles } from '../../theme';
@@ -17,33 +17,23 @@ class StudentList extends Component {
 	}
 
 	componentDidMount(){
-		this.props.TeacherFetchList();
+		this.props.StudentFetchList();
 	}
 
-	_renderlistOfTeachers() {
-		var listOfTeachers = [];
-		_.map(this.props.teachers, (value, key) => {
-			listOfTeachers.push({ ...value, id: key });
+	_renderlistOfStudents() {
+		var listOfStudents = [];
+		_.map(this.props.students, (value, key) => {
+			listOfStudents.push({ ...value, id: key });
 		})
-
 		return <FlatList
-			data={listOfTeachers}
+			data={listOfStudents}
 			keyExtractor={item => item.id}
 			stickySectionHeadersEnabled = { true }
 			ListHeaderComponent = { <SearchInput placeholder="Looking for student..." autoCapitalize="none" /> }
 			renderItem={ ({ item }) => {
 				var imageRef = "";
 				if ( typeof(item.image) === "object" ) imageRef = item.image.ref;
-				return <SimpleAvatarStack />;
-				/*
-				return <TeacherItem 
-					teacherInfo={item} 
-					onEditPress={ ()=> this.props.navigation.navigate('TeacherForm', { actionType: 'edit', teacherid: item.id, firstname: item.firstname })}
-					onDeletePress={ ()=> this.props.TeacherRemove({
-						teacherid: item.id,
-						imageRef
-					})}
-				/>*/
+				return <SimpleAvatarStack>{`${item.firstname} ${item.lastname}`}</SimpleAvatarStack>;
 			} }
 		/>
 	}
@@ -54,7 +44,7 @@ class StudentList extends Component {
 				<View style={Styles.defaultLayout}>
 					<Grid>
 						<Row isNoCell={true}>
-							{ this._renderlistOfTeachers() }
+							{ this._renderlistOfStudents() }
 						</Row>
 					</Grid>
 				</View>
@@ -64,7 +54,7 @@ class StudentList extends Component {
 }
 
 const mapStateToProps = (state) => {
-	const { teachers, allteacher } = state.teachers;
-	return { teachers, allteacher };
+	const { students, allteacher } = state.students;
+	return { students, allteacher };
 }
-export default connect(mapStateToProps, {TeacherFetchList, TeacherRemove})(StudentList);
+export default connect(mapStateToProps, {StudentFetchList, StudentRemove})(StudentList);

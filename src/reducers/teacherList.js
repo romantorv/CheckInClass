@@ -14,6 +14,7 @@ const INITIAL_STATE = {
 }
 
 export default (state = INITIAL_STATE, action) => {
+	console.log("action", action)
 	switch (action.type) {
 		case TEACHER_ISWAITING:
 			return { ...state, isWaiting: true };
@@ -24,6 +25,7 @@ export default (state = INITIAL_STATE, action) => {
 		case TEACHER_FETCH_LIST_FAIL:
 			return { ...state, isWaiting: false, errorMessage: action.payload };
 		case TEACHER_FETCH_LIST_SUCCESS:
+			console.log("action.payload.allteachers", action.payload.allteachers);
 			return { ...state, isWaiting: false, errorMessage: "", teachers: action.payload.teachers, allteachers: action.payload.allteachers };
 		default:
 			return state;

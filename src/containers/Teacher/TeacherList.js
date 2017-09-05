@@ -3,7 +3,7 @@ import { View, Text, ScrollView, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import { TeacherFetchList, TeacherRemove } from '../../actions';
-import { ButtonAdd, Grid, Row } from '../../components/common';
+import { ButtonAdd, Grid, Row, SearchInput } from '../../components/common';
 import { TeacherItem  } from '../../components';
 import { Styles } from '../../theme';
 
@@ -30,7 +30,7 @@ class TeacherList extends Component {
 			data={listOfTeachers}
 			keyExtractor={item => item.id}
 			stickySectionHeadersEnabled = { true }
-			ListHeaderComponent = { <Text>Search Bar</Text>}
+			ListHeaderComponent = { <SearchInput placeholder="Looking for teacher..." autoCapitalize="none" /> }
 			renderItem={ ({ item }) => {
 				var imageRef = "";
 				if ( typeof(item.image) === "object" ) imageRef = item.image.ref;
@@ -63,7 +63,7 @@ class TeacherList extends Component {
 }
 
 const mapStateToProps = (state) => {
-	const { teachers, allteacher } = state.teachers;
-	return { teachers, allteacher };
+	const { teachers, allteachers } = state.teachers;
+	return { teachers, allteachers };
 }
 export default connect(mapStateToProps, {TeacherFetchList, TeacherRemove})(TeacherList);

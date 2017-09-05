@@ -12,12 +12,12 @@ import {
 	InputGroup
 } from '../../components/common';
 import {
-	TeacherAttachPhoto,
-	TeacherCreatNew,
-	TeacherEdit,
-	TeacherFormReset,
-	TeacherFormSave,
-	TeacherOnInputChanged
+	StudentAttachPhoto,
+	StudentCreatNew,
+	StudentEdit,
+	StudentFormReset,
+	StudentFormSave,
+	StudentOnInputChanged
 } from '../../actions';
 
 
@@ -37,14 +37,14 @@ class StudentEditForm extends Component {
 	static navigationOptions = ({ navigation }) => {
 		const { params } = navigation.state;
 		return {
-			title: "Creating new teacher",
+			title: (params.actionType === "create") ? "Create a new Student" : `Editing "${_.truncate(params.firstname, {'length': 30})}"`,
 			headerLeft: <ButtonBack onPress={() => navigation.goBack()}>BACK</ButtonBack>,
 			headerRight: <ButtonSave onPress={() => params.onSave()}>SAVE</ButtonSave>
 		}
 	}
 
 	componentWillMount() {
-		this.props.TeacherFormReset();
+		this.props.StudentFormReset();
 	}
 	
 	componentDidMount() {
@@ -54,8 +54,8 @@ class StudentEditForm extends Component {
 
 		const navParams = this.props.navigation.state.params;
 		try {
-			if ( navParams.actionType === "create" ) this.props.TeacherCreatNew();
-			if ( navParams.actionType === "edit" ) this.props.TeacherEdit(navParams.teacherid);
+			if ( navParams.actionType === "create" ) this.props.StudentCreatNew();
+			if ( navParams.actionType === "edit" ) this.props.StudentEdit(navParams.studentid);
 		} catch (error) {
 			console.log(error);
 		}
@@ -65,21 +65,25 @@ class StudentEditForm extends Component {
 		if ( _.isEmpty(this.props.firstname) ) return false;
 
 		const {
-			teacherid,
-			image,
-			firstname,
-			lastname,
-			title,
-			biology,
+			studentid, 
+			firstname, 
+			lastname, 
+			dob, 
+			gender, 
+			nationality, 
+			identitfyno, 
+			guardian, 
 			isactive
 			} = this.props;
-		this.props.TeacherFormSave({
-			teacherid,
-			image,
-			firstname,
-			lastname,
-			title,
-			biology,
+		this.props.StudentFormSave({
+			studentid, 
+			firstname, 
+			lastname, 
+			dob, 
+			gender, 
+			nationality, 
+			identitfyno, 
+			guardian, 
 			isactive
 			});
 	}
@@ -96,8 +100,8 @@ class StudentEditForm extends Component {
 				console.log('User tapped custom button: ', response.customButton);
 			}
 			else {
-				this.props.TeacherAttachPhoto({
-					teacherid: this.props.teacherid,
+				this.props.StudentAttachPhoto({
+					studentid: this.props.studentid,
 					imgName: response.fileName,
 					imageURI: response.uri
 				});
@@ -128,32 +132,52 @@ class StudentEditForm extends Component {
 							<InputGroup
 								label="FIRST NAME"
 								placeholder="e.g: Johns"
-								onChangeText={(value) => this.props.TeacherOnInputChanged({ name: 'firstname', value })}
+								onChangeText={(value) => this.props.StudentOnInputChanged({ name: 'firstname', value })}
 								value={this.props.firstname} />
 						</Cell>
 						<Cell>
 							<InputGroup
 								label="LAST NAME"
 								placeholder="e.g: Wright B."
-								onChangeText={(value) => this.props.TeacherOnInputChanged({ name: 'lastname', value })}
+								onChangeText={(value) => this.props.StudentOnInputChanged({ name: 'lastname', value })}
 								value={this.props.lastname} />
+						</Cell>
+					</Row>
+					<Row style={{ marginLeft: 0, marginRight: 0 }}>
+						<Cell>
+							<InputGroup
+								label="DATE OF BIRTH"
+								placeholder="DD/MM/YYYY"
+								onChangeText={(value) => this.props.StudentOnInputChanged({ name: 'dob', value })}
+								value={this.props.dob} />
+						</Cell>
+						<Cell>
+							<InputGroup
+								label="GENDER"
+								onChangeText={(value) => this.props.StudentOnInputChanged({ name: 'gender', value })}
+								value={this.props.gender} />
+						</Cell>
+					</Row>
+					<Row style={{ marginLeft: 0, marginRight: 0 }}>
+						<Cell>
+							<InputGroup
+								label="NATIONALITY"
+								onChangeText={(value) => this.props.StudentOnInputChanged({ name: 'nationality', value })}
+								value={this.props.nationality} />
+						</Cell>
+						<Cell>
+							<InputGroup
+								label="IDENTIFICATION NO."
+								placeholder="e.g: P12345678"
+								onChangeText={(value) => this.props.StudentOnInputChanged({ name: 'identitfyno', value })}
+								value={this.props.identitfyno} />
 						</Cell>
 					</Row>
 					<Row isNoCell={true}>
 						<InputGroup
-							label="TITLE"
-							placeholder="e.g: Psychologist - Masshachusetts Institude of Technology"
-							onChangeText={(value) => this.props.TeacherOnInputChanged({ name: 'title', value })}
-							value={this.props.title} />
-					</Row>
-					<Row isNoCell={true}>
-						<InputGroup
-							label="BIOLOGY"
-							placeholder="Introduce about teacher / lecture..."
-							inputRows={4}
-							onChangeText={(value) => this.props.TeacherOnInputChanged({ name: 'biology', value })}
-							value={this.props.biology}
-						/>
+							label="GUARDIAN"
+							onChangeText={(value) => this.props.StudentOnInputChanged({ name: 'guardian', value })}
+							value={this.props.guardian} />
 					</Row>
 				</Grid>
 			</View>
@@ -164,30 +188,38 @@ class StudentEditForm extends Component {
 const mapStateToProps = (state) => {
 	const { isWaiting,
 		errorMessage,
-		teacherid,
-		image,
-		firstname,
-		lastname,
-		title,
-		biology
-		} = state.teacherForm;
+		studentid, 
+		firstname, 
+		lastname, 
+		dob, 
+		gender, 
+		nationality, 
+		identitfyno, 
+		guardian,
+		image, 
+		isactive
+		} = state.studentForm;
 	return {
 		isWaiting,
 		errorMessage,
-		teacherid,
+		studentid, 
+		firstname, 
+		lastname, 
+		dob, 
+		gender, 
+		nationality, 
+		identitfyno, 
+		guardian, 
 		image,
-		firstname,
-		lastname,
-		title,
-		biology
+		isactive
 	};
 }
 
 export default connect(mapStateToProps, {
-	TeacherAttachPhoto,
-	TeacherCreatNew,
-	TeacherEdit,
-	TeacherFormReset,
-	TeacherFormSave,
-	TeacherOnInputChanged
+	StudentAttachPhoto,
+	StudentCreatNew,
+	StudentEdit,
+	StudentFormReset,
+	StudentFormSave,
+	StudentOnInputChanged
 })(StudentEditForm);

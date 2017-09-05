@@ -340,7 +340,8 @@ const Styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'center',
-		alignContent: 'stretch'
+		alignContent: 'stretch',
+		width: '100%'
 	},
 		stackItemWrapper: {
 			flexDirection: 'row',

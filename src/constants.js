@@ -52,3 +52,17 @@ export const TEACHER_SAVE_SUCCESS = "save_teacher_success";
 export const TEACHER_SAVE_FAIL = "save_teacher_fail";
 export const TEACHER_FETCH_LIST_SUCCESS = "fetch_teacher_list_success";
 export const TEACHER_FETCH_LIST_FAIL = "fetch_teacher_list_fail";
+// STUDENT
+export const STUDENT_ISWAITING = "student_is_waiting";
+export const STUDENT_INPUT_CHANGED = "student_input_form_changed";
+export const STUDENT_RESET = "reset_student_form";
+export const STUDENT_NEW = "create_student";
+export const STUDENT_EDIT = "edit_student";
+export const STUDENT_REMOVE_FAIL = "student_remove_fail";
+export const STUDENT_REMOVE_SUCCESS = "student_remove_success";
+export const STUDENT_ATTACH_PHOTO_SUCCESS = "attach_student_photo_success";
+export const STUDENT_ATTACH_PHOTO_FAIL = "attach_student_photo_fail";
+export const STUDENT_SAVE_SUCCESS = "save_student_success";
+export const STUDENT_SAVE_FAIL = "save_student_fail";
+export const STUDENT_FETCH_LIST_SUCCESS = "fetch_student_list_success";
+export const STUDENT_FETCH_LIST_FAIL = "fetch_student_list_fail";

@@ -27,7 +27,7 @@ export const SimpleAvatarStack = (props) => {
 					size: props.size,
 					resizeMode: props.resizeMode})
 				}
-				<Text style={Styles.stackItemLabel}>Sarah Obama</Text>
+				<Text style={Styles.stackItemLabel}>{props.children}</Text>
 			</View>
 			<TouchableOpacity style={Styles.stackItemAction}>
 				<Text style={Styles.stackItemActionText}>DELETE</Text>
