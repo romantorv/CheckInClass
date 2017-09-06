@@ -8,6 +8,7 @@ target 'CheckInClass' do
   # Required by RNFirebase
   pod 'Firebase/Core'
   pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
   
   # [OPTIONAL PODS] - comment out pods for firebase products you won't be using.
   pod 'Firebase/AdMob'

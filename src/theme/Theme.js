@@ -124,7 +124,10 @@ const Styles = StyleSheet.create({
 		fontSize: 18
 	},
 	buttonHeaderRight: {
-		marginRight: 15
+		marginRight: 15,
+		flexDirection: 'row',
+		justifyContent: 'center',
+		alignItems: 'center'
 	},
 	buttonHeaderLeft: {
 		marginLeft: 15
@@ -133,7 +136,8 @@ const Styles = StyleSheet.create({
 			fontSize: 13,
 			fontWeight: '400',
 			fontFamily: fontPrimary,
-			color: colorInvert
+			color: colorInvert,
+			lineHeight: 14
 		},
 	avatarImage: {
 		width: 250,
