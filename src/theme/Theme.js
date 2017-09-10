@@ -130,7 +130,10 @@ const Styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	buttonHeaderLeft: {
-		marginLeft: 15
+		marginLeft: 15,
+		flexDirection: 'row',
+		justifyContent: 'center',
+		alignItems: 'center'
 	},
 		buttonHeaderText: {
 			fontSize: 13,
@@ -433,4 +436,29 @@ const TabStyles = {
 		
 }
 
-export { Styles, RouterStyles, TabStyles };
+const DatePickerStyles = { 
+	dateTouchBody: {
+		backgroundColor: '#FFF',
+		borderRadius: 2,
+		paddingLeft: 15,
+		paddingRight: 15,
+		height: 55
+	},
+	dateInput: {
+		borderWidth: 0,
+		alignItems: 'flex-start'
+	},
+	placeholderText: {
+		fontFamily: fontPrimary,
+		paddingLeft: 0
+	},
+	dateText: { 
+		fontFamily: fontPrimary,
+		paddingLeft: 0
+	},
+	dateIcon: {
+		
+	}
+}
+
+export { Styles, RouterStyles, TabStyles, DatePickerStyles };

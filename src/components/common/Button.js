@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, View, ActivityIndicator } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Styles, RouterStyles } from '../../theme';
 
 const Button = (props) => {
@@ -43,7 +43,7 @@ const ButtonAdd = (props) => {
 			onPress={props.onPress}
 		>
 			<View style={Styles.buttonHeaderRight}>
-				<Icon name="ios-add-circle-outline" size={17} color="#FFF" style={{marginRight:5, lineHeight:20}} />
+				<Icon name="plus" size={17} color="#FFF" style={{marginRight:5, lineHeight:20}} />
 				<Text style={Styles.buttonHeaderText}>{props.children}</Text>
 			</View>
 		</TouchableOpacity>
@@ -56,7 +56,7 @@ const ButtonSave = (props) => {
 			onPress={props.onPress}
 		>
 			<View style={Styles.buttonHeaderRight}>
-				<Icon name="ios-checkmark-circle-outline" size={17} color="#FFF" style={{marginRight:5, lineHeight:20}} />
+				<Icon name="check" size={17} color="#FFF" style={{marginRight:5, lineHeight:20}} />
 				<Text style={Styles.buttonHeaderText}>{props.children}</Text>
 			</View>
 		</TouchableOpacity>
@@ -69,6 +69,7 @@ const ButtonBack = (props) => {
 			onPress={props.onPress}
 		>
 			<View style={Styles.buttonHeaderLeft}>
+				<Icon name="arrow-left" size={17} color="#FFF" style={{marginRight:5, lineHeight:20}} />
 				<Text style={Styles.buttonHeaderText}>{props.children}</Text>
 			</View>
 		</TouchableOpacity>

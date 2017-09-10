@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import moment from 'moment';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import DatePicker from 'react-native-datepicker';
 import ImagePicker from 'react-native-image-picker';
 
-import { Styles } from '../../theme';
+import { Styles, DatePickerStyles } from '../../theme';
 import {
 	AvatarThumb, Button, ButtonBack, ButtonSave,
 	Grid, Row, Cell,
@@ -41,6 +43,13 @@ class StudentEditForm extends Component {
 			headerLeft: <ButtonBack onPress={() => navigation.goBack()}>BACK</ButtonBack>,
 			headerRight: <ButtonSave onPress={() => params.onSave()}>SAVE</ButtonSave>
 		}
+	}
+
+	constructor(props){
+		super(props);
+		this.state = {
+			dob: ""
+		};
 	}
 
 	componentWillMount() {
@@ -145,11 +154,28 @@ class StudentEditForm extends Component {
 					</Row>
 					<Row style={{ marginLeft: 0, marginRight: 0 }}>
 						<Cell>
-							<InputGroup
-								label="DATE OF BIRTH"
-								placeholder="DD/MM/YYYY"
-								onChangeText={(value) => this.props.StudentOnInputChanged({ name: 'dob', value })}
-								value={this.props.dob} />
+							<View style={Styles.inputGroupContainer}>
+								<Text style={Styles.inputLabel}>DATE OF BIRTH</Text>
+								<View>
+									<DatePicker 
+										style={{width: '100%'}}
+										date= { this.state.dob }
+										mode="date"
+										placeholder="Please select date"
+										minDate="1970-01-01"
+										format="DD MMM YYYY"
+										maxDate= { new Date() }
+										confirmBtnText="Confirm"
+										cancelBtnText="Cancel"
+										customStyles={ DatePickerStyles }
+										onDateChange={ value => {
+											console.log("select date", value);
+											this.setState({dob: value});
+											this.props.StudentOnInputChanged({ name: 'dob', value: moment(value, 'DD MMM YYYY').format() })
+										} }
+									/>
+								</View>
+							</View>
 						</Cell>
 						<Cell>
 							<InputGroup
