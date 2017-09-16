@@ -421,6 +421,51 @@ const RouterStyles = {
 
 }
 
+const FormStyles = {
+	inputGroupContainer: {
+		marginBottom: 15,
+		alignContent: 'stretch',
+		alignItems: 'stretch',
+		width: '100%'
+	},
+		inputLabel: {
+			fontWeight: '500',
+			fontFamily: fontPrimary,
+			fontSize: 11,
+			color: colorPrimary,
+			marginBottom: 5
+		},
+		inputWrapper: {
+			backgroundColor: colorInvert,
+			borderRadius: 2,
+			paddingLeft: 15,
+			paddingRight: 15,
+			height: 55,
+			flexDirection: 'row',
+			justifyContent: 'center'
+		},
+		input: {
+			fontFamily: fontPrimary,
+			fontSize: 14,
+			lineHeight: 30,
+			color: colorPrimary,
+			textAlign: 'left',
+			flex: 1
+		},
+	optionContainer: {
+		flex: 1,
+		flexDirection: 'row', 
+		justifyContent: 'flex-start', 
+		paddingTop: 5
+	},
+		optionLabel: {
+			fontFamily: fontPrimary,
+			fontSize: 14,
+			color: colorPrimary,
+			textAlign: 'left'
+		}
+}
+
 const TabStyles = {
 	tabContainer: {
 		backgroundColor: '#F9F9F9',
@@ -461,4 +506,41 @@ const DatePickerStyles = {
 	}
 }
 
-export { Styles, RouterStyles, TabStyles, DatePickerStyles };
+const DropdownStyles = {
+	DropdownContainer: {
+		backgroundColor: colorInvert,
+		borderRadius: 2,
+		paddingLeft: 15,
+		paddingRight: 15,
+		height: 55,
+		flexDirection: 'row',
+		justifyContent: 'flex-start',
+		alignItems: 'center',
+		alignContent: 'stretch',
+		flex: 1
+	},
+		defaultLabel: {
+			fontFamily: fontPrimary,
+			fontSize: 14,
+			color: colorPrimary
+		},
+	DropdownListContainer: {
+		marginTop: 20,
+		width: 330
+	},
+		optionLabel: {
+			fontFamily: fontPrimary,
+			fontSize: 14,
+			textAlign: 'left',
+			flex: 1
+		},
+		selectedLabel: {
+			fontFamily: fontPrimary,
+			fontSize: 14,
+			color: colorHighlight,
+			textAlign: 'left'
+		}
+	
+}
+
+export { Styles, FormStyles, RouterStyles, TabStyles, DatePickerStyles, DropdownStyles };

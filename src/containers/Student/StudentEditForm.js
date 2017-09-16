@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import moment from 'moment';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import DatePicker from 'react-native-datepicker';
+import { RadioButton, RadioButtonInput, RadioButtonLabel } from 'react-native-simple-radio-button';
+import ModalDropdown from 'react-native-modal-dropdown';
 import ImagePicker from 'react-native-image-picker';
 
-import { Styles, DatePickerStyles } from '../../theme';
+import { Styles, DatePickerStyles, FormStyles, DropdownStyles } from '../../theme';
 import {
 	AvatarThumb, Button, ButtonBack, ButtonSave,
 	Grid, Row, Cell,
@@ -21,6 +23,7 @@ import {
 	StudentFormSave,
 	StudentOnInputChanged
 } from '../../actions';
+import {CountryListItems} from './CountryList';
 
 
 const cameraRollSettings = {
@@ -68,8 +71,8 @@ class StudentEditForm extends Component {
 		} catch (error) {
 			console.log(error);
 		}
-	}
 
+	}
 	_onSave(){
 		if ( _.isEmpty(this.props.firstname) ) return false;
 
@@ -96,6 +99,48 @@ class StudentEditForm extends Component {
 			isactive
 			});
 	}
+
+	_renderGenderOptions = () => {
+		return (
+			<View style={[Styles.inputWrapper, 
+				{
+					flexDirection: 'row',
+					alignItems: 'center'
+				}]}>
+				<View style={FormStyles.optionContainer}>
+					<RadioButton
+						obj={{'label': "Male", 'value': "Male"}} 
+						isSelected={ this.props.gender === "Male" }
+						labelStyle={FormStyles.optionLabel}
+						borderWidth={1}
+						buttonColor={'#000'}
+						buttonSize={10}
+						onPress={(value) => {
+                        this.props.StudentOnInputChanged({name: 'gender', value})
+                      }}/>
+				</View>
+				<View style={FormStyles.optionContainer}>
+					<RadioButton 
+						obj={{'label': "Female", 'value': "Female"}} 
+						isSelected={ this.props.gender === "Female" }
+						labelStyle={FormStyles.optionLabel}
+						borderWidth={1}
+						buttonColor={'#000'}
+						buttonSize={10}
+						onPress={(value) => {
+                        this.props.StudentOnInputChanged({name: 'gender', value})
+                      }}/>
+				</View>
+			</View>
+		)
+	}
+
+	_getCountryListNameOnly() {
+		var CountryList = [];
+		_.map(CountryListItems, value => CountryList.push(value.name) );
+		return CountryList;
+	}
+
 
 	_getPhotos = () => {
 		ImagePicker.showImagePicker(cameraRollSettings, (response) => {
@@ -156,40 +201,49 @@ class StudentEditForm extends Component {
 						<Cell>
 							<View style={Styles.inputGroupContainer}>
 								<Text style={Styles.inputLabel}>DATE OF BIRTH</Text>
-								<View>
-									<DatePicker 
-										style={{width: '100%'}}
-										date= { this.state.dob }
-										mode="date"
-										placeholder="Please select date"
-										minDate="1970-01-01"
-										format="DD MMM YYYY"
-										maxDate= { new Date() }
-										confirmBtnText="Confirm"
-										cancelBtnText="Cancel"
-										customStyles={ DatePickerStyles }
-										onDateChange={ value => {
-											console.log("select date", value);
-											this.setState({dob: value});
-											this.props.StudentOnInputChanged({ name: 'dob', value: moment(value, 'DD MMM YYYY').format() })
-										} }
-									/>
-								</View>
+								<DatePicker 
+									style={{width: '100%'}}
+									date= { this.state.dob }
+									mode="date"
+									placeholder="Please select date"
+									minDate="1970-01-01"
+									format="DD MMM YYYY"
+									maxDate= { new Date() }
+									confirmBtnText="Confirm"
+									cancelBtnText="Cancel"
+									customStyles={ DatePickerStyles }
+									onDateChange={ value => {
+										console.log("select date", value);
+										this.setState({dob: value});
+										this.props.StudentOnInputChanged({ name: 'dob', value: moment(value, 'DD MMM YYYY').format() })
+									} }
+								/>
 							</View>
 						</Cell>
 						<Cell>
-							<InputGroup
-								label="GENDER"
-								onChangeText={(value) => this.props.StudentOnInputChanged({ name: 'gender', value })}
-								value={this.props.gender} />
+							<View style={Styles.inputGroupContainer}>
+								<Text style={Styles.inputLabel}>GENDER</Text>
+								{ this._renderGenderOptions() }
+							</View>
+							
 						</Cell>
 					</Row>
 					<Row style={{ marginLeft: 0, marginRight: 0 }}>
 						<Cell>
-							<InputGroup
-								label="NATIONALITY"
-								onChangeText={(value) => this.props.StudentOnInputChanged({ name: 'nationality', value })}
-								value={this.props.nationality} />
+							<View style={Styles.inputGroupContainer}>
+								<Text style={Styles.inputLabel}>NATIONALITY</Text>
+								<ModalDropdown
+									style={DropdownStyles.DropdownContainer}
+									textStyle={DropdownStyles.defaultLabel}
+									dropdownStyle={DropdownStyles.DropdownListContainer}
+									dropdownTextStyle = {DropdownStyles.optionLabel}
+									dropdownTextHighlightStyle = {DropdownStyles.selectedLabel}
+									defaultValue = "Please select from the list"
+									options= { this._getCountryListNameOnly() }
+									onSelect={ (index, value) => this.props.StudentOnInputChanged({name: 'nationality', value })}
+									
+								/>
+							</View>
 						</Cell>
 						<Cell>
 							<InputGroup
