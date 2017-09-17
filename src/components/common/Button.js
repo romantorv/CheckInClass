@@ -78,14 +78,16 @@ const ButtonBack = (props) => {
 
 const LinkEdit = (props) => {
 	return (
-		<TouchableOpacity onPress={props.onPress} >
+		<TouchableOpacity onPress={props.onPress} style={Styles.linkWithIconWrapper} >
+			<Icon name="pencil" size={14} color="#1FBAD6" style={{marginRight:2}} />
 			<Text style={[Styles.textSmall, Styles.link, props.style]}>{props.children}</Text>
 		</TouchableOpacity>
 	)
 }
 const LinkDelete = (props) => {
 	return (
-		<TouchableOpacity onPress={props.onPress} >
+		<TouchableOpacity onPress={props.onPress} style={Styles.linkWithIconWrapper}>
+			<Icon name="delete-forever" size={14} color="#09091A" style={{marginRight:2}} />
 			<Text style={[Styles.textSmall, props.style]}>{props.children}</Text>
 		</TouchableOpacity>
 	)

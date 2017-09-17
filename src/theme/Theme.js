@@ -97,6 +97,9 @@ const Styles = StyleSheet.create({
 	textCenter: {
 		textAlign: 'center'
 	},
+	linkWithIconWrapper: {
+		flexDirection: 'row'
+	},
 	link: {
 		color: colorHighlight
 	},
