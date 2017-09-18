@@ -14,6 +14,7 @@ import {
 	STUDENT_FETCH_LIST_FAIL,
 	STUDENT_FETCH_LIST_SUCCESS
 } from '../constants';
+import moment from 'moment';
 
 export const StudentOnInputChanged = ({name, value}) => {
 	return {
@@ -34,12 +35,12 @@ export const StudentCreatNew = () => {
 	}
 }
 
-export const StudentRemove = (teacherItem) => {
+export const StudentRemove = (studentItem) => {
 	return (dispatch) => {
 		dispatch({type: STUDENT_ISWAITING});
 		const uid = firebase.auth().currentUser.uid;
 		const studentRef = `Schools/${uid}/Students`;
-		const { studentid, imageRef } = teacherItem;
+		const { studentid, imageRef } = studentItem;
 		firebase.database().ref(studentRef)
 			.child(studentid)
 			.remove()
@@ -64,7 +65,11 @@ export const StudentEdit = (studentid) => {
 		firebase.database().ref(studentRef)
 			.child(studentid)
 			.once('value')
-			.then(response => dispatch({ type: STUDENT_EDIT, payload: {studentid, student: response.toJSON()} }))
+			.then(response => {
+				var responseJSON = response.toJSON();
+				responseJSON.dob = moment(responseJSON.dob).format('DD MMM YYYY');
+				dispatch({ type: STUDENT_EDIT, payload: {studentid, student: responseJSON} })
+			})
 			.catch(error => dispatch({ type: STUDENT_SAVE_FAIL, payload: error.message }))
 	}
 }
@@ -75,9 +80,10 @@ export const StudentFormSave = (formDetail) => {
 		const studentRef = `Schools/${uid}/Students`;
 		const { studentid, firstname, lastname, dob, gender, nationality, identitfyno, guardian, isactive } = formDetail;
 		var timeStamp = new Date().getTime();
+		var formatedDOB = moment(dob, 'DD MMM YYYY').format();
 		firebase.database().ref(studentRef)
 			.child(studentid)
-			.update({ firstname, lastname, dob, gender, nationality, identitfyno, guardian, isactive })
+			.update({ firstname, lastname, dob: formatedDOB, gender, nationality, identitfyno, guardian, isactive })
 			.then(response => dispatch({ type: STUDENT_SAVE_SUCCESS }))
 			.catch(error => dispatch({ type: STUDENT_SAVE_FAIL, payload: error.message }))
 

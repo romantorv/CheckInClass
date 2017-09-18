@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import { StudentFetchList, StudentRemove } from '../../actions';
 import { ButtonAdd, Grid, Row, SearchInput } from '../../components/common';
-import { TeacherItem, SimpleAvatarStack  } from '../../components';
+import { StudentItem  } from '../../components';
 import { Styles } from '../../theme';
 
 class StudentList extends Component {
@@ -32,8 +32,12 @@ class StudentList extends Component {
 			ListHeaderComponent = { <SearchInput placeholder="Looking for student..." autoCapitalize="none" /> }
 			renderItem={ ({ item }) => {
 				var imageRef = "";
-				if ( typeof(item.image) === "object" ) imageRef = item.image.ref;
-				return <SimpleAvatarStack>{`${item.firstname} ${item.lastname}`}</SimpleAvatarStack>;
+				if ( typeof(item.image) === "object" ) imageRef = item.image.downloadUrl;
+				return <StudentItem
+						imageURI = { imageRef }
+						onEditPress={ ()=> this.props.navigation.navigate('StudentForm', { actionType: 'edit', studentid: item.id, firstname: item.firstname })}
+						onDeletePress = { () => this.props.StudentRemove({studentid: item.id, imageRef }) }
+						>{`${item.firstname||"No Define Name"} ${item.lastname || ""}`}</StudentItem>;
 			} }
 		/>
 	}

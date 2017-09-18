@@ -169,7 +169,7 @@ class StudentEditForm extends Component {
 				<Grid>
 					<Row isNoCell={true}>
 						<View style={Styles.inputGroupContainer}>
-							<Text style={Styles.inputLabel}>TEACHER PORTRAIT</Text>
+							<Text style={Styles.inputLabel}>STUDENT PORTRAIT</Text>
 							<View>
 								<AvatarThumb
 									size={125}
@@ -203,7 +203,7 @@ class StudentEditForm extends Component {
 								<Text style={Styles.inputLabel}>DATE OF BIRTH</Text>
 								<DatePicker 
 									style={{width: '100%'}}
-									date= { this.state.dob }
+									date= { this.props.dob }
 									mode="date"
 									placeholder="Please select date"
 									minDate="1970-01-01"
@@ -213,9 +213,7 @@ class StudentEditForm extends Component {
 									cancelBtnText="Cancel"
 									customStyles={ DatePickerStyles }
 									onDateChange={ value => {
-										console.log("select date", value);
-										this.setState({dob: value});
-										this.props.StudentOnInputChanged({ name: 'dob', value: moment(value, 'DD MMM YYYY').format() })
+										this.props.StudentOnInputChanged({ name: 'dob', value })
 									} }
 								/>
 							</View>
@@ -238,7 +236,7 @@ class StudentEditForm extends Component {
 									dropdownStyle={DropdownStyles.DropdownListContainer}
 									dropdownTextStyle = {DropdownStyles.optionLabel}
 									dropdownTextHighlightStyle = {DropdownStyles.selectedLabel}
-									defaultValue = "Please select from the list"
+									defaultValue = {this.props.nationality || "Please select from the list"}
 									options= { this._getCountryListNameOnly() }
 									onSelect={ (index, value) => this.props.StudentOnInputChanged({name: 'nationality', value })}
 									
@@ -252,12 +250,6 @@ class StudentEditForm extends Component {
 								onChangeText={(value) => this.props.StudentOnInputChanged({ name: 'identitfyno', value })}
 								value={this.props.identitfyno} />
 						</Cell>
-					</Row>
-					<Row isNoCell={true}>
-						<InputGroup
-							label="GUARDIAN"
-							onChangeText={(value) => this.props.StudentOnInputChanged({ name: 'guardian', value })}
-							value={this.props.guardian} />
 					</Row>
 				</Grid>
 			</View>

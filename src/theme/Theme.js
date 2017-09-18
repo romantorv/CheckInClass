@@ -367,7 +367,8 @@ const Styles = StyleSheet.create({
 			fontSize: 14
 		},
 		stackItemAction: {
-			justifyContent: 'flex-end'
+			justifyContent: 'flex-end',
+			flexDirection: 'row'
 		},
 		stackItemActionText: {
 			color: colorPrimary,
