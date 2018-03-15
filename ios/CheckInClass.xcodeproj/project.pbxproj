@@ -606,6 +606,7 @@
 				1A5B65922DF949448D677434 /* Resources */,
 				1D23D8F56BACBE6CE077045E /* Pods */,
 				F43AE1F76BB1AA12AA0022DB /* Frameworks */,
+				A19AE0601F8E5E5400F20F22 /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -636,6 +637,14 @@
 				A10900011F322DF40094BE9F /* libRCTCameraRoll.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A19AE0601F8E5E5400F20F22 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				D65F344764954C5F9F6FE0A1 /* libRNFirebase.a */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		A1E9A7ED1F34C4A700BB0A27 /* Products */ = {

@@ -82,6 +82,7 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"
   install_resource "../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"
+  install_resource "../../node_modules/react-native-vector-icons/Fonts/Feather.ttf"
   install_resource "../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"
   install_resource "../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"
   install_resource "../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"
@@ -94,6 +95,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"
   install_resource "../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"
+  install_resource "../../node_modules/react-native-vector-icons/Fonts/Feather.ttf"
   install_resource "../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"
   install_resource "../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"
   install_resource "../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"
