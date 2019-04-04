@@ -1,12 +1,12 @@
 import RNFirebase from 'react-native-firebase'
 
 const FB_Configuration = {
-	apiKey: "AIzaSyB8YXt3rBlo7N3F8XFhnAi0wUkrJzvs4Jk",
-    authDomain: "checkinclass-e5392.firebaseapp.com",
-    databaseURL: "https://checkinclass-e5392.firebaseio.com",
-    projectId: "checkinclass-e5392",
-    storageBucket: "checkinclass-e5392.appspot.com",
-	messagingSenderId: "501250367396",
+	apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+	messagingSenderId: "",
 	debug: true,
 	persistence: true
 }
